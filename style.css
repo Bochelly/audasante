@@ -57,10 +57,77 @@ body header h1
 	letter-spacing: 3px;
 	font-size : 0.85em;
 	padding-left:1.2%;
-	padding-top: 1.5%;
+	padding-top: 2.2%;
 	position: fixed;
 	 width : 14.8%;
 	 height: 8.5%;
 	color : #FFFFFF;
 	background-color: #3C3B53;
+}
+
+#top-bar li{ /*Permet d'afficher tous les élements côte à côte padding-bottom: 10px;*/
+	display: inline;
+    
+}
+
+
+
+
+
+#top-bar{
+	text-align: right;
+    position: fixed;
+    	left : 16%;
+    	bottom: 95%;
+    	top : 0%;
+    	width : 84%; /*largeur */
+    	height: 55px;
+	box-shadow: 0px 0px 4px black;
+}
+
+#search-field{
+	text-align: left;
+	width: 55%;
+	padding: 15px 15px 0px 15px;
+	text-decoration: none;
+	display: inline;
+    float: left;
+	font-size: 1em;
+	color: #747474;	
+}
+
+#search-field input[type=text]{
+	border: none;
+	width: 55%;
+}
+
+
+#search-text{
+	padding-left: 15px;
+	text-decoration: none;
+}
+
+
+
+#top-bar a:hover /*lorsque qu'on passe la souris sur le lien*/
+{
+	background-color: #524f82;
+	color: #FFFFFF;
+	border-left:  solid 3px #aaaaaa;
+
+}
+#top-bar em:hover{
+	color: #000000;
+	background-color: #dddddd;
+	border-left:  solid 3px #aaaaaa;
+}
+
+
+#top-bar a{
+	color : #dddddd;
+	text-decoration: none;
+	padding: 15px 15px 0px 15px;
+        width:auto;
+        float: right;
+
 }
