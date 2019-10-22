@@ -11,7 +11,7 @@ body nav
     	width : 16%; /*largeur */
 }
 
-body nav li
+body nav a li
 {
 	font-size: 0.9em;
 	list-style: none; /*enlève les points des listes*/
@@ -25,15 +25,18 @@ body nav li
 
 
 
-body nav li a
+body nav a
 {
 	color : #E8E8EB;
-	text-decoration: none; /* enlève le soulignement*/
-	padding-left: 5% /* eloigne le texte des icons*/
-
+	text-decoration: none; /* enlève le soulignement des liens*/
 }
 
-body nav li:hover /*lorsque qu'on passe la souris sur le lien*/
+body nav a li span
+{
+	padding-left: 5%;
+}
+
+body nav li:hover /*lorsque qu'on passe la souris sur le lien, le fond est bleu foncé*/
 {
 	background-color: #3C3B53;
 }
@@ -57,7 +60,7 @@ body header h1
 	letter-spacing: 3px;
 	font-size : 0.85em;
 	padding-left:1.2%;
-	padding-top: 2.2%;
+	padding-top: 1.5%;
 	position: fixed;
 	 width : 14.8%;
 	 height: 8.5%;
