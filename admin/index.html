@@ -32,8 +32,13 @@
 
 	<div id='top-bar'>
 		<ul>
-			<form>
-				<li id="search-field"><i class="fas fa-search" style="color:#A5A4BF;"></i><input id="search-text" type="text" placeholder="Recherchez un patient, un test ou un message"><input type="submit" hidden></i></li>
+			<form autocomplete="off" >
+				<div class="autocomplete">
+					<li id="search-field"><i class="fas fa-search" style="color:#A5A4BF;"></i>
+						<input id="search-text" type="text" name="search-bar" placeholder="Recherchez un patient, un test ou un message">
+						<input type="submit" hidden>
+					</li>
+				</div>
 			</form>
 			<li id="top-photo"><a href="#"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a> </li>
 			<li id="top-assist"> <a href="Assistance.html"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
@@ -43,6 +48,7 @@
 		</ul>
 	</div>
 
+	<script src="js/script.js"></script>
 </body>
 </html>
 
