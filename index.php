@@ -24,7 +24,7 @@
 	<DIV class=p1>
 		<form method="get" action="connect.php">
 			<fieldset>
-				<legend>Login : </legend>
+				<legend>Login :rgbrbrrb </legend>
 				<input type="text" name="login"/>
 			</fieldset>
 			<fieldset>
