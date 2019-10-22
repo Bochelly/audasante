@@ -113,13 +113,16 @@ body header h1
 {
 	background-color: #524f82;
 	color: #FFFFFF;
-	border-left:  solid 3px #aaaaaa;
+
+	height: 40px;
+
 
 }
 #top-bar em:hover{
 	color: #000000;
 	background-color: #dddddd;
 	border-left:  solid 3px #aaaaaa;
+	height: 55px;
 }
 
 
