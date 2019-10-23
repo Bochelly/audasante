@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 19 oct. 2019 à 17:45
+-- Généré le :  mer. 23 oct. 2019 à 09:43
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -25,24 +25,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `connect`
+-- Structure de la table `medic`
 --
 
-DROP TABLE IF EXISTS `connect`;
-CREATE TABLE IF NOT EXISTS `connect` (
-  `id` int(128) NOT NULL,
-  `email` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(64) CHARACTER SET utf8 NOT NULL,
-  `nb_try` int(16) NOT NULL,
-  `lastconnect` date DEFAULT NULL
+DROP TABLE IF EXISTS `medic`;
+CREATE TABLE IF NOT EXISTS `medic` (
+  `n_secu` bigint(20) NOT NULL,
+  `first_name` varchar(63) NOT NULL,
+  `last_name` varchar(63) NOT NULL,
+  `birth_date` date NOT NULL,
+  `work_place` varchar(63) NOT NULL,
+  `e_mail` varchar(63) NOT NULL,
+  `password` varchar(63) NOT NULL,
+  `last_connect` date NOT NULL,
+  `nb_try` int(16) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`n_secu`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `patient`
+--
+
+DROP TABLE IF EXISTS `patient`;
+CREATE TABLE IF NOT EXISTS `patient` (
+  `n_secu` bigint(20) NOT NULL,
+  `first_name` varchar(63) CHARACTER SET utf8 NOT NULL,
+  `last_name` varchar(63) CHARACTER SET utf8 NOT NULL,
+  `birth_date` date NOT NULL,
+  `e_mail` varchar(63) CHARACTER SET utf8 NOT NULL,
+  `password` varchar(63) CHARACTER SET utf8 NOT NULL,
+  `last_connect` date NOT NULL,
+  `nb_try` int(16) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`n_secu`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `connect`
---
-
-INSERT INTO `connect` (`id`, `email`, `password`, `nb_try`, `lastconnect`) VALUES
-(1, 'thomas.hercule@isep.fr', 'iseppp', 0, '2019-10-19');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
