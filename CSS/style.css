@@ -71,6 +71,18 @@ body header h1
 	background-color: #3C3B53;
 }
 
+h2 {
+
+	position : relative;
+		top : 85px;
+		left: 21%;
+	font-size : 1.8em;
+	display: inline;
+	color: #43425D;
+	text-align: left;
+} 
+
+
 #top-bar li{ /*Permet d'afficher tous les élements côte à côte padding-bottom: 10px;*/
 	display: inline;
     
@@ -81,6 +93,7 @@ body header h1
 
 
 #top-bar{
+	background-color: white;
     position: fixed;
     	left : 16%;
     	bottom: 95%;
@@ -88,6 +101,7 @@ body header h1
     	width : 84%; /*largeur */
     	height: 55px;
 	box-shadow: 0px 0px 4px black;
+	z-index: 99;
 }
 
 .autocomplete {
