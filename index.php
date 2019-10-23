@@ -18,21 +18,34 @@
 	<title>Connexion</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
+	
+	<style>
+
+
+</style>
 </head>
 
 <body>
-	<DIV class=p1>
+
+	<div class=back_log>
+		<img src="css/img/main_mesure_x2.png" width="70%" height="auto">
+	</div>
+
+
+	<div class=droite_log>
 		<form method="get" action="connect.php">
-			<fieldset>
-				<legend>Login : </legend>
-				<input type="text" name="login"/>
-			</fieldset>
-			<fieldset>
-				<legend>Mot de passe : </legend>
-				<input type="password" name="pswrd"/>
-			</fieldset>
-			<input type="submit" name="submit" value="Se connecter"/>
+					<i class="" style="color:#43425D;"> </i><legend>A U D A S A N T É</legend>
+					<i class="" style="color:#43425D;"> </i><legend>E-mail</legend>
+					<input type="text" name="login"/>
+					<legend>Mot de passe</legend>
+					<input type="password" name="pswrd"/>
+				</br><input type="submit" name="submit" value="Connexion"/>
+				</br>Rester connecter <input type="radio" name="submit"/>
 		</form>
 	</div>
+
+
 </body>
+
 </html>
+
