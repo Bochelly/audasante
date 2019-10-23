@@ -21,6 +21,8 @@ body nav a li
     padding-top: 9%; /* espacement des liens en haut*/
     padding-bottom: 9%;
     padding-left: 10%; 
+    transition-property : background-color;
+	transition-duration: 0.3s;
 }
 
 
@@ -39,6 +41,7 @@ body nav a li span
 body nav li:hover /*lorsque qu'on passe la souris sur le lien, le fond est bleu foncé*/
 {
 	background-color: #3C3B53;
+
 }
 
 .en_cours 
@@ -153,17 +156,14 @@ body header h1
 
 #top-bar a:hover /*lorsque qu'on passe la souris sur le lien*/
 {
-	background-color: #524f82;
+	transition-property : border-bottom;
+	transition-duration: 0.1s;
+	border-bottom: 4px solid;
+	border-color: #524f82;
 	color: #FFFFFF;
 	height: 40px;
 
 }
-#top-bar em:hover{
-	color: #000000;
-	background-color: #dddddd;
-	border-left:  solid 3px #aaaaaa;
-}
-
 
 #top-bar a{
 	color : #dddddd;
