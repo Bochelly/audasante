@@ -19,7 +19,7 @@
 
 	<?php
 		require('menu_lateral_admin.php');
-		require('top-bar.php')
+		require('top_bar.php')
 	?>
 
 
