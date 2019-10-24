@@ -16,7 +16,7 @@ body nav a li
 	font-size: 0.9em;
 	list-style: none; /*enlève les points des listes*/
     flex-direction: column;
-    display : block;
+    display : block;far
     align-items: flex-start; /* alignement a gauche */
     padding-top: 9%; /* espacement des liens en haut*/
     padding-bottom: 9%;
@@ -173,3 +173,32 @@ body header h1
         float: right;
 
 }
+
+/*////////////
+// POLICES /*/
+
+@font-face {
+    font-family: 'nom-de-la-police';
+    src: url('nom-de-la-police.ttf') format('truetype');  
+}
+
+/*//////////////////////
+// Page de connexion /*/
+
+#log-connect-container {
+	position: absolute;
+	height:100%;
+	width: 50%;
+	right:0px;
+	display: flex;
+}
+
+#log-connect {
+	margin-left: auto ;
+	margin-right: auto ;
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size:1.2vw
+
+}
+

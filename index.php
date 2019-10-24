@@ -27,25 +27,29 @@
 
 <body>
 
-	<div class=back_log>
-		<img src="css/img/main_mesure_x2.png" width="70%" height="auto">
-	</div>
 
 
-	<div class=droite_log>
+<img src="css/img/main_mesure_x2.png" style='position: fixed ;height: auto; width: 50%; left:0px; bottom:0px;'/>
+
+<div id=log-connect-container>
+
+
+
+	<div id=log-connect>
 		<form method="get" action="connect.php">
-					<i class="" style="color:#43425D;"> </i><legend>A U D A S A N T É</legend>
-					<i class="" style="color:#43425D;"> </i><legend>E-mail</legend>
-					<input type="text" name="login"/>
-					<legend>Mot de passe</legend>
-					<input type="password" name="pswrd"/>
-				</br><input type="submit" name="submit" value="Connexion"/>
-				</br>Rester connecter <input type="radio" name="submit"/>
+			<i class="" style="color:#43425D;"> </i><legend>A U D A S A N T É</legend>
+			<i class="" style="color:#43425D;"> </i><legend>E-mail</legend>
+			<input type="text" name="login"/>
+			<legend>Mot de passe</legend>
+			<input type="password" name="pswrd"/>
+			</br><input type="submit" name="submit" value="Connexion"/>
+			</br>Rester connecter <input type="radio" name="submit"/>
 		</form>
 	</div>
-
-
+	<div style="clear:both"></div>
+</div>
 </body>
+
 
 </html>
 
