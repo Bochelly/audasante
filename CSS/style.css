@@ -188,31 +188,4 @@ h2 {
 
 }
 
-/*////////////
-// POLICES /*/
-
-@font-face {
-    font-family: 'nom-de-la-police';
-    src: url('nom-de-la-police.ttf') format('truetype');  
-}
-
-/*//////////////////////
-// Page de connexion /*/
-
-#log-connect-container {
-	position: absolute;
-	height:100%;
-	width: 50%;
-	right:0px;
-	display: flex;
-}
-
-#log-connect {
-	margin-left: auto ;
-	margin-right: auto ;
-	margin-top: auto;
-	margin-bottom: auto;
-	font-size:1.2vw
-
-}
 
