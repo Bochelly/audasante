@@ -26,8 +26,8 @@ button:focus {
   position: fixed;
   background-image:url("img/main_mesure_x2.png");
   background-repeat: no-repeat;
-  background-size: 60% auto;
-  background-position: -10% 100%; 
+  background-size: 50% auto;
+  background-position: 0% 100%; 
   height: 100%;
   width: 100%;
   left:0px;
@@ -63,10 +63,6 @@ button:focus {
   width: 100%;
 }
 
-.full-width {
-  width: 100%;
-}
-
 .input-fields {
   margin-top: 25px;
 }
@@ -75,32 +71,65 @@ button:focus {
   display: flex;
   flex-wrap:wrap;
   justify-content:space-evenly; 
-  align-items: baseline;
+  align-items: center;
   padding-top: 3% ;
   padding-left: 1% ;
   padding-right: 1% ;
-  margin-left: 25% ;
-  margin-right: 25% ;
+  margin-left: 22% ;
+  margin-right: 22% ;
   height: 35%;
 }
 
-.input-line {
-  height:10%;
-  background: none;
-  color: #43425D;
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  letter-spacing: 0px;
-  letter-spacing: 0.02rem;
-  font-size: 1.2vw;
-  border-bottom: 1px solid rgba(67, 66, 93, 0.65);
-  transition: all .2s ease;
+.input-line{
+  height:18%;
+  width:100%;
+  /*background: none;*/
 }
 
-.input-line:focus {
+.input-line input:focus ~ .floating-label,
+.input-line input:placeholder-shown ~ .floating-label,
+.input-line input:not(:focus):valid ~ .floating-label{
+  left: 0.1vw;
+  top: -120%;
+  font-size: 0.9vw;
+}
+
+.floating-label {
+  position:relative;
+  pointer-events: none;
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-size: 1.2vw;
+  left: 0.1vw;
+  top: -65%;
+  transition: 0.2s ease all;
+}
+
+.inputText {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-size: 1.2vw;
+  width: 100%;
+  height: 2vw;
+}
+
+
+.input-line input{
+  color: #43425D;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(67, 66, 93, 0.3);
+  transition: .2s;
+}
+
+.input-line input:focus {
   outline: none;
   border-color: #43425D;;
   transition: .2s;
+}
+
+
+.input-line input:required{
+  box-shadow:none;
 }
 
 .welcome {
@@ -124,13 +153,13 @@ button:focus {
 }
 
 .ghost-round {
+  margin-left:3%;
+  margin-right:3%;
   height: 20%;
-  width: 40%;
+  width: 42%;
   cursor: pointer;
-  background: none;
   border: 1px solid rgba(67, 66, 93, 1);
   border-radius: 7px;
-  color: rgba(67, 66, 93, 1);
   font-size: 1.2vw;
   font-family: 'Source Sans Pro';
   font-weight: 300;
@@ -138,17 +167,38 @@ button:focus {
 }
 
 .ghost-round:hover {
+  transition: .2s;
+}
+
+.bright {
+  background: none;
+  color: rgba(67, 66, 93, 1);
+}
+.bright:hover {
   background: rgba(67, 66, 93, 1);
   color: #fff;
-  transition: all .2s ease;
 }
+
+.dark {
+  background: rgba(67, 66, 93, 1);
+  color: #fff;
+}
+.dark:hover {
+  background: none;
+  color: rgba(67, 66, 93, 1);
+}
+
 
 .switch {
   display: flex;
   justify-content:flex-start; 
   flex-wrap: wrap ;
   align-items:center;
-  width: 60%;
+  width: 50%;
+}
+
+.switch p {
+  margin-left: 1.5%;
   font-size: 1.2vw;
   font-weight: 300;
   text-align: left;
@@ -163,7 +213,7 @@ button:focus {
   position: relative;
   cursor: pointer;
 
-  left: -7%;
+  margin-left: -11%;
   width: 35%;
 
   width: 2.4vw;
@@ -202,6 +252,23 @@ button:focus {
 }
 
 
+a{
+  text-decoration: none;
+  color: rgba(67, 66, 93, 0.7);
+  width: 45%;
+  font-size: 1.2vw;
+  font-weight: 300;
+  text-align: right;
+  transition-duration: 0.2s;
+}
+
+a:hover /*lorsque qu'on passe la souris sur le lien*/
+{
+  transition-duration: 0.2s;
+  color: rgba(67, 66, 93, 1);
+
+}
+
 @media (orientation:portrait) {
   #log-img {
     background:none;
@@ -234,15 +301,26 @@ button:focus {
   .ghost-round{
     font-size: 5vw;
   }
-  .input-line{
-    line-height: 10vw;
+
+  .input-line input:focus ~ .floating-label,
+  .input-line input:not(:placeholder-shown) ~ .floating-label,
+  .input-line input:not(:focus):placeholder-shown ~ .floating-label{
+    font-size: 3vw;
   }
-  input{
+
+  .floating-label {
     font-size: 5vw;
   }
-  ::placeholder {
-  font-size: 5vw;
+
+  .inputText {
+    font-size: 5vw;
   }
+
+  .input-line input{
+    font-size: 5vw;
+    height:5vw;
+  }
+
   .content {
     margin-left: 5% ;
     margin-right: 5% ;
