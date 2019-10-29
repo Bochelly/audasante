@@ -71,17 +71,6 @@ body header h1
 	background-color: #3C3B53;
 }
 
-h2 {
-
-	position : relative;
-		top : 85px;
-		left: 21%;
-	font-size : 1.8em;
-	display: inline;
-	color: #43425D;
-	text-align: left;
-} 
-
 
 #top-bar li{ /*Permet d'afficher tous les élements côte à côte padding-bottom: 10px;*/
 	display: inline;
