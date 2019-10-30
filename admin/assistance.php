@@ -20,10 +20,11 @@
 		require('menu_lateral_admin.php');
 		require('top_bar.php')
 	?>
-	
+	<h2>Besoin d'aide ?</h2>
+	<a href='#'><div id="faq"><i class="fas fa-question"></i>Vous avez une question concernant nos produits ? La réponse se trouve probablement dans notre foire à questions !</div></a>
+	<h2>Contactez nous !</h2>
+
 	<div id="formulaire_contact"> 
-		<p>
-			<h2>Contactez nous !</h2>
 			Vous avez une question à laquelle notre F.A.Q ne répond pas ?<br/>
 			Ecrivez nous un mail simplement ici :
 			<br/><br/>
@@ -36,8 +37,19 @@
 
 				</p>
 			</form>
-		</p>
 	</div>
+
+	<div id="barre_contact">
+		<ul>
+			<li><i class="fas fa-map-marker-alt"></i></li>
+			<li><i class="fas fa-phone-square-alt"></i></li>
+			<li><i class="fas fa-at"></i></li>
+			<li><i class="fab fa-facebook"></i></li>
+			<li><i class="fab fa-instagram"></i></li>
+
+		</ul>
+	</div>
+
 
 	<script src="../js/script.js"></script>
 </body>
