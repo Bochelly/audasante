@@ -32,13 +32,12 @@
 					<label for="email">Votre e-mail :</label><br/><input type="text" name="email" id="email"/><br/>
 					<label for="objet">L'objet :</label><br/><input type="text" name="objet" id="objet"/><br/>
 					<label for="message"> Votre message </label>:<br/><textarea name="message" id="message"></textarea><br/>
+					<input type="submit" name="envoi" value="Envoyez nous un mail !" />
 
 				</p>
 			</form>
 		</p>
 	</div>
-
-
 
 	<script src="../js/script.js"></script>
 </body>
