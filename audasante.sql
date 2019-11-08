@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 23 oct. 2019 à 09:43
+-- Généré le :  ven. 08 nov. 2019 à 12:24
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `audasante`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `accuracy`
+--
+
+DROP TABLE IF EXISTS `accuracy`;
+CREATE TABLE IF NOT EXISTS `accuracy` (
+  `n_test` int(11) NOT NULL,
+  `shift` int(11) NOT NULL,
+  PRIMARY KEY (`n_test`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -59,6 +72,59 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `last_connect` date NOT NULL,
   `nb_try` int(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`n_secu`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reflex`
+--
+
+DROP TABLE IF EXISTS `reflex`;
+CREATE TABLE IF NOT EXISTS `reflex` (
+  `n_test` int(255) NOT NULL,
+  `reaction_avg` int(12) NOT NULL,
+  `reaction_min` int(12) NOT NULL,
+  `reaction_max` int(12) NOT NULL,
+  PRIMARY KEY (`n_test`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `rhythm`
+--
+
+DROP TABLE IF EXISTS `rhythm`;
+CREATE TABLE IF NOT EXISTS `rhythm` (
+  `n_test` int(255) NOT NULL,
+  `shift_avg` int(12) NOT NULL,
+  `shift_min` int(12) NOT NULL,
+  `shift_max` int(12) NOT NULL,
+  PRIMARY KEY (`n_test`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE IF NOT EXISTS `test` (
+  `n_test` int(255) NOT NULL,
+  `type_test` int(8) NOT NULL,
+  `n_secu` int(128) NOT NULL,
+  `test_start` datetime NOT NULL,
+  `test_end` datetime NOT NULL,
+  `n_case` int(32) NOT NULL,
+  `heartbeat_avg` int(10) NOT NULL,
+  `heartbeat_min` int(10) NOT NULL,
+  `heartbeat_max` int(10) NOT NULL,
+  `temp_avg` int(6) NOT NULL,
+  `temp_min` int(6) NOT NULL,
+  `temp_max` int(6) NOT NULL,
+  PRIMARY KEY (`n_test`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
