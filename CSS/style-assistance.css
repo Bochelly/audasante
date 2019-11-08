@@ -47,13 +47,50 @@ hr
 
 #contenuAssistance #mail 
 {
- float: left;
- text-align: center;
+ float: left;	
  width: 40%;
  display: block;
  position: relative;
  margin-left:3%;
  margin-top: 1%;
+}
+#contenuAssistance #mail h3
+{
+	text-align: center;
+}
+
+#contenuAssistance #mail p
+{
+	font-weight: bold;
+	font-size: 1.1vw;
+}
+
+#contenuAssistance #mail p input
+{
+	width:100%;
+	resize: none;
+	box-sizing: border-box;
+	border-radius: 20px;
+	padding-left : 5px;
+}
+
+#contenuAssistance #mail p textarea
+{
+	width : 100%;
+	height:200px;
+	padding: 12px 20px;
+ 	box-sizing: border-box;
+ 	border-radius: 4px;
+ 	resize: none;
+}
+
+
+#contenuAssistance #mail p span input
+{
+	width : 40%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #contenuAssistance #contact 
@@ -68,8 +105,8 @@ hr
 #contenuAssistance #contact ul li
 {
 	list-style: none;
-	padding-top: 4%;
-	padding-bottom: 4%;
+	padding-top: 4.3%;
+	padding-bottom: 4.3%;
 }
 
 #contenuAssistance #contact ul li i	

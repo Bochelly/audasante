@@ -30,15 +30,15 @@
 	<h2>Contactez nous !</h2>
 
 	<div id="mail"> 
-			Vous avez une question à laquelle notre F.A.Q ne répond pas ?<br/>
-			Ecrivez nous un mail simplement ici :
+			<h3>Vous avez une question à laquelle notre F.A.Q ne répond pas ?<br/>
+			Ecrivez nous un mail simplement ici :</h3>
 			<br/><br/>
-			<form method="post" action="traitement_formulaire.php">
+			<form method="post" action="traitement_mail.php">
 				<p> 
 					<label for="email">Votre e-mail :</label><br/><input type="text" name="email" id="email"/><br/>
 					<label for="objet">L'objet :</label><br/><input type="text" name="objet" id="objet"/><br/>
 					<label for="message"> Votre message </label>:<br/><textarea name="message" id="message"></textarea><br/>
-					<input type="submit" name="envoi" value="Envoyez nous un mail !" />
+					<span><input type="submit" name="envoi" value="Envoyez nous un mail !" /></span>
 
 				</p>
 			</form>
@@ -46,11 +46,11 @@
 
 	<div id="contact">
 		<ul>
-			<li><i class="fas fa-map-marker-alt fa-fw fa-2x"></i> yo j'habite 171 reue saint maur</li>
-				<li><i class="fas fa-phone-square-alt fa-fw fa-2x"></i> 06 08 41 38 42 ;)</li>
-				<li><i class="fas fa-at fa-fw fa-2x"></i> felixnedelec@gmail.com</li>
-			<li><i class="fab fa-facebook fa-fw fa-2x"></i> felix nedelec</li>
-			<li><i class="fab fa-instagram fa-fw fa-2x"></i> felixndlc</li>
+			<li><i class="fas fa-map-marker-alt fa-fw fa-2x" style="color: #D2323F"></i> 10, rue de Vanves à Issy-les-Moulinaux</li>
+				<li><i class="fas fa-phone-square-alt fa-fw fa-2x" style="color: #72B239"></i> 0100000000</li>
+				<li><i class="fas fa-at fa-fw fa-2x" style="color: #156080"></i> Audasanté@gmail.com</li>
+			<li><i class="fab fa-facebook fa-fw fa-2x" style="color: #4267B2"></i> Audasanté</li>
+			<li><i class="fab fa-instagram fa-fw fa-2x" style="color: #BE2866"></i> Audasanté</li>
 
 		</ul>
 	</div>
