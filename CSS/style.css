@@ -16,7 +16,7 @@ body nav a li
 	font-size: 0.9em;
 	list-style: none; /*enlève les points des listes*/
     flex-direction: column;
-    display : block;far
+    display : block;
     align-items: flex-start; /* alignement a gauche */
     padding-top: 9%; /* espacement des liens en haut*/
     padding-bottom: 9%;

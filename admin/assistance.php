@@ -16,15 +16,20 @@
 
 <body>
 	<header><h1>AUDASANTÉ</h1></header>
+
 	<?php
 		require('menu_lateral_admin.php');
 		require('top_bar.php')
 	?>
+	<div id="contenuAssistance">	
 	<h2>Besoin d'aide ?</h2>
-	<a href='#'><div id="faq"><i class="fas fa-question"></i>Vous avez une question concernant nos produits ? La réponse se trouve probablement dans notre foire à questions !</div></a>
+	<p>Vous avez une question ? La réponse se trouve probablement dans notre foire aux questions !</p>
+	<p><a href="#">Foire Aux Questions</a></p>
+	<br>
+	<hr>
 	<h2>Contactez nous !</h2>
 
-	<div id="formulaire_contact"> 
+	<div id="mail"> 
 			Vous avez une question à laquelle notre F.A.Q ne répond pas ?<br/>
 			Ecrivez nous un mail simplement ici :
 			<br/><br/>
@@ -39,18 +44,18 @@
 			</form>
 	</div>
 
-	<div id="barre_contact">
+	<div id="contact">
 		<ul>
-			<li><i class="fas fa-map-marker-alt"></i></li>
-			<li><i class="fas fa-phone-square-alt"></i></li>
-			<li><i class="fas fa-at"></i></li>
-			<li><i class="fab fa-facebook"></i></li>
-			<li><i class="fab fa-instagram"></i></li>
+			<li><i class="fas fa-map-marker-alt fa-fw fa-2x"></i> yo j'habite 171 reue saint maur</li>
+				<li><i class="fas fa-phone-square-alt fa-fw fa-2x"></i> 06 08 41 38 42 ;)</li>
+				<li><i class="fas fa-at fa-fw fa-2x"></i> felixnedelec@gmail.com</li>
+			<li><i class="fab fa-facebook fa-fw fa-2x"></i> felix nedelec</li>
+			<li><i class="fab fa-instagram fa-fw fa-2x"></i> felixndlc</li>
 
 		</ul>
 	</div>
 
-
+	</div>
 	<script src="../js/script.js"></script>
 </body>
 </html>
