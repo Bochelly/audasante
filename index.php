@@ -9,6 +9,13 @@
    else if(isset($_SESSION['id_user'])){
           header('location:user/index.php');
    }
+
+  
+  if (isset($_POST["error_msg"])) {
+	$error_msg=htmlentities(trim($_POST["error_msg"]));
+    }
+    else { $error_msg=""; }
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +27,7 @@
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 	
 	<style>
+
 
 
 </style>
@@ -53,6 +61,8 @@
 			</div>
 
 			<a href="Patients.html"><span>Mot de passe oublié</span></a>
+
+			<span><?php echo $error_msg ?></span>
 
 			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
 			<button class="ghost-round bright"  type="submit" name="submit" value="Register">S'inscrire</button>

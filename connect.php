@@ -4,7 +4,7 @@
 <head>
 	<meta charset=utf-8 /> 
 	<title>Connexion</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 </head>
 
@@ -59,7 +59,8 @@
 
 			if($last_connect==(date("Y-m-d")) && $MAX_essai==$nbr_try)
 			{
-			  echo 'Vous avez atteint le quota de tentative, essayez demain !<br/>';
+
+			  echo 'Vous avez atteint le quota de tentatives, essayez demain !<br/>';
 			  exit();
 			}
 			else
@@ -92,10 +93,11 @@
   	            {
                   $nbr_try++;
                   $bdd->exec("UPDATE '".$status."' SET nb_try='".$nbr_try."'WHERE e_mail='".$login."'") or die(print_r($bdd->errorInfo(), TRUE));
-
-                  echo 'Le mot de passe et/ou le mail sont incorrectes <br/>';
-                  echo '<a href="index.php" href="index.php">Réessayez</a>';
-                  exit();
+                  ?>
+                  <h1><span>Le mot de passe et/ou le mail sont incorrectes </span><br/></h1>
+                  <a href="index.php">Réessayez</a>
+                  <?php
+                  exit($error_msg);
                   }
               }
 

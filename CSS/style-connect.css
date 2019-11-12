@@ -303,8 +303,10 @@ a:hover /*lorsque qu'on passe la souris sur le lien*/
   }
 
   .input-line input:focus ~ .floating-label,
-  .input-line input:not(:placeholder-shown) ~ .floating-label,
-  .input-line input:not(:focus):placeholder-shown ~ .floating-label{
+  .input-line input:placeholder-shown ~ .floating-label,
+  .input-line input:not(:focus):valid ~ .floating-label{
+    left: 0.1vw;
+    top: -100%;
     font-size: 3vw;
   }
 
@@ -325,14 +327,19 @@ a:hover /*lorsque qu'on passe la souris sur le lien*/
     margin-left: 5% ;
     margin-right: 5% ;
   }
-  .switch {
-    font-size: 4vw;
+  .switch p{
+
+    font-size: 3vw;
   }
   .switch label {
   width: 8vw;
   height: 4vw;
   border-radius: 100px;
   transition: 0.3s;
+  }
+
+  a {
+    font-size: 3vw;
   }
 
 }
