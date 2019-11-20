@@ -38,6 +38,11 @@ body nav a li span
 	padding-left: 5%;
 }
 
+body nav a i 
+{
+	color : #A5A4BF;
+}
+
 body nav li:hover /*lorsque qu'on passe la souris sur le lien, le fond est bleu foncé*/
 {
 	background-color: #3C3B53;
@@ -47,6 +52,11 @@ body nav li:hover /*lorsque qu'on passe la souris sur le lien, le fond est bleu 
 .en_cours 
 {
 	background: linear-gradient(90deg, #A3A0FB 2%, #3C3B53 2%); /* modifie la couleur de l'arriere plan lorsque le lien est actif*/
+}
+
+.en_cours i
+{
+	color:#A3A0FB;
 }
 
 body header
