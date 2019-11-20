@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `audasante`
 --
-
+CREATE SCHEMA IF NOT EXISTS `audasante` DEFAULT CHARACTER SET utf8 ;
+USE `audasante` ;
 -- --------------------------------------------------------
 
 --
