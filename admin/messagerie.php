@@ -1,3 +1,4 @@
+<?php $page_en_cours = 'messagerie'; ?>
 <!DOCTYPE html>
 
 

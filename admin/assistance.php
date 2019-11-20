@@ -1,4 +1,4 @@
-<?php global $page_en_cours; $page_en_cours = 'assistance'; ?>
+<?php $page_en_cours = 'assistance'; ?>
 
 <!DOCTYPE html>
 
