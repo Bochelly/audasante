@@ -1,3 +1,5 @@
+<?php global $page_en_cours; $page_en_cours = 'accueil'; ?>
+
 <!DOCTYPE html>
 
 
