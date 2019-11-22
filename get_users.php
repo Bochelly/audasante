@@ -29,9 +29,9 @@ else
 	}
 	print_r($requete_1);
 	
-	echo "<br>",$requete_1[0];
-	echo "<br>",$requete_1[1];
-	echo "<br>",$requete_1[2];
+	echo "<br>",$requete_1['first_name'];
+	echo "<br>",$requete_1['last_name'];
+	echo "<br>",$requete_1['n_secu'];
 /* } */
 ?>
 </body>
