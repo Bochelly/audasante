@@ -1,75 +1,99 @@
-<?php
-   // tous d'abord il faut démarrer le système de sessions
-   session_start();
-
-   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-	if(isset($_SESSION['id_admin'])){
-          header('location:admin/index.php');
-   }
-   else if(isset($_SESSION['id_user'])){
-          header('location:user/index.php');
-   }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset=utf-8 /> 
 	<title>S'enregistrer</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
+
+	<style>
+
+				.window form {
+		  display: flex;
+		  flex-wrap:wrap;
+		  justify-content:space-evenly; 
+		  align-items: center;
+		  padding-top: 3% ;
+		  padding-left: 1% ;
+		  padding-right: 1% ;
+		  margin-left: 30% ;
+		  margin-right: 30% ;
+		  margin-bottom: 15% ; 
+		  height: 35%;
+		}
+
+		.input-line input:focus ~ .floating-label,
+		.input-line input:placeholder-shown ~ .floating-label,
+		.input-line input:not(:focus):valid ~ .floating-label{
+		  left: 0.1vw;
+		  top: -90%;
+		  font-size: 0.9vw;
+		}
+
+		h1
+		{
+			text-align: center;
+		}
+
+	</style>
+
 </head>
+
+
 
 <body>
 
-	<form method="get" action="register.php">
-		<fieldset>
-			<legend>N° Médecin</legend>
-			<input type="text" name="nMed"/>
-		</fieldset>
-		<input type="submit" name="submit" value="entrer"/>
-	</form>
+	<div class='window'>
+		<h1>Formulaire d'inscription</h1>
+		<form method="get" action="#">
 
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">Nom</span>
+			</div>
 
-<?php 
-if(isset($_GET['nMed']))
-{
-	require('config.php'); // On réclame le fichier config
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">Prénom</span>
+			</div>
 
-	if (($bdd->query("SELECT * FROM medic WHERE id='".$_GET['nMed']."'")!=null))
-	{
-?>
-	<DIV class=p1>
-		<form method="get" action="register.php">
-			<fieldset>
-				<legend>Nom</legend>
-				<input type="text" name="nom"/>
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">Date de naissance</span>
+			</div>
 
-				<legend>Prénom</legend>
-				<input type="text" name="surname"/>
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">Sexe</span>
+			</div>
 
-				<legend>N° de téléphone</legend>
-				<input type="text" name="phone"/>
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">Numéro de sécurité sociale</span>
+			</div>
 
-				<legend>N° de sécurité sociale </legend>
-				<input type="text" name="secusos"/>
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">E-mail</span>
+			</div>
 
-				<legend>e-mail </legend>
-				<input type="text" name="email"/>
+			<div class="input-line">
+				<input type="password" class="inputText" required/></input>
+				<span class="floating-label">Mot de passe</span>
+			</div>
 
-				<legend>Mot de passe </legend>
-				<input type="password" name="pswrd_1"/>
+			<div class="input-line">
+				<input type="password" class="inputText" required/></input>
+				<span class="floating-label">Répéter mot de passe</span>
+			</div>
 
-				<legend>Confirmatoin du mot de passe </legend>
-				<input type="password" name="pswrd_2"/>
-			</fieldset>
-			<input type="submit" name="submit" value="register"/>
+			<div class="input-line">
+				<input type='text' class='inputText' required></input>
+				<span class="floating-label">Hôpital</span>
+			</div>
+
+			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 5%;">S'inscrire</button>
 		</form>
 	</div>
-<?php 
-	}
-}
-?>
-	
 </body>
 </html>
