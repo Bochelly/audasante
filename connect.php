@@ -11,44 +11,46 @@
 <body>
 
 <?php
-
-  if(!isset($_GET['login']) && !isset($_GET['pswrd']))
+echo "<div class='welcome' style='margin-bottom:1.5%;'> Ce mail n'existe pas ! <br/></div>";
+echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
+  if(!isset($_GET['login']) || !isset($_GET['pswrd']))
   {
+            echo "<div class='welcome' style='margin-bottom:1.5%;'> Ce mail n'existe pas ! <br/></div>";
       header('Location: index.php');
   }
   else
   {
-      // On va vérifier les variables
-      /* if()
-      {
-          echo 'Vous devez entrer uniquement des lettres ou des chiffres <br/>';
-          echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
-          exit();
-      }
-      else
-      { */
-  		require('config.php'); // On réclame le fichier config
+    // On va vérifier les variables
+    /* if()
+    {
+      echo 'Vous devez entrer uniquement des lettres ou des chiffres <br/>';
+      echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
+      exit();
+    }
+    else
+    { */
+    require('config.php'); // On réclame le fichier config
 
-        $login = $_GET['login'];
-        $pswrd = $_GET['pswrd'];
-  		$MAX_essai = 20;
-  		$requete_1 = $bdd->query("SELECT * FROM patient WHERE e_mail='".$login."'");
-		$requete_2 = $bdd->query("SELECT * FROM medic WHERE e_mail='".$login."'");
-          // On vérifie si ce login existe
+      $login = $_GET['login'];
+      $pswrd = $_GET['pswrd'];
+      $MAX_essai = 20;
+      $requete_1 = $bdd->query("SELECT * FROM patient WHERE e_mail='".$login."'")->fetch();
+  		$requete_2 = $bdd->query("SELECT * FROM medic WHERE e_mail='".$login."'")->fetch();
+            // On vérifie si ce login existe
   		
-          if($requete_1!=FALSE)
-          {
-          	$status="patient";
-          }
-          else if($requete_2!=FALSE)
+      if($requete_1!=FALSE)
+      {
+      	$status="patient";
+      }
+      else if($requete_2!=FALSE)
 		  {
-			$status="medic";
+		  	$status="medic";
 		  }
 		  else
 		  {
-			echo "Ce mail n'existe pas ! <br/>";
-			echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
-			exit();
+  			echo "<div class='welcome' style='margin-bottom:1.5%;'> Ce mail n'existe pas ! <br/></div>";
+  			echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
+  			exit();
 		  }
           {
   			$last_connect_arr = $bdd->query("SELECT last_connect FROM '".$status."' WHERE e_mail='".$login."'")->fetch();
@@ -60,7 +62,7 @@
 			if($last_connect==(date("Y-m-d")) && $MAX_essai==$nbr_try)
 			{
 
-			  echo 'Vous avez atteint le quota de tentatives, essayez demain !<br/>';
+			  echo "<div class='welcome' style='margin-bottom:1.5%;'> 'Vous avez atteint le quota de tentatives, essayez demain !<br/>' </div>";
 			  exit();
 			}
 			else
