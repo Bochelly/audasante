@@ -4,7 +4,16 @@
 	<meta charset=utf-8 /> 
 	<title>S'enregistrer</title>
 	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> <!--Permet de telecharger la police Source sans pro -->
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
+
+
+
+
+
+
+
+
 
 	<style>
 		.window form {
@@ -30,7 +39,7 @@
 		.input-line input:placeholder-shown ~ .floating-label,
 		.input-line input:not(:focus):valid ~ .floating-label{
 		  left: 0.1vw;
-		  top: -90%;
+		  top: -105%;
 		  font-size: 0.9vw;
 		}
 
@@ -47,12 +56,22 @@
 		  text-align: left;
 		  transition-duration: 0.2s;
 		  margin-top: 3%;
-		  margin-left: 4%;
+		  margin-left: 10%;
 		}
 
 	</style>
 
 </head>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -109,7 +128,7 @@
 				<span class="floating-label">Répéter mot de passe</span>
 			</div>
 
-			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 5%;">S'inscrire</button><br/>
+			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">S'inscrire</button><br/>
 			<a href="index">Vous avez déjà un compte ? Identifiez-vous.</a>
 		</form>
 
