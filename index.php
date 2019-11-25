@@ -60,7 +60,7 @@
 				<p>Se souvenir de moi</p>
 			</div>
 
-			<a href="Patients.html"><span>Mot de passe oublié</span></a>
+			<a href="forbidden.html"><span>Mot de passe oublié</span></a>
 
 			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
 			<a class="ghost-round bright"  onclick="self.location.href='register.php'">S'inscrire</a>

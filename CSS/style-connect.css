@@ -255,11 +255,11 @@ button:focus {
 a{
   text-decoration: none;
   color: rgba(67, 66, 93, 0.7);
-  width: 45%;
   font-size: 1.2vw;
   font-weight: 300;
   text-align: right;
   transition-duration: 0.2s;
+  text-align: center;
 }
 
 a:hover /*lorsque qu'on passe la souris sur le lien*/
