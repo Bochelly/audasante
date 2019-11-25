@@ -164,6 +164,9 @@ button:focus {
   font-family: 'Source Sans Pro';
   font-weight: 300;
   transition: .2s;
+  display: flex;
+  align-items:center;
+  justify-content:center; 
 }
 
 .ghost-round:hover {
@@ -255,10 +258,8 @@ button:focus {
 a{
   text-decoration: none;
   color: rgba(67, 66, 93, 0.7);
-  width: 45%;
   font-size: 1.2vw;
   font-weight: 300;
-  text-align: right;
   transition-duration: 0.2s;
 }
 
