@@ -1,3 +1,23 @@
+/*////////////
+// POLICES /*/
+
+@font-face {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+/*
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('C:\wamp64\www\Audasante\CSS\font\SourceSansProSourceSansPro-Light.ttf') format("truetype");
+  font-style: light;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('C:\wamp64\www\Audasante\CSS\font\SourceSansProSourceSansPro-Bold.ttf') format("truetype");
+  font-style: bold;
+} */
+
+
 /*//////////////////////
 // Page de connexion /*/
 
@@ -347,23 +367,7 @@ a:hover /*lorsque qu'on passe la souris sur le lien*/
 
 
 
-/*////////////
-// POLICES /*/
 
-@font-face {
-  font-family: "nom de la police";
-  src: url('font/nom-de-la-police-regular.ttf');
-}
-@font-face {
-  font-family: "nom de la police";
-  font-style: italic;
-  src: url('font/nom-de-la-police-italic.ttf');
-}
-@font-face {
-  font-family: "nom de la police";
-  font-weight: bold;
-  src: url('font/nom-de-la-police-bold.ttf');
-}
 
 
 
