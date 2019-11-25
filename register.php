@@ -16,8 +16,8 @@
 		  padding-top: 3% ;
 		  padding-left: 1% ;
 		  padding-right: 1% ;
-		  margin-left: 30% ;
-		  margin-right: 30% ;
+		  margin-left:35% ;
+		  margin-right: 35% ;
 		  margin-bottom: 15% ; 
 		  height: 35%;
 		}
@@ -33,6 +33,10 @@
 		h1
 		{
 			text-align: center;
+		}
+
+		div{
+			font-size : 1.2vw;
 		}
 
 	</style>
@@ -59,17 +63,17 @@
 
 			<div class="input-line">
 				<input type='text' class='inputText' required></input>
-				<span class="floating-label">Date de naissance</span>
-			</div>
-
-			<div class="input-line">
-				<input type='text' class='inputText' required></input>
-				<span class="floating-label">Sexe</span>
-			</div>
-
-			<div class="input-line">
-				<input type='text' class='inputText' required></input>
 				<span class="floating-label">Numéro de sécurité sociale</span>
+			</div>
+
+			<div class="input-line">
+				Date de naissance : <input type='date' class='inputText' required></input>
+				
+			</div>	
+			<div class="input-line">
+				<br/>
+				Sexe : <INPUT type="radio" name="sex" value="H" checked> Homme <INPUT type="radio" name="sex" value="F"> Femme<br/>
+				
 			</div>
 
 			<div class="input-line">
