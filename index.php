@@ -27,11 +27,10 @@
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 	
 	<style>
-		
 
 
 
-	</style>
+</style>
 </head>
 
 <body>
@@ -47,12 +46,12 @@
 		<form method="get" action="connect.php">
 
 			<div class="input-line">
-				<input type='text' class='inputText' required></input>
+				<input type='text' class='inputText' id='login'required></input>
 				<span class="floating-label">E-mail</span>
 			</div>
 
 			<div class="input-line">
-				<input type="password" class="inputText" required/></input>
+				<input type="password" class="inputText" id='pswrd'required/></input>
 				<span class="floating-label">Mot de passe</span>
 			</div>
 
@@ -66,7 +65,7 @@
 			<span><?php echo $error_msg ?></span>
 
 			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
-			<button class="ghost-round bright"  type="submit" name="submit" value="Register">S'inscrire</button>
+			<button class="ghost-round bright"  onclick="self.location.href='register.php'" name="Register" >S'inscrire</button>
 		</form>
 
 	</div>
