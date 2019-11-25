@@ -164,6 +164,9 @@ button:focus {
   font-family: 'Source Sans Pro';
   font-weight: 300;
   transition: .2s;
+  display: flex;
+  align-items:center;
+  justify-content:center; 
 }
 
 .ghost-round:hover {
@@ -257,9 +260,7 @@ a{
   color: rgba(67, 66, 93, 0.7);
   font-size: 1.2vw;
   font-weight: 300;
-  text-align: right;
   transition-duration: 0.2s;
-  text-align: center;
 }
 
 a:hover /*lorsque qu'on passe la souris sur le lien*/
