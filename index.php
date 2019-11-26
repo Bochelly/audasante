@@ -24,14 +24,8 @@
 	<meta charset=utf-8 /> 
 	<title>Connexion</title>
 	<link rel="stylesheet" href="css/style-connect.css" media="screen"/>
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> <!--Permet de telecharger la police Source sans pro -->
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 	
-	<style>
-
-
-
-</style>
 </head>
 
 <body>
@@ -44,7 +38,7 @@
 
 		<div class='subtitle' style="margin-bottom:3%;">La musique au service de la vie</div>
 
-		<form method="get" action="connect.php">
+		<form method="GET" action="connect.php">
 
 			<div class="input-line">
 				<input type='text' class='inputText' name='login'required></input>
@@ -61,9 +55,12 @@
 				<p>Se souvenir de moi</p>
 			</div>
 
-			<a href="forbidden.html"><span>Mot de passe oublié</span></a>
+			<a href="Patients.html"><span>Mot de passe oublié</span></a>
+
+			<span><?php echo $error_msg ?></span>
 
 			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
+
 			<a class="ghost-round bright"  onclick="self.location.href='register.php'">S'inscrire</a>
 		</form>
 
