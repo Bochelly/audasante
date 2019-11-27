@@ -9,15 +9,6 @@
 <body>
 
 <?php
-/*
-if(!isset($_GET['']))
-{
-  header('Location: .php');
-}
-
-else
-{
-*/
 	require('config.php'); // On réclame le fichier config
 
 	$requete_1 = $bdd->query("SELECT first_name ,last_name ,n_secu FROM user WHERE medic=FALSE")->fetch();
@@ -32,7 +23,6 @@ else
 	echo "<br>",$requete_1['first_name'];
 	echo "<br>",$requete_1['last_name'];
 	echo "<br>",$requete_1['n_secu'];
-/* } */
 ?>
 </body>
 </html>
