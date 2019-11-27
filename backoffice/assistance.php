@@ -20,7 +20,7 @@
 	<header><h1>AUDASANTÉ</h1></header>
 
 	<?php
-		require('menu_lateral_admin.php');
+		require('menu_lateral_backoffice.php');
 		require('top_bar.php')
 	?>
 	<div id="contenuAssistance">	
