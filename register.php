@@ -1,3 +1,33 @@
+<?php
+   // tous d'abord il faut démarrer le système de sessions
+   session_start();
+
+   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
+	if(isset($_SESSION['id_admin'])){
+          header('location:admin/index.php');
+   }
+   else if(isset($_SESSION['id_user'])){
+          header('location:user/index.php');
+   }
+
+  
+  if (isset($_GET["error_type"])) {
+  		if ($_GET["error_type"] == "nolog") {
+			$error_msg = "Des informations sont manquantes";
+		}
+		if ($_GET["error_type"] == "repeat") {
+			$error_msg = "Le mot de passe répété n'est pas le même";
+		}
+		elseif ($_GET["error_type"] == "exist") {
+			$error_msg = "Le numéro de sécurité sociale est déjà associé a un compte";
+		}
+		else {
+			$error_msg = "Erruer inconnue";
+		}
+		} else { $error_msg="OK"; }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +36,6 @@
 	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> <!--Permet de telecharger la police Source sans pro -->
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
-
-
-
-
-
-
-
-
 
 	<style>
 		.window form {
@@ -86,7 +108,7 @@
 
 		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous pour accéder à votre espace personnel</div>
 
-		<form method="POST" action="#">
+		<form method="POST" action="register_php.php">
 
 			<div class="input-line" style="width : 47%; display : inline;">
 				<input type='text' class='inputText' name='first_name' required></input>
@@ -119,14 +141,16 @@
 			</div>
 
 			<div class="input-line">
-				<input type="password" class="inputText" name='password' required/></input>
+				<input type="password" class="inputText" name='pswrd' required/></input>
 				<span class="floating-label">Mot de passe</span>
 			</div>
 
 			<div class="input-line">
-				<input type="password" class="inputText" name='password_rep' required/></input>
+				<input type="password" class="inputText" name='pswrd_again' required/></input>
 				<span class="floating-label">Répéter mot de passe</span>
 			</div>
+
+			<div class="error"><?php echo $error_msg ?><br/></div>
 
 			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">S'inscrire</button><br/>
 			<a href="index">Vous avez déjà un compte ? Identifiez-vous.</a>

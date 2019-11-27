@@ -1,79 +1,61 @@
-<?php
-   // tous d'abord il faut démarrer le système de sessions
-   session_start();
-
-   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-  if(isset($_SESSION['id_admin'])){
-          header('location:admin/index.php');
-   }
-   else if(isset($_SESSION['id_user'])){
-          header('location:user/index.php');
-   }
-
-  
-  if (isset($_GET["error_type"])) {
-    if ($_GET["error_type"] == "falselog") {
-      $error_msg = "Cet e-mail n'existe pas !";
-    }
-    elseif ($_GET["error_type"] == "nolog") {
-      $error_msg = "Aucun identifants recus !";
-    }
-    elseif ($_GET["error_type"] == "spam") {
-      $error_msg = "Vous avez atteint le quota de tentatives, essayez demain !";
-    }
-  } else { $error_msg=""; }
-
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset=utf-8 /> 
+	<meta charset=utf-8 /> 
   <title>Connexion</title>
   <link rel="stylesheet" href="css/style-connect.css" media="screen"/>
   <link rel="icon" type="image/png" href="css/img/audalogo.png" />
-  
 </head>
 
 <body>
 
-<div id=log-img></div>
-<div id=log-connect-container>
+<?php
+//on vérifie qu'on ai bien toute les informatoins d'inscriptions
+  if(!isset($_POST['first_name']) || !isset($_POST['last_name'])|| !isset($_POST['n_secu'])|| !isset($_POST['birth_date'])|| !isset($_POST['sex'])|| !isset($_POST['e_mail'])|| !isset($_POST['pswrd'])|| !isset($_POST['pswrd_again']))
+  {
+    $error_type = "nolog";
+    header('Location: index.php?error_type='.$error_type.'');
+    exit();
+  }
+  //On vérifie si les deux mot de passes sont identiques
+  elseif (isset($_POST['pswrd']) != isset($_POST['pswrd_again'])) {
+  	$error_type = "repeat";
+    header('Location: index.php?error_type='.$error_type.'');
+    exit();
+  }
+  else
+   {
+		require('config.php'); // On réclame le fichier config
 
-  <div class='window'>
-    <div class='welcome' style="margin-bottom:1.5%;">AUDASANTÉ</div>
+		$first_name = $_POST['first_name'];
+		$last_name = $_POST['last_name'];
+		$n_secu = $_POST['n_secu'];
+		$birth_date = $_POST['birth_date'];
+		$sex = $_POST['sex'];
+		$e_mail = $_POST['e_mail'];
+		$pswrd = $_POST['pswrd'];
+		$pswrd_again = $_POST['pswrd_again'];
 
-    <div class='subtitle' style="margin-bottom:3%;">La musique au service de la vie</div>
+		
+		// On vérifie si ce numéro de sécu existe déja
+		$requete_1 = $bdd->query("SELECT * FROM user WHERE n_secu='".$n_secu."'")->fetch();
+		if($requete_1!=FALSE)
+		{
+			$error_type = "exist";
+			header('Location: index.php?error_type='.$error_type.'');
+			exit();
+		}
+		else {
 
-    <form method="POST" action="connect.php">
+		//on hache le mot de passe
+		$pswrd_hash = hash('sha256', $pswrd);
 
-      <div class="input-line">
-        <input type='text' class='inputText' name='login'required></input>
-        <span class="floating-label">E-mail</span>
-      </div>
-
-      <div class="input-line">
-        <input type="password" class="inputText" name='pswrd'required/></input>
-        <span class="floating-label">Mot de passe</span>
-      </div>
-
-      <div class="error"><?php echo $error_msg ?><br/></div>
-
-      <div class="switch">
-        <input type="checkbox" name="switch" name="submit"/><label for="switch"></label>
-        <p>Se souvenir de moi</p>
-      </div>
-
-      <a href="Patients.html"><span>Mot de passe oublié</span></a>
-
-      <button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
-
-      <a class="ghost-round bright"  onclick="self.location.href='register.php'">S'inscrire</a>
-    </form>
-
-  </div>
-</div>
-</body> 
-
+		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
+			header('Location: index.php');
+		exit();
+		}
+    }
+?>
+</body>
 </html>
-
