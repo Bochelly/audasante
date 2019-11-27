@@ -49,7 +49,7 @@
 		else {
 
 		//on hache le mot de passe
-		$pswrd_hash = hash('sha256', $pswrd);
+		$pswrd_hash = password_hash($pswrd,PASSWORD_BCRYPT);
 
 		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
 			header('Location: index.php');

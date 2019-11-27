@@ -8,10 +8,10 @@
 
 <body>
 
-<?php
+<?php 
 	require('config.php'); // On réclame le fichier config
-
-		$first_name = 'Thomas';
+	
+ 		$first_name = 'Thomas';
 		$last_name = 'Hercule';
 		$n_secu = '1234567891';
 		$birth_date = '1999-08-05';
@@ -26,8 +26,9 @@
 		echo $birth_date ;
 		echo $e_mail;
 		echo $pswrd ;
-
-
 ?>
+
+
+
 </body>
 </html>

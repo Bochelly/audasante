@@ -24,7 +24,7 @@
 		else {
 			$error_msg = "Erruer inconnue";
 		}
-		} else { $error_msg="OK"; }
+		} else { $error_msg=""; }
 
 ?>
 
