@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `birth_date` DATE NOT NULL,
   `e_mail` VARCHAR(63) NOT NULL,
   `password` VARCHAR(63) NOT NULL,
-  `last_connect` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_connect` DATE NOT NULL,
   `nb_try` INT(16) NOT NULL DEFAULT '0',
   `n_secu_medic` INT(255) NULL,
   `id_hospital` INT(32) NULL,
