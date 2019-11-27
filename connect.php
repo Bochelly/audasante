@@ -14,8 +14,8 @@
 
   if(!isset($_POST['login']) || !isset($_POST['pswrd']))
   {
-    $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> Aucun identifants recus ! <br/></div>";
-    header('Location: index.php?id='.$_GET['error_msg'].'';
+    $error_type = "nolog";
+    header('Location: index.php');
     exit();
   }
   else
@@ -39,8 +39,8 @@
 
   		if($requete_1==FALSE)
       {
-        $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> Ce mail n'existe pas ! <br/></div>";
-        header('Location: index.php?id='.$_GET['error_msg'].'';
+        $error_type = "unknown";
+        header('Location: index.php?error_type='.$error_type.'');
         exit();
       }
 
@@ -55,8 +55,8 @@
 
 			if($requete_1['last_connect']==(date("Y-m-d")) && $MAX_essai==$requete_1['nb_try'])
 			{
-        $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> 'Vous avez atteint le quota de tentatives, essayez demain !<br/>' </div>";
-        header('Location: index.php?id='.$_GET['error_msg'].'';
+        $error_type = "spam";
+        header('Location: index.php?error_type='.$error_type.'');
         exit();
 			}
 			else
@@ -84,16 +84,12 @@
         }
         else
         {
-          $nbr_try++;
+          $nbr_try=$requete_1['nb_try']+1;
           $bdd->exec("UPDATE user SET nb_try='".$nbr_try."'WHERE e_mail='".$login."'") or die(print_r($bdd->errorInfo(), TRUE));
-                  $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> 'Le mot de passe et/ou le mail sont incorrectes<br/>' </div>";
-        header('Location: index.php?id='.$_GET['error_msg'].'';
+          
+        $error_type = "falselog";
+        header('Location: index.php?error_type='.$error_type.'');
         exit();
-          ?>
-          <h1><span> </span><br/></h1>
-          <a href="index.php">Réessayez</a>
-
-          <?php
         }
       }
   }

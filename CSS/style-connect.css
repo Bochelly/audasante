@@ -290,6 +290,16 @@ a:hover /*lorsque qu'on passe la souris sur le lien*/
 
 }
 
+.error{
+  text-align:center;
+  width:100%;
+  color: rgba(242, 53, 53, 1);
+  transition: 0.2s;
+  font-size: 1.4vw
+  
+}
+
+
 @media (orientation:portrait) {
   #log-img {
     background:none;
