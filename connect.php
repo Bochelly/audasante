@@ -12,11 +12,11 @@
 
 <?php
 
-  if(!isset($_GET['login']) || !isset($_GET['pswrd']))
+  if(!isset($_POST['login']) || !isset($_POST['pswrd']))
   {
-    echo "<div class='welcome' style='margin-bottom:1.5%;'> Aucun identifants recus ! <br/></div>";
+    $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> Aucun identifants recus ! <br/></div>";
+    header('Location: index.php?id='.$_GET['error_msg'].'';
     exit();
-    header('Location: index.php');
   }
   else
   {
@@ -31,16 +31,16 @@
     { */
     require('config.php'); // On réclame le fichier config
 
-      $login = $_GET['login'];
-      $pswrd = $_GET['pswrd'];
+      $login = $_POST['login'];
+      $pswrd = $_POST['pswrd'];
       $MAX_essai = 20;
       $requete_1 = $bdd->query("SELECT * FROM user WHERE e_mail='".$login."'")->fetch();
             // On vérifie si ce login existe
 
   		if($requete_1==FALSE)
       {
-        echo "<div class='welcome' style='margin-bottom:1.5%;'> Ce mail n'existe pas ! <br/></div>";
-        echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
+        $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> Ce mail n'existe pas ! <br/></div>";
+        header('Location: index.php?id='.$_GET['error_msg'].'';
         exit();
       }
 
@@ -55,9 +55,9 @@
 
 			if($requete_1['last_connect']==(date("Y-m-d")) && $MAX_essai==$requete_1['nb_try'])
 			{
-
-			  echo "<div class='welcome' style='margin-bottom:1.5%;'> 'Vous avez atteint le quota de tentatives, essayez demain !<br/>' </div>";
-			  exit();
+        $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> 'Vous avez atteint le quota de tentatives, essayez demain !<br/>' </div>";
+        header('Location: index.php?id='.$_GET['error_msg'].'';
+        exit();
 			}
 			else
 			{
@@ -86,11 +86,14 @@
         {
           $nbr_try++;
           $bdd->exec("UPDATE user SET nb_try='".$nbr_try."'WHERE e_mail='".$login."'") or die(print_r($bdd->errorInfo(), TRUE));
+                  $error_msg = "<div class='welcome' style='margin-bottom:1.5%;'> 'Le mot de passe et/ou le mail sont incorrectes<br/>' </div>";
+        header('Location: index.php?id='.$_GET['error_msg'].'';
+        exit();
           ?>
-          <h1><span>Le mot de passe et/ou le mail sont incorrectes </span><br/></h1>
+          <h1><span> </span><br/></h1>
           <a href="index.php">Réessayez</a>
+
           <?php
-          exit($error_msg);
         }
       }
   }

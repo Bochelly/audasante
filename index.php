@@ -11,8 +11,8 @@
    }
 
   
-  if (isset($_POST["error_msg"])) {
-	$error_msg=htmlentities(trim($_POST["error_msg"]));
+  if (isset($_GET["error_msg"])) {
+	$error_msg=$_GET["error_msg"];
     }
     else { $error_msg=""; }
 
@@ -38,7 +38,7 @@
 
 		<div class='subtitle' style="margin-bottom:3%;">La musique au service de la vie</div>
 
-		<form method="GET" action="connect.php">
+		<form method="POST" action="connect.php">
 
 			<div class="input-line">
 				<input type='text' class='inputText' name='login'required></input>
