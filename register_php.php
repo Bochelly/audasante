@@ -1,3 +1,29 @@
+<?php
+   // tous d'abord il faut démarrer le système de sessions
+   session_start();
+
+   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
+  if(isset($_SESSION['id_admin'])){
+          header('location:admin/index.php');
+   }
+   else if(isset($_SESSION['id_user'])){
+          header('location:user/index.php');
+   }
+
+  
+  if (isset($_GET["error_type"])) {
+    if ($_GET["error_type"] == "falselog") {
+      $error_msg = "Cet e-mail n'existe pas !";
+    }
+    elseif ($_GET["error_type"] == "nolog") {
+      $error_msg = "Aucun identifants recus !";
+    }
+    elseif ($_GET["error_type"] == "spam") {
+      $error_msg = "Vous avez atteint le quota de tentatives, essayez demain !";
+    }
+  } else { $error_msg=""; }
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -6,85 +32,48 @@
   <title>Connexion</title>
   <link rel="stylesheet" href="css/style-connect.css" media="screen"/>
   <link rel="icon" type="image/png" href="css/img/audalogo.png" />
+  
 </head>
 
 <body>
 
-<?php
+<div id=log-img></div>
+<div id=log-connect-container>
 
-  if(!isset($_POST['login']) || !isset($_POST['pswrd']))
-  {
-    echo "<div class='welcome' style='margin-bottom:1.5%;'> Aucun identifants recus ! <br/></div>";
-    exit();
-    header('Location: index.php');
-  }
-  else
-  {
-    require('config.php'); // On réclame le fichier config
+  <div class='window'>
+    <div class='welcome' style="margin-bottom:1.5%;">AUDASANTÉ</div>
 
-      $login = $_POST['login'];
-      $pswrd = $_POST['pswrd'];
+    <div class='subtitle' style="margin-bottom:3%;">La musique au service de la vie</div>
 
-      $requete_1 = $bdd->query("SELECT * FROM user WHERE e_mail='".$login."'")->fetch();
-            // On vérifie si ce login existe
+    <form method="POST" action="connect.php">
 
-      if($requete_1!=FALSE)
-      {
-        echo "<div class='welcome' style='margin-bottom:1.5%;'> Ce numéro  de sécurité sociale est déjà assosié a un compte ! <br/></div>";
-        echo '<a href="index.php" temp_href="register.php">Réessayer</a>';
-        exit();
-      }
+      <div class="input-line">
+        <input type='text' class='inputText' name='login'required></input>
+        <span class="floating-label">E-mail</span>
+      </div>
 
-      if($requete_1['medic']==TRUE)
-      {
-        $status="medic";
-      }
-      else
-      {
-        $status="patient";
-      }
+      <div class="input-line">
+        <input type="password" class="inputText" name='pswrd'required/></input>
+        <span class="floating-label">Mot de passe</span>
+      </div>
 
-      if($requete_1['last_connect']==(date("Y-m-d")) && $MAX_essai==$requete_1['nb_try'])
-      {
+      <div class="error"><?php echo $error_msg ?><br/></div>
 
-        echo "<div class='welcome' style='margin-bottom:1.5%;'> 'Vous avez atteint le quota de tentatives, essayez demain !<br/>' </div>";
-        exit();
-      }
-      else
-      {
-        // On vérifie si le login et le mot de passe correspondent au compte utilisateur
-        if($requete_1['password']==$pswrd) {
-          $nbr_try = 0;
-          //on met a jour la date de dernère connexion et le nombre d'essais
-          $bdd->exec("UPDATE user SET nb_try='".$nbr_try."', last_connect=NOW() WHERE e_mail='".$login."'");
+      <div class="switch">
+        <input type="checkbox" name="switch" name="submit"/><label for="switch"></label>
+        <p>Se souvenir de moi</p>
+      </div>
 
-           // on démarre le système de sessions
-           session_start();
-           
-          $_SESSION['n_secu'] = $requete_1['n_secu'];
-          
-           // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-         if($requete_1['medic']==TRUE) {
-           header('Location: admin/index.php');
-         }
-         else {
-          // On redirige vers la partie membre
-          header('Location: user/index.php');
-          }
+      <a href="Patients.html"><span>Mot de passe oublié</span></a>
 
-        }
-        else
-        {
-          $nbr_try++;
-          $bdd->exec("UPDATE user SET nb_try='".$nbr_try."'WHERE e_mail='".$login."'") or die(print_r($bdd->errorInfo(), TRUE));
-          ?>
-          <h1><span>Le mot de passe et/ou le mail sont incorrectes </span><br/></h1>
-          <a href="index.php">Réessayez</a>
-          <?php
-          exit($error_msg);
-        }
-      }
-  }
-?>
-</body>
+      <button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
+
+      <a class="ghost-round bright"  onclick="self.location.href='register.php'">S'inscrire</a>
+    </form>
+
+  </div>
+</div>
+</body> 
+
 </html>
+

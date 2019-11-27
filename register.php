@@ -86,45 +86,45 @@
 
 		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous pour accéder à votre espace personnel</div>
 
-		<form method="get" action="#">
+		<form method="POST" action="#">
 
 			<div class="input-line" style="width : 47%; display : inline;">
-				<input type='text' class='inputText' required></input>
+				<input type='text' class='inputText' name='first_name' required></input>
 				<span class="floating-label">Prénom</span>
 			</div>
 
 			<div class="input-line" style="width : 47%; display : inline;margin-left:6%;">
-				<input type='text' class='inputText' required></input>
+				<input type='text' class='inputText' name='last_name' required></input>
 				<span class="floating-label">Nom</span>
 			</div>
 		
 			<div class="input-line">
-				<input type='text' class='inputText' required></input>
+				<input type='text' class='inputText' name='n_secu' required></input>
 				<span class="floating-label">Numéro de sécurité sociale</span>
 			</div>
 
 			<div class="input-line">
-				Date de naissance : <input type='date' class='inputText' required></input>
+				Date de naissance : <input type='date' class='inputText' name='birth_date' required></input>
 				
 			</div>	
 			<div class="input-line">
 				<br/>
-				Sexe : <INPUT type="radio" name="sex" value="H" checked></INPUT> Homme <INPUT type="radio" name="sex" value="F"></INPUT> Femme<br/>
+				Sexe : <INPUT type="radio" name="sex" value="H" name='sex' checked></INPUT> Homme <INPUT type="radio" name="sex" value="F"></INPUT> Femme<br/>
 				
 			</div>
 		
 			<div class="input-line">
-				<input type='text' class='inputText' required></input>
+				<input type='text' class='inputText' name='e_mail' required></input>
 				<span class="floating-label">E-mail</span>
 			</div>
 
 			<div class="input-line">
-				<input type="password" class="inputText" required/></input>
+				<input type="password" class="inputText" name='password' required/></input>
 				<span class="floating-label">Mot de passe</span>
 			</div>
 
 			<div class="input-line">
-				<input type="password" class="inputText" required/></input>
+				<input type="password" class="inputText" name='password_rep' required/></input>
 				<span class="floating-label">Répéter mot de passe</span>
 			</div>
 
