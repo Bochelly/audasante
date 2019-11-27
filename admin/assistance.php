@@ -22,19 +22,19 @@
 	<?php
 		require('menu_lateral_admin.php');
 		require('top_bar.php')
-	?>
+	?>	
 	<div id="contenuAssistance">	
 	<h2>Besoin d'aide ?</h2>
 	<div id="mail"> 
 			<h3>Contactez nous !</h3>
 			<br/><br/>
-			<form method="post" action="traitement_mail.php">
+			<form method="post" action="traitement_mail_contact.php">
 				<p> 
-					<label for="email">Email</label><input type="text" name="email" id="email"/><br/>
+					<label for="email">Email</label><input type="text" name="email" required/><br/>
 					<p class="dessous">Nous vous contacterons à cette adresse</p>
-					<label for="objet">Objet</label><input type="text" name="objet" id="objet"/><br/>
+					<label for="objet">Objet</label><input type="text" name="objet" required/><br/>
 					<p class="dessous">Indiquez la raison de votre demande</p>
-					<label for="message">Message</label><textarea name="message" id="message" placeholder="Tapez votre message ici..."></textarea><br/>
+					<label for="message">Message</label><textarea name="message" placeholder="Tapez votre message ici..." required></textarea><br/>
 					<span><input type="submit" name="envoi" value="Envoyer	" /></span>
 
 				</p>
