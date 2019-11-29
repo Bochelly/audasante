@@ -11,10 +11,20 @@
    }
 
   
-  if (isset($_GET["error_msg"])) {
-	$error_msg=$_GET["error_msg"];
-    }
-    else { $error_msg=""; }
+  if (isset($_GET["error_type"])) {
+  		if ($_GET["error_type"] == "falselog") {
+			$error_msg = "Mot de passe incorrect";
+		}
+		elseif ($_GET["error_type"] == "unknown") {
+			$error_msg = "Cet e-mail n'existe pas !";
+		}
+		elseif ($_GET["error_type"] == "nolog") {
+			$error_msg = "Aucun identifants recus !";
+		}
+		elseif ($_GET["error_type"] == "spam") {
+			$error_msg = "Vous avez atteint le quota de tentatives, essayez demain !";
+		}
+	} else { $error_msg=""; }
 
 ?>
 
@@ -50,14 +60,14 @@
 				<span class="floating-label">Mot de passe</span>
 			</div>
 
+			<div class="error"><?php echo $error_msg ?><br/></div>
+
 			<div class="switch">
 				<input type="checkbox" name="switch" name="submit"/><label for="switch"></label>
 				<p>Se souvenir de moi</p>
 			</div>
 
 			<a href="Patients.html"><span>Mot de passe oublié</span></a>
-
-			<span><?php echo $error_msg ?></span>
 
 			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
 

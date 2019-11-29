@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset=utf-8 /> 
+	<meta charset=utf-8 /> 
   <title>Connexion</title>
   <link rel="stylesheet" href="css/style-connect.css" media="screen"/>
   <link rel="icon" type="image/png" href="css/img/audalogo.png" />
@@ -11,80 +11,51 @@
 <body>
 
 <?php
-
-  if(!isset($_POST['login']) || !isset($_POST['pswrd']))
+//on vérifie qu'on ai bien toute les informatoins d'inscriptions
+  if(!isset($_POST['first_name']) || !isset($_POST['last_name'])|| !isset($_POST['n_secu'])|| !isset($_POST['birth_date'])|| !isset($_POST['sex'])|| !isset($_POST['e_mail'])|| !isset($_POST['pswrd'])|| !isset($_POST['pswrd_again']))
   {
-    echo "<div class='welcome' style='margin-bottom:1.5%;'> Aucun identifants recus ! <br/></div>";
+    $error_type = "nolog";
+    header('Location: index.php?error_type='.$error_type.'');
     exit();
-    header('Location: index.php');
+  }
+  //On vérifie si les deux mot de passes sont identiques
+  elseif (isset($_POST['pswrd']) != isset($_POST['pswrd_again'])) {
+  	$error_type = "repeat";
+    header('Location: index.php?error_type='.$error_type.'');
+    exit();
   }
   else
-  {
-    require('config.php'); // On réclame le fichier config
+   {
+		require('config.php'); // On réclame le fichier config
 
-      $login = $_POST['login'];
-      $pswrd = $_POST['pswrd'];
+		$first_name = $_POST['first_name'];
+		$last_name = $_POST['last_name'];
+		$n_secu = $_POST['n_secu'];
+		$birth_date = $_POST['birth_date'];
+		$sex = $_POST['sex'];
+		$e_mail = $_POST['e_mail'];
+		$pswrd = $_POST['pswrd'];
+		$pswrd_again = $_POST['pswrd_again'];
 
-      $requete_1 = $bdd->query("SELECT * FROM user WHERE e_mail='".$login."'")->fetch();
-            // On vérifie si ce login existe
+		
+		// On vérifie si ce numéro de sécu existe déja
+		$requete_1 = $bdd->query("SELECT * FROM user WHERE n_secu='".$n_secu."'")->fetch();
+		if($requete_1!=FALSE)
+		{
+			$error_type = "exist";
+			header('Location: index.php?error_type='.$error_type.'');
+			exit();
+		}
+		else {
 
-      if($requete_1!=FALSE)
-      {
-        echo "<div class='welcome' style='margin-bottom:1.5%;'> Ce numéro  de sécurité sociale est déjà assosié a un compte ! <br/></div>";
-        echo '<a href="index.php" temp_href="register.php">Réessayer</a>';
-        exit();
-      }
+		//on hache le mot de passe
+		$pswrd_hash = password_hash($pswrd,PASSWORD_BCRYPT);
 
-      if($requete_1['medic']==TRUE)
-      {
-        $status="medic";
-      }
-      else
-      {
-        $status="patient";
-      }
-
-      if($requete_1['last_connect']==(date("Y-m-d")) && $MAX_essai==$requete_1['nb_try'])
-      {
-
-        echo "<div class='welcome' style='margin-bottom:1.5%;'> 'Vous avez atteint le quota de tentatives, essayez demain !<br/>' </div>";
-        exit();
-      }
-      else
-      {
-        // On vérifie si le login et le mot de passe correspondent au compte utilisateur
-        if($requete_1['password']==$pswrd) {
-          $nbr_try = 0;
-          //on met a jour la date de dernère connexion et le nombre d'essais
-          $bdd->exec("UPDATE user SET nb_try='".$nbr_try."', last_connect=NOW() WHERE e_mail='".$login."'");
-
-           // on démarre le système de sessions
-           session_start();
-           
-          $_SESSION['n_secu'] = $requete_1['n_secu'];
-          
-           // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-         if($requete_1['medic']==TRUE) {
-           header('Location: admin/index.php');
-         }
-         else {
-          // On redirige vers la partie membre
-          header('Location: user/index.php');
-          }
-
-        }
-        else
-        {
-          $nbr_try++;
-          $bdd->exec("UPDATE user SET nb_try='".$nbr_try."'WHERE e_mail='".$login."'") or die(print_r($bdd->errorInfo(), TRUE));
-          ?>
-          <h1><span>Le mot de passe et/ou le mail sont incorrectes </span><br/></h1>
-          <a href="index.php">Réessayez</a>
-          <?php
-          exit($error_msg);
-        }
-      }
-  }
+		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
+			header('Location: index.php');
+		exit();
+		}
+    }
 ?>
 </body>
 </html>
