@@ -1,3 +1,4 @@
+<?php $page_en_cours = 'assistance'; ?>
 <!DOCTYPE html>
 
 
@@ -21,37 +22,7 @@
 		require('menu_lateral_admin.php');
 		require('top_bar.php')
 	?>
-	<div id="contenuAssistance">	
-	<h2>Besoin d'aide ?</h2>
-	<div id="mail"> 
-			<h3>Contactez nous !</h3>
-			<br/><br/>
-			<form method="post" action="traitement_mail.php">
-				<p> 
-					<label for="email">Email</label><input type="text" name="email" id="email"/><br/>
-					<p class="dessous">Nous vous contacterons à cette adresse</p>
-					<label for="objet">Objet</label><input type="text" name="objet" id="objet"/><br/>
-					<p class="dessous">Indiquez la raison de votre demande</p>
-					<label for="message">Message</label><textarea name="message" id="message" placeholder="Tapez votre message ici..."></textarea><br/>
-					<span><input type="submit" name="envoi" value="Envoyer	" /></span>
-
-				</p>
-			</form>
-	</div>
-
-	<div id="contact">
-		<h3>Communauté</h3>
-		<ul>
-			<a href="#"><li><i class="fas fa-question fa-fw fa-2x" style="color: #43425D"></i>Foire Aux Questions</li></a>
-			<li><i class="fas fa-map-marker-alt fa-fw fa-2x" style="color: #D2323F"></i> 10, rue de Vanves à Issy-les-Moulinaux</li>
-				<li><i class="fas fa-phone-square-alt fa-fw fa-2x" style="color: #72B239"></i> 0100000000</li>
-				<li><i class="fas fa-at fa-fw fa-2x" style="color: #156080"></i> Audasanté@gmail.com</li>
-			<li><i class="fab fa-facebook fa-fw fa-2x" style="color: #4267B2"></i> Audasanté</li>
-			<li><i class="fab fa-instagram fa-fw fa-2x" style="color: #BE2866"></i> Audasanté</li>
-			<li><i class="fab fa-twitter-square fa-fw fa-2x" style="color: #00A7E1"></i> Audasanté</li>
-
-		</ul>
-	</div>
+	
 
 	</div>
 	<script src="../js/script.js"></script>

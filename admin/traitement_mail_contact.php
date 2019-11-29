@@ -1,4 +1,5 @@
 <?php
+
 	/* on récupère les données du formulaire */
 	$email   =($_POST['email']);
 	$objet   =($_POST['objet']);
@@ -16,6 +17,8 @@
 				'Content-Disposition: inline'. "\r\n" .
 				'Content-Transfer-Encoding: 7bit'." \r\n" .
 				'X-Mailer:PHP/'.phpversion();
+
+
 
 
     $envoi = mail('audasante@gmail.com', $objet, $message, $headers);

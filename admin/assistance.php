@@ -34,7 +34,7 @@
 					<p class="dessous">Nous vous contacterons à cette adresse</p>
 					<label for="objet">Objet</label><input type="text" name="objet" required/><br/>
 					<p class="dessous">Indiquez la raison de votre demande</p>
-					<label for="message">Message</label><textarea name="message" placeholder="Tapez votre message ici..." required></textarea><br/>
+					<label for="message">Message</label><textarea name="message" rows=11 placeholder="Tapez votre message ici..." required></textarea><br/>
 					<span><input type="submit" name="envoi" value="Envoyer	" /></span>
 
 				</p>
@@ -44,7 +44,7 @@
 	<div id="contact">
 		<h3>Communauté</h3>
 		<ul>
-			<a href="#"><li><i class="fas fa-question fa-fw fa-2x" style="color: #43425D"></i>Foire Aux Questions</li></a>
+			<a href="faq"><li><i class="fas fa-question fa-fw fa-2x" style="color: #43425D"></i>Foire Aux Questions</li></a>
 			<li><i class="fas fa-map-marker-alt fa-fw fa-2x" style="color: #D2323F"></i> 10, rue de Vanves à Issy-les-Moulinaux</li>
 				<li><i class="fas fa-phone-square-alt fa-fw fa-2x" style="color: #72B239"></i> 0100000000</li>
 				<li><i class="fas fa-at fa-fw fa-2x" style="color: #156080"></i> Audasanté@gmail.com</li>
