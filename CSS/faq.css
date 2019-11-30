@@ -1,0 +1,53 @@
+.faq
+{
+	margin-top: 10%;
+	margin-left: 20%;
+	width: 50%;
+	height: 100%;	
+}
+
+.faq .question 
+{
+	padding : 1%;
+	position: relative; 
+	border : solid 1px;
+	border-radius: 5% 0%;
+	background-color: #D0D0CE; 	
+	list-style: none;
+}
+.faq .question i
+{
+	padding-left: 2%;
+}
+
+.faq .question a
+{
+	color: #3C3B53;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 1000;
+	font-size: 1.2em;
+}
+
+.faq .question:hover
+{
+	background-color: #A9AAAF;
+}
+
+.faq .question:hover .reponse
+{
+	visibility: visible;
+	height: auto;
+	transform: scaleY(1);
+}
+
+.faq .reponse
+{
+	display:block;
+	position: relative;
+	visibility: hidden;
+	height:0;
+	transform : scaleY(0); /* transform permet de modifier la taille d'un élément html*/
+	transition: transform 0.3s ease; /*type de transition voulue*/
+}
+

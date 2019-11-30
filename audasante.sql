@@ -76,7 +76,7 @@ INSERT INTO `faq` (`id`, `subject`, `answer`, `frequency`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `patient`
+-- Structure de la table `hospital`
 --
 
 DROP TABLE IF EXISTS `hospital`;
