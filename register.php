@@ -21,6 +21,9 @@
 		elseif ($_GET["error_type"] == "exist") {
 			$error_msg = "Le numéro de sécurité sociale est déjà associé a un compte";
 		}
+		elseif ($_GET["error_type"] == "notexist") {
+			$error_msg = "Le numéro de sécurité sociale n'est pas dans la base de donnée";
+		}
 		else {
 			$error_msg = "Erruer inconnue";
 		}
