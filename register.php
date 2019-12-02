@@ -37,7 +37,7 @@
 	<meta charset=utf-8 /> 
 	<title>S'enregistrer</title>
 	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> <!--Permet de telecharger la police Source sans pro -->
+	<!--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> Permet de telecharger la police Source sans pro -->
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 
 	<style>
@@ -64,7 +64,7 @@
 		.input-line input:placeholder-shown ~ .floating-label,
 		.input-line input:not(:focus):valid ~ .floating-label{
 		  left: 0.1vw;
-		  top: -105%;
+		  top: -112%;
 		  font-size: 0.9vw;
 		}
 
