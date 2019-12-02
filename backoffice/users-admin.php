@@ -17,8 +17,12 @@
 
 		<?php
 			require('menu_lateral_backoffice.php');
-			require('top_bar.php')
+			require('top_bar.php');
+			require('config.php');
+			//$requete_1 = $bdd->prepare("SELECT first_name ,last_name ,n_secu FROM user WHERE medic=FALSE");
+			//$sql->setFetchMode(PDO::FETCH_ASSOC);
 		?>
+
 		<div id="contenuAssistance">	
 			<h2>Users admin</h2>
 			<div id="mail"> 
@@ -32,6 +36,7 @@
 								    <th>N° SÉCU</th>
 								    <th>ACTIONS</th>
 								  </tr>
+								 
 								  <tr>
 								    <td>Antoine BORRELLY</td>
 								    <td>Dupont</td>
@@ -136,26 +141,9 @@
 								    <td>Admin</td>
 								    <td>1022302040</td>
 								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								  <tr>
-								    <td>Poudlard</td>
-								    <td>Duval</td>
-								  </tr>
-								   <tr>
-								    <td>Admin</td>
-								    <td>Duval</td>
-								  </tr>
-								   <tr>
-								    <td>1022302040</td>
-								    <td>Duval</td>
-								  </tr>
-								   <tr>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								    <td>Duval</td>
 								  </tr>
 								</table>
-
-							>
+							<image id="plus-button" src = "../images/plus.png" alt="plus button"/> 
 			</div>
 		</div>
 		<script src="../js/script.js"></script>

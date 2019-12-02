@@ -11,6 +11,11 @@ th, td {
 	text-align : left;
 	padding-left : 15px;
 }
+
+.faq-text{
+	width:30%;
+}
+
 th {
 	color : #A3A6B4;
 	background-color:#F5F6FA;
@@ -180,4 +185,8 @@ td {
 	position : fixed;
 	right : 10%;
 	bottom : 5%;
+}
+
+#plus-button:hover
+{
 }
