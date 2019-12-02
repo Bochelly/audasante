@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset=utf-8 /> 
+	<meta charset=utf-8 /> 
   <title>Connexion</title>
   <link rel="stylesheet" href="css/style-connect.css" media="screen"/>
   <link rel="icon" type="image/png" href="css/img/audalogo.png" />
@@ -10,6 +11,7 @@
 <body>
 
 <?php
+
   if(!isset($_POST['login']) || !isset($_POST['pswrd']))
   {
     $error_type = "nolog";
@@ -28,51 +30,57 @@
     else
     { */
     require('config.php'); // On réclame le fichier config
+
       $login = $_POST['login'];
       $pswrd = $_POST['pswrd'];
       $MAX_essai = 20;
       $requete_1 = $bdd->query("SELECT * FROM user WHERE e_mail='".$login."'")->fetch();
             // On vérifie si ce login existe
-      if($requete_1==FALSE)
+
+  		if($requete_1==FALSE)
       {
         $error_type = "unknown";
         header('Location: index.php?error_type='.$error_type.'');
         exit();
       }
+
       if($requete_1['medic']==TRUE)
       {
-        $status="medic";
+      	$status="medic";
       }
       else
-      {
-        $status="patient";
-      }
-      if($requete_1['last_connect']==(date("Y-m-d")) && $MAX_essai==$requete_1['nb_try'])
-      {
+		  {
+		  	$status="patient";
+		  }
+
+			if($requete_1['last_connect']==(date("Y-m-d")) && $MAX_essai==$requete_1['nb_try'])
+			{
         $error_type = "spam";
         header('Location: index.php?error_type='.$error_type.'');
         exit();
-      }
-      else
-      {
-        // On vérifie si le login et le mot de passe correspondent au compte utilisateur
-        if(password_verify($pswrd,$requete_1['password'])) {
-          $nbr_try = 0;
-          //on met a jour la date de dernère connexion et le nombre d'essais
-          $bdd->exec("UPDATE user SET nb_try='".$nbr_try."', last_connect=NOW() WHERE e_mail='".$login."'");
-           // on démarre le système de sessions
-           session_start();
-           
-          $_SESSION['n_secu'] = $requete_1['n_secu'];
-          
-           // Si la session de l'admin ou de l'user est active, on redirige vers sa page
+			}
+			else
+			{
+  			// On vérifie si le login et le mot de passe correspondent au compte utilisateur
+  			if(password_verify($pswrd,$requete_1['password'])) {
+  				$nbr_try = 0;
+  				//on met a jour la date de dernère connexion et le nombre d'essais
+  				$bdd->exec("UPDATE user SET nb_try='".$nbr_try."', last_connect=NOW() WHERE e_mail='".$login."'");
+
+  			   // on démarre le système de sessions
+  			   session_start();
+  			   
+  				$_SESSION['n_secu'] = $requete_1['n_secu'];
+  				
+  			   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
          if($requete_1['medic']==TRUE) {
-           header('Location: admin/index.php');
+  			   header('Location: admin/index.php');
          }
          else {
-          // On redirige vers la partie membre
-          header('Location: user/index.php');
+  				// On redirige vers la partie membre
+  				header('Location: user/index.php');
           }
+
         }
         else
         {
