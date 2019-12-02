@@ -63,7 +63,7 @@
 			<div class="error"><?php echo $error_msg ?><br/></div>
 
 			<div class="switch">
-				<input type="checkbox" name="switch" name="submit"/><label for="switch"></label>
+				<input type="checkbox" id="switch" name="submit"/><label for="switch"></label>
 				<p>Se souvenir de moi</p>
 			</div>
 
