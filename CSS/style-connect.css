@@ -109,6 +109,7 @@ button:focus {
 .input-line input:focus ~ .floating-label,
 .input-line input:placeholder-shown ~ .floating-label,
 .input-line input:not(:focus):valid ~ .floating-label{
+  font-weight: 600;
   left: 0.1vw;
   top: -120%;
   font-size: 0.9vw;
@@ -153,9 +154,9 @@ button:focus {
 }
 
 .welcome {
+
   font-weight: 400;
-  color: #43425D
-  margin-top: -10%;
+  color: #43425D;
   font-weight: bold;
   text-align: center;
   font-size: 2vw;
