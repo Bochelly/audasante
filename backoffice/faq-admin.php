@@ -36,119 +36,18 @@
 								    <th>DATE</th>
 								    <th>ACTIONS</th>
 								  </tr>
-								 
-								  <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								  <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								  <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								  <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
-								   <tr>
-								    <td>Comment faire des trucs ?</td>
-								    <td class="faq-text">Il faut faire ça et ça et ça. Et ça aussi</td>
-								    <td></td>
-								    <td>12/12/2019</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
-								  </tr>
+										<?php 
+										$reponse = $bdd->query('SELECT * FROM faq');
+										while ($data = $reponse->fetch()) { 
+											?>
+											<tr>
+												<td><?php echo $data['subject']; ?></td>
+												<td><?php echo $data['answer']; ?></td>
+												<td></td>
+												<td><?php echo $data['date']; ?></td>
+												<td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
+											</tr>								
+										<?php } $reponse->closeCursor(); ?>
 								</table>
 							<image id="plus-button" src = "../images/plus.png" alt="plus button"/> 
 

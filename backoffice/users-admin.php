@@ -27,8 +27,32 @@
 			<h2>Users admin</h2>
 			<div id="mail"> 
 							<h3>All users</h3>
+
+							 <div class="form-popup" id="myForm">
+
+									  <form action="user_edit_action_page.php" class="form-container">
+
+									    <h3>Edit user</h3>
+									    <h4>Antoine BORRELLY</h4>
+
+									    <label for="email"><b>Name</b></label>
+									    <input type="text" placeholder="Enter Email" name="email" required>
+
+									    <label for="text"><b>Hospital</b></label>
+									    <input type="text" placeholder="Enter Hospital" name="text" required>
+
+									    <label for="number"><b>N° Sécu</b></label>
+									    <input type="number" placeholder="0000000000" name="email" required>
+
+
+									    <button type="submit" class="btn save" >Save</button>
+									    <button type="submit" class="btn cancel" onclick="closeForm()">Cancel</button>
+									  </form>
+									</div> 
+
 					<!-- Inserer le tableau ici -->
 							<table>
+
 								  <tr>
 								    <th>NOM</th>
 								    <th>HÔPITAL</th>
@@ -36,13 +60,14 @@
 								    <th>N° SÉCU</th>
 								    <th>ACTIONS</th>
 								  </tr>
-								 
+
+								  
 								  <tr>
 								    <td>Antoine BORRELLY</td>
 								    <td>Dupont</td>
 								    <td>Admin</td>
 								    <td>1022302040</td>
-								    <td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
+								    <td><span class="delete"> Delete</span> <span class="edit" onclick="openForm()">Edit</span></td>
 								  </tr>
 								  <tr>
 								    <td>Antoine BORRELLY</td>

@@ -200,3 +200,11 @@ document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
 } 
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+} 
