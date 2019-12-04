@@ -1,0 +1,124 @@
+#contenuAssistance
+{
+	position : absolute;
+	margin-left:16%;
+	margin-top : 3%;
+	width:84%;
+	height: 100%;
+	background-color:#F0F0F7;
+}
+
+#contenuAssistance h2
+{
+	margin-left: 3%;
+	margin-top: 2%;
+	margin-bottom: 1.5%;
+	color: #43425D;
+	opacity: 1;
+	
+}
+
+
+#contenuAssistance #mail 
+{
+	background-color: #FFFFFF;
+	 float: left;	
+	 width: 50%;
+	 display: block;
+	 position: relative;
+	 margin-left:3%;
+}	
+
+#contenuAssistance #mail h3
+{
+	margin-left: 3.5%;
+	margin-top: 3.5%;
+	color:#4D4F5C;
+}
+
+#contenuAssistance #mail label
+{
+	color: #43425D;
+	margin-left: 3.5%;	
+	font-weight: bold;
+	display : inline-block;
+	width:7.5%;
+}
+
+#contenuAssistance #mail input
+{
+	display:inline-block;
+	border: 1px solid #E8E9EC;
+	border-radius: 4px;
+	opacity: 1;	
+	margin-left: 10%;
+	width: 70%;
+	height: 40px;
+	padding-left: 2%;
+	margin-bottom: 1%;
+}
+
+.dessous
+{
+	color : #808495;
+	margin-left: 21%;
+	margin-bottom: 6%;
+}
+
+
+#contenuAssistance #mail textarea
+{
+	display:inline-block;
+	vertical-align: middle;
+	border: 1px solid #CECFD0;
+	border-radius: 5px;
+	margin-left: 10%;
+	width : 72%;
+	height: 250px;
+	resize:none;
+}
+
+#contenuAssistance #mail textarea::placeholder
+{
+	padding-left: 2%;
+	padding-top: 2%;
+}
+
+#contenuAssistance #mail span input
+{
+	margin-top:5%;
+	width : 30%;
+	height: 50px;
+	display: block;
+	background-color: #3B86FF;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#contenuAssistance #contact 
+{
+	background-color: #FFFFFF;
+ display: block;
+ position: relative;
+ width: 40%;
+ margin-left: 57%;
+ margin-top: 2%;
+}
+
+#contenuAssistance #contact h3
+{
+
+}
+
+#contenuAssistance #contact ul li
+{
+	list-style: none;
+	padding-left: 3%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+#contenuAssistance #contact ul li i	
+{
+	vertical-align: middle;
+}

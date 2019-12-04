@@ -1,0 +1,218 @@
+body {
+	background-color: #F0F0F7;
+}
+
+img {
+	border-radius: 30px;
+}
+
+.main-section small{
+	font-size: 12px;
+	color: #4D4F5C;
+}
+.main-section h3, .main-section h5{
+	margin: 0px;
+	color: #4D4F5C;
+}
+.main-section{
+	display: block;
+	position: relative;
+	background-color: #F0F0F7;
+	margin-left: 16%;
+	margin-top: 115px;
+	padding: 0% 5% 0% 5%; 
+	z-index: 1;
+	height: 100%;
+	overflow: auto;
+
+}
+
+
+.head-section{
+	padding-bottom: 15px;
+	background-color: white;
+	border-bottom:1px solid #E6E6E6;
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+}
+.headLeft-section{
+	width: 0;
+	float: left;
+}
+.headLeft-sub{
+	padding: 0px;
+	text-align: center;
+	background-color: red;
+}
+.headLeft-sub input{
+	width: 60%;
+	border-radius: 0px;
+	border:1px solid #E6E6E6;
+	padding: 7px;
+}
+.headLeft-sub button{
+	background: #009EF7;
+	color: #fff;
+	border:1px solid #E6E6E6;
+	padding: 7px 15px;
+}
+.headRight-section{
+	width: 70%;
+	float: left;
+}
+.headRight-sub{
+	padding: 10px 15px 0px 15px;
+}
+
+.body-section{
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+
+.right-section{
+	width: 100%;
+	float: left;
+	height: 100%;
+	background-color: #F6F6F6;
+	position: relative;
+}
+.message{
+	height: 100%;
+}
+.message ul{
+	padding: 0px;
+	list-style: none;
+	margin: 0px auto;
+	width: 90%;
+	overflow:hidden;
+}
+.message ul li{
+	position: relative;
+	width: 80%;
+	padding: 15px 0px;
+	clear: both;
+}
+.message ul li.msg-left{
+	float: left;
+}
+.message ul li.msg-left img{
+	position: absolute;
+	width: 40px;
+	bottom: 30px;
+}
+.message ul li.msg-left .msg-desc{
+	margin-left: 70px;
+	font-size: 14px;
+	background: #E8E8E8;
+	padding:5px 10px;
+	border-radius: 5px 5px 5px 0px;
+	position: relative;
+}
+.message ul li.msg-left .msg-desc:before{
+	position: absolute;
+	content: '';
+	border:10px solid transparent;
+	border-bottom-color: #E8E8E8;
+	bottom: 0px;
+	left: -10px;
+}
+.message ul li.msg-left small{
+	float: right;
+	color: #c1c1c1;
+}
+
+.message ul li.msg-right{
+	float: right;
+}
+.message ul li.msg-right img{
+	position: absolute;
+	width: 40px;
+	right: 0px;
+	bottom: 30px;
+}
+.message ul li.msg-right .msg-desc{
+	margin-right: 70px;
+	font-size: 14px;
+	background: #cce5ff;
+	color: #004085;
+	padding:5px 10px;
+	border-radius: 5px 5px 5px 0px;
+	position: relative;
+}
+.message ul li.msg-right .msg-desc:before{
+	position: absolute;
+	content: '';
+	border:10px solid transparent;
+	border-bottom-color: #cce5ff;
+	bottom: 0px;
+	right: -10px;
+}
+.message ul li.msg-right small{
+	float: right;
+	color: #c1c1c1;
+	margin-right: 70px;
+}
+.message ul li.msg-day{
+	border-top:1px solid #EBEBEB;
+	width: 100%;
+	padding: 0px;
+	margin: 15px 0px;
+}
+.message ul li.msg-day small{
+	position: absolute;
+	top: -10px;
+	background: #F6F6F6;
+	color: #c1c1c1;
+	padding: 3px 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.right-section-bottom{
+	background: #fff;
+	width: 100%;
+	padding: 15px;
+	position: absolute;
+	bottom: 0px;
+	border-top:1px solid #E6E6E6;
+	text-align: center;
+}
+.right-section-bottom input{
+	border:0px;
+	padding:8px 5px;
+	width:calc(100% - 150px);
+}
+.right-section-bottom .btn-send{
+	border:0px;
+	padding: 8px 10px;
+	float: right;
+	margin-right: 30px;
+	color: #009EF7;
+	font-size: 18px;
+	background: #fff;
+	cursor: pointer;
+}
+.upload-btn{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+}
+.upload-btn .btn{
+  	border:0px;
+	padding: 8px 10px;
+	color: #009EF7;
+	font-size: 18px;
+	background: #fff;
+	cursor: pointer;
+}
+.upload-btn input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}

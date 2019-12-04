@@ -1,0 +1,264 @@
+table {
+	padding : 0% 3% 3% 3%;
+	font-size : 0.95vw;
+	width: 95%;
+	border-collapse: collapse;
+	margin : 0% 3% 3% 3%;
+}
+th, td {
+	width : 20%;
+	height : 50px;
+	text-align : left;
+	padding-left : 15px;
+}
+th {
+	color : #A3A6B4;
+	background-color:#F5F6FA;
+}
+td {
+	border-bottom: 1px solid #ddd;
+}
+ tr:hover {
+ 	background-color: #f5f5f5;
+ }
+
+ .edit {
+ 	color : #3B86FF;
+ 	margin-left : 8%;
+ 	text-decoration: underline;
+
+ }
+
+.delete {
+ 	color : #FF3B3B;
+ 	text-decoration: underline;
+ }
+
+#contenuAssistance
+{
+
+	position : absolute;
+	margin-left:16%;
+	margin-top : 3%;
+	width:84%;
+	height: 93.9%;
+	background-color:#F0F0F7;
+}
+
+#contenuAssistance h2
+{
+	margin-left: 6%;
+	margin-top: 5%;
+	margin-bottom: 1.5%;
+	color: #43425D;
+	opacity: 1;
+	font-size: 1.4vw;
+	
+}
+
+
+#contenuAssistance #mail 
+{
+	background-color: #FFFFFF;
+	 float: left;	
+	 width: 80%;
+	 display: block;
+	 position: relative;
+	 margin-left:6%;
+}	
+
+#contenuAssistance #mail h3
+{
+	margin-left: 3.5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	color:#4D4F5C;
+}
+
+#contenuAssistance #mail label
+{
+	color: #43425D;
+	margin-left: 3.5%;	
+	font-weight: bold;
+	display : inline-block;
+	width:7.5%;
+	font-size: 1.1vw;
+}
+
+#contenuAssistance #mail input
+{
+	display:inline-block;
+	border: 1px solid #E8E9EC;
+	border-radius: 4px;
+	opacity: 1;	
+	margin-left: 10%;
+	width: 70%;
+	height: 40px;
+	padding-left: 2%;
+	margin-bottom: 1%;
+}
+
+.dessous
+{
+	color : #808495;
+	margin-left: 21%;
+	margin-bottom: 6%;
+	font-size: 0.9vw;
+}
+
+
+#contenuAssistance #mail textarea
+{
+	display:inline-block;
+	vertical-align: middle;
+	border: 1px solid #CECFD0;
+	border-radius: 5px;
+	margin-left: 10%;
+	width : 72%;
+	height: 225px;
+	resize:none;
+	padding-left: 2%;
+	padding-top: 2%;
+}
+
+#contenuAssistance #mail span input
+{
+	margin-top:5%;
+	width : 30%;
+	height: 40px;
+	display: block;
+	background-color: #3B86FF;
+	margin-left: auto;
+	margin-right: auto;
+	color : #E8E8D4;
+}
+
+#contenuAssistance #contact 
+{
+	background-color: #FFFFFF;
+ display: block;
+ position: relative;
+ width: 40%;
+ margin-left: 57%;
+ padding-bottom: 4.2%;
+}
+
+#contenuAssistance #contact h3
+{
+	padding-left: 3.5%;
+	padding-top: 3.5%;
+	color:#4D4F5C;
+}
+
+#contenuAssistance #contact ul li
+{
+	list-style: none;
+	padding-left: 3%;
+	padding-top: 8.1%;
+
+}
+
+#contenuAssistance #contact ul li i	
+{
+	vertical-align: middle;
+	padding-right: 5%;
+}
+
+#contenuAssistance #contact ul a
+{
+	text-decoration: none;
+	color : black;
+}
+
+#contenuAssistance #contact ul a
+{
+	background-color: black;
+}
+
+#plus-button
+{
+	position : fixed;
+	right : 10%;
+	bottom : 5%;
+}
+
+ {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .save {
+  margin-top : 20px;
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+} 
+
+.form-popup h4 {
+	color: grey;
+	margin-left: 15px;
+	margin-bottom: 20px;
+
+}

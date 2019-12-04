@@ -1,0 +1,69 @@
+body{
+	background-color: #F0F0F7		;
+}
+h2
+{
+	margin-left: 19%;
+	margin-top : 6%;
+}
+.faq
+{
+	margin-top: 2%;
+	margin-left: 19%;
+	width: 77.5%;
+	height: 100%;	
+	background-color: #FFFF;
+}
+
+.faq .question 
+{
+	padding : 1%;
+	position: relative; 
+	list-style: none;
+	padding-top: 1%;
+	padding-bottom: 3%;
+}
+.faq .question i
+{
+	padding-left: 2%;
+}
+
+.faq .question a
+{
+	color: #3C3B53;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 1000;
+	font-size: 1.2em;
+}
+
+.faq .question:hover
+{
+	background-color: #43425D;
+}
+
+.faq .question:hover a
+{
+	color : #E8E8EB;
+	transition: 0s;
+}
+
+
+.faq .question:hover .reponse
+{
+	visibility: visible;
+	height: auto;
+	transform: scaleY(1);
+}
+
+.faq .reponse
+{
+	display:block;
+	position: relative;
+	visibility: hidden;
+	height:0;
+	transform : scaleY(0); /* transform permet de modifier la taille d'un élément html*/
+	transition: transform 0.3s ease; /*type de transition voulue*/
+	color:#E8E8EB;
+}
+
