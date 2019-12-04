@@ -44,7 +44,7 @@
 	<div id="contact">
 		<h3>Communauté</h3>
 		<ul>
-			<a href="faq"><li><i class="fas fa-question fa-fw fa-2x" style="color: #43425D"></i>Foire Aux Questions</li></a>
+			<a href="faq" ><li id="faq"><i class="fas fa-question fa-fw fa-2x" style="color: #E8E8EB"></i>Foire Aux Questions</li></a>
 			<li><i class="fas fa-map-marker-alt fa-fw fa-2x" style="color: #D2323F"></i> 10, rue de Vanves à Issy-les-Moulinaux</li>
 				<li><i class="fas fa-phone-square-alt fa-fw fa-2x" style="color: #72B239"></i> 0100000000</li>
 				<li><i class="fas fa-at fa-fw fa-2x" style="color: #156080"></i> Audasanté@gmail.com</li>

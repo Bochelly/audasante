@@ -21,6 +21,7 @@ require('../config.php')
 
 <body>
 	<header><h1>AUDASANTÉ</h1></header>
+	<h2> FAQ </h2>
 
 	<?php
 		require('menu_lateral_admin.php');
