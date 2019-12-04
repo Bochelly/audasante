@@ -21,8 +21,9 @@
 	<header><h1>AUDASANTÉ</h1></header>
 
 	<?php
+    $page_en_cours = 'accueil';
 		require('menu_lateral_admin.php');
-		require('top_bar.php')
+		require('top_bar.php');
 	?>
 		        
 		        <h2> Profil Administtrateur </h2>
