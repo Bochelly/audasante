@@ -11,18 +11,23 @@
 <?php
 	require('config.php'); // On réclame le fichier config
 
-	$requete_1 = $bdd->query("SELECT first_name ,last_name ,n_secu FROM user WHERE medic=FALSE")->fetch();
+	$requete_1 = $bdd->query("SELECT * FROM user WHERE medic=FALSE")->fetch();
 
 	if($requete_1==FALSE)
 	{
 		echo "La table est vide!";
 		exit();
 	}
+	else 
+	{
 	print_r($requete_1);
 	
 	echo "<br>",$requete_1['first_name'];
 	echo "<br>",$requete_1['last_name'];
 	echo "<br>",$requete_1['n_secu'];
+	echo "<br>",$requete_1['birth_date'];
+
+}
 ?>
 </body>
 </html>
