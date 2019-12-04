@@ -1,4 +1,6 @@
-<?php $page_en_cours = 'assistance'; ?>
+<?php $page_en_cours = 'assistance'; 
+session_start(); // On démarre la session AVANT toute chose
+?>
 
 <!DOCTYPE html>
 

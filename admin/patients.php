@@ -1,9 +1,7 @@
-<?php $page_en_cours = 'assistance';
-require('../config.php')
+<?php $page_en_cours = 'patients';
+require('../config.php');
 session_start(); // On démarre la session AVANT toute chose
-
  ?>
-
 
 <!DOCTYPE html>
 
@@ -14,7 +12,7 @@ session_start(); // On démarre la session AVANT toute chose
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="../CSS/style.css" />
-	<link rel="stylesheet" href="../CSS/faq.css"/>
+	<link rel="stylesheet" href="../CSS/patients-style.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> <!--Permet de telecharger la police Source sans pro -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"> <!-- Permet d'utiliser les émoticions de fontawesome -->
 	<title>Audasanté</title>
@@ -23,33 +21,32 @@ session_start(); // On démarre la session AVANT toute chose
 
 <body>
 	<header><h1>AUDASANTÉ</h1></header>
-	<h2> FAQ </h2>
 
 	<?php
 		require('menu_lateral_admin.php');
-		require('top_bar.php')
-	?>
+		require('top_bar.php');
+		$patients = $bdd->query('SELECT first_name, last_name, birth_date FROM user WHERE n_secu_medic='.$_SESSION["n_secu"].'');
+	?>	
 
 
-
-	<div class='faq'> 
+	<div id="main_section"> 
 		<ul>
 			<?php 
-				$reponse = $bdd->query('SELECT * FROM faq');
-				while ($data = $reponse->fetch()) { 
-					?>
-					<li class="question">
-						<a href='#'><?php echo $data['subject']; ?><i class="fas fa-angle-down"></i></a>
-						<ul>
-							<li class="reponse"><?php echo $data['answer']; ?></li>
+				while ($data = $patients->fetch()) { 
+			?>
+					<a href="#"><li  class="patients">
+						<ul class="info">
+							<li><?php echo $data['first_name']; ?></li>
+							<li><?php echo $data['last_name']; ?></li>
+							<li><?php echo $data['birth_date']; ?></li>
 						</ul>
-					</li>
-					
-					
-					<?php } $reponse->closeCursor(); ?>
+					</li></a>
+			<?php } 
+				$patients->closeCursor(); 
+			?>
 		</ul>
 	</div>
+
 	<script src="../js/script.js"></script>
 </body>
-
 </html>
