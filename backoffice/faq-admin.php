@@ -42,7 +42,7 @@
 											?>
 											<tr>
 												<td><?php echo $data['subject']; ?></td>
-												<td><?php echo $data['answer']; ?></td>
+												<td class="answer_text"><?php echo $data['answer']; ?></td>
 												<td></td>
 												<td><?php echo $data['date']; ?></td>
 												<td><span class="delete"> Delete</span> <span class="edit">Edit</span></td>
