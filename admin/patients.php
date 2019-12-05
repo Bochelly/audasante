@@ -25,7 +25,7 @@ session_start(); // On démarre la session AVANT toute chose
 	<?php
 		require('menu_lateral_admin.php');
 		require('top_bar.php');
-		$patients = $bdd->query('SELECT first_name, last_name, birth_date FROM user WHERE n_secu_medic='.$_SESSION["n_secu"].'');
+		$patients = $bdd->query('SELECT first_name, last_name, birth_date, e_mail FROM user WHERE n_secu_medic='.$_SESSION["n_secu"].'');
 	?>	
 
 
@@ -38,7 +38,14 @@ session_start(); // On démarre la session AVANT toute chose
 						<ul class="info">
 							<li><?php echo $data['first_name']; ?></li>
 							<li><?php echo $data['last_name']; ?></li>
-							<li><?php echo $data['birth_date']; ?></li>
+							<li>
+								<?php $date = date_parse($data['birth_date']);
+									  $jour = $date['day'];
+									  $mois = $date['month'];
+									  $annee = $date['year'];
+									  echo $jour."/".$mois."/".$annee ?>	  	
+							</li>
+							<li><?php echo $data['e_mail']; ?></li>
 						</ul>
 					</li></a>
 			<?php } 
