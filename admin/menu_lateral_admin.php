@@ -10,3 +10,5 @@
 		    <a href="parametre"><li <?php if ($page_en_cours == 'parametre') {echo 'class="en_cours"';} ?>><i class="fas fa-cogs fa-lg fa-fw"> </i><span>Parametres</span></li></a>
 		</ul>
 </nav>
+
+<div class='burger'><a href='#'><i class="fas fa-grip-lines fa-lg fa-4x"></i></a></div>
