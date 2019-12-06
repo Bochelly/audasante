@@ -1,5 +1,9 @@
 * {margin:0; padding:0;font-family: 'Source Sans Pro';} /* Permet de coller la liste sur la gauche de l'écran*/
 
+#croix
+{
+	visibility: hidden;
+}
 .burger 
 {
 	visibility: hidden;
@@ -196,14 +200,6 @@ body header h1
 	h1{
 		visibility : hidden;
 	}
-
-	nav{
-		visibility : hidden;
-	}
-
-	#top-bar{
-		
-	}
 	#top-messagerie	
 	{
 		visibility: hidden;
@@ -227,23 +223,51 @@ body header h1
 	font-size: 1em;
 	color: #747474;	
 	}
-	
+
+#croix{
+	position: absolute;
+	z-index: 3;
+	top:2%;
+	left:85%;
+}
+#croix i{
+	color: black;
+}
+
+#menu {
+	position: fixed;
+	top: 0;
+    height: 100%;
+	width: 70%;
+	z-index: 2;
+	padding-top: 10%;
+}
+#top-bar{
+	position:fixed;
+	z-index: 1;
+}
+
+#menu:not(:target) {
+  transform: translate3d(-700px, 0, 0); /* cache le menu*/
+  transition: left 1s;
+}
+
+#menu:target {
+  transform: translate3d(0, 0, 0); /* affiche le menu quand on click sur le burger */
+  transition: left 1s;
+}
+
+#menu:target #croix {
+  visibility: visible;
+}
 
 
-
-
-
-
-	.burger
-	{
-		visibility: visible;
-		background-color: #3C3B53;
-		width : 20%;
-		height : 20%;
-	}
 	.burger a
 	{
+		padding:1.5%;
+		visibility: visible;
 		color : black;
-		background-color: #3C3B53;
 	}
+
+
 }
