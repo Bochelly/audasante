@@ -2,11 +2,14 @@
 
 #croix
 {
+	display:none;
 	visibility: hidden;
+	list-style: none;
 }
 .burger 
 {
 	visibility: hidden;
+	display: none;
 }
 body nav
 {
@@ -87,6 +90,23 @@ body header h1
 	color : #FFFFFF;
 	background-color: #3C3B53;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #top-bar li{ /*Permet d'afficher tous les élements côte à côte padding-bottom: 10px;*/
@@ -195,6 +215,23 @@ body header h1
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media all and (max-width : 680px){
 
 	h1{
@@ -224,49 +261,67 @@ body header h1
 	color: #747474;	
 	}
 
-#croix{
+	#croix{
 	position: absolute;
-	z-index: 3;
+	z-index: 9;
 	top:2%;
 	left:85%;
 }
-#croix i{
+	#croix i{
 	color: black;
 }
 
-#menu {
+	#menu {
 	position: fixed;
 	top: 0;
     height: 100%;
 	width: 70%;
-	z-index: 2;
+	z-index: 8;
 	padding-top: 10%;
 }
-#top-bar{
+	#top-bar{
 	position:fixed;
-	z-index: 1;
+	z-index: 7;
 }
 
-#menu:not(:target) {
+	#menu:not(:target) {
   transform: translate3d(-700px, 0, 0); /* cache le menu*/
   transition: left 1s;
 }
 
-#menu:target {
+	#menu:target {
   transform: translate3d(0, 0, 0); /* affiche le menu quand on click sur le burger */
   transition: left 1s;
 }
 
-#menu:target #croix {
+	#menu:target #croix {
   visibility: visible;
+  display : block;
 }
 
+	.burger{
+		display:block;
+		position: fixed;
+		top:0%;
+		left:0%;
+		width:20%;
+		height: 55px;
+
+	}
 
 	.burger a
 	{
-		padding:1.5%;
+		position: absolute;
+		top:0%;
+		left:0%;
+		width: 100%;
+		height: 90%;
+		z-index: 6;
+		padding-left: 10%;
+		padding-top: 3%;
 		visibility: visible;
 		color : black;
+		background-color: #3C3B53;
 	}
 
 

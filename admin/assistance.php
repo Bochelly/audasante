@@ -27,7 +27,10 @@ session_start(); // On démarre la session AVANT toute chose
 	?>	
 	<div id="contenuAssistance">	
 	<h2>Besoin d'aide ?</h2>
+
+	<a class="bouton_mail" href="#mail"><div> Envoyez-nous un mail ! </div></a>
 	<div id="mail"> 
+			<li id='close'><a href=''><i class="far fa-times-circle fa-lg fa-fw"></i></a></li>
 			<h3>Contactez nous !</h3>
 			<br/><br/>
 			<form method="post" action="traitement_mail_contact.php">
