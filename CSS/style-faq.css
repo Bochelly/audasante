@@ -89,7 +89,8 @@ h2
 	h2
 {
 	margin-left: 10%;
-	margin-top : 13%;
+	margin-top : 20%;
+	margin-bottom: 5%;
 }
 
 	.faq
@@ -106,6 +107,11 @@ h2
 		
 	}
 
+	.faq .question a
+{
+	font-size: 1.1em;
+}
+
 .faq .question:hover .reponse
 {
 	visibility: visible;
@@ -115,6 +121,7 @@ h2
 
 .faq .reponse
 {
+	font-size: 1em;
 	display:block;
 	position: relative;
 	visibility: visible;
