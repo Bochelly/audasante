@@ -125,7 +125,7 @@ body header h1
     	bottom: 95%;
     	top : 0%;
     	width : 84%; /*largeur */
-    	height: 55px;
+    	height: 7.2%;
 	box-shadow: 0px 0px 4px black;
 	z-index: 98;
 }
@@ -216,6 +216,39 @@ body header h1
 
 
 
+
+
+
+#menu_profil{
+	position: fixed;
+	color:#E8E8EB;
+	top: 7.2%;
+	right: 0%;
+	}
+#menu_profil ul{
+	list-style:none;
+}
+
+#menu_profil a{
+	display: block;
+	width:100%;
+	text-decoration: none;
+	color: #E8E8EB;
+	padding-bottom: 10%;
+	background-color: #3C3B53;
+}
+
+
+
+
+#top-photo:not(:hover) #menu_profil {
+  display : none;
+}
+
+	#top-photo:hover #menu_profil {
+	display:block;
+
+}
 
 
 
@@ -323,6 +356,46 @@ body header h1
 		color : black;
 		background-color: #3C3B53;
 	}
+
+
+	#menu_profil{
+	position: fixed;
+	color:#E8E8EB;
+	top: 7.2%;
+	right: 0%;
+	}
+#menu_profil ul{
+	list-style:none;
+}
+
+#menu_profil a{
+	display: block;
+	width:100%;
+	text-decoration: none;
+	color: #E8E8EB;
+	padding-bottom: 10%;
+	background-color: #3C3B53;
+}
+
+
+
+
+#menu_profil:not(:target) {
+  transform: translate3d(-700px, 0, 0); /* cache le menu*/
+  transition: left 5s;
+  visibility: hidden;
+}
+
+	#menu_profil:target {
+	transform: translate3d(0, 0, 0); /* affiche le menu quand on click sur le burger */
+  transition: left 5s;
+  visibility: visible;
+
+}
+
+#top-photo:not(:hover) #menu_profil {
+  display : block;
+}
 
 
 }

@@ -8,7 +8,14 @@
 				</li>
 			</div>
 		</form>
-		<li id="top-photo"><a href="#"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a> </li>
+		<li id="top-photo"><a href="#menu_profil"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a>
+			 <div id="menu_profil">
+					<ul>
+						<a class='noTransition' href="#"><li> Profil  </li></a>
+						<a class='noTransition' href="#"><li> Déconnexion  </li></a>
+					</ul>
+			</div>
+		</li>
 		<li id="top-assist"> <a href="assistance"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
 		<li id="top-messagerie"><a href="messagerie"><i class="fas fa-envelope fa-lg fa-fw" style="color:#A5A4BF;" title="messagerie"> </i></a> </li>
 
