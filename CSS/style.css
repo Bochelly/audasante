@@ -281,7 +281,6 @@ body header h1
 }
 	#top-bar{
 	position:fixed;
-	z-index: 7;
 }
 
 	#menu:not(:target) {
@@ -301,6 +300,7 @@ body header h1
 
 	.burger{
 		display:block;
+		z-index: 98;
 		position: fixed;
 		top:0%;
 		left:0%;

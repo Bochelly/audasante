@@ -1,4 +1,4 @@
-body{
+	body{
 	background-color: #F0F0F7		;
 }
 h2
@@ -67,3 +67,61 @@ h2
 	color:#E8E8EB;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width : 680px){
+	h2
+{
+	margin-left: 10%;
+	margin-top : 13%;
+}
+
+	.faq
+{
+	margin-top: 2%;
+	margin-left:7%;
+	width: 83.5%;
+	height: 100%;	
+	background-color: #FFF;
+	border: solid 2px;
+}
+	.faq .question {
+		background-color: #a5a4bf;
+		
+	}
+
+.faq .question:hover .reponse
+{
+	visibility: visible;
+	height: auto;
+	transform: none;
+}
+
+.faq .reponse
+{
+	display:block;
+	position: relative;
+	visibility: visible;
+	height:auto;
+	transform : none; /* transform permet de modifier la taille d'un élément html*/
+	transition: none; /*type de transition voulue*/
+	color:#E8E8EB;
+}
+
+}
