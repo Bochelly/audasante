@@ -29,37 +29,7 @@ session_start(); // On démarre la session AVANT toute chose
 	?>	
 
 
-	<div id="main_section"> 
-		<h2> Patients </h2>
-		<ul>
-			<?php 
-				while ($data = $patients->fetch()) { 
-			?>
-					<a href="#"><li  class="patients">
-						<ul class="info">
-							<li><?php echo $data['first_name']; ?></li>
-							<li><?php echo $data['last_name']; ?></li>
-							<li>
-								<?php $date = date_parse($data['birth_date']);
-									  $jour = $date['day'];
-									  $mois = $date['month'];
-									  $annee = $date['year'];
-									  echo $jour."/".$mois."/".$annee ?>	  	
-							</li>
-							<li><?php echo $data['e_mail']; ?></li>
-						</ul>
-						<hr color='#F1F1F3'>
-						<div class='social_media'>
-							<i class="fab fa-instagram fa-lg fa-fw"></i> 
-							<i class="fab fa-twitter fa-lg fa-fw"></i> 
-							<i class="fab fa-facebook-f fa-lg fa-fw"></i>
-						</div>
-					</li></a>
-			<?php } 
-				$patients->closeCursor(); 
-			?>
-		</ul>
-	</div>
+
 
 	<script src="../js/script.js"></script>
 </body>

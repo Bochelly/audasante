@@ -11,8 +11,8 @@
 		<li id="top-photo"><a href="#menu_profil"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a>
 			 <div id="menu_profil">
 					<ul>
-						<a class='noTransition' href="#"><li> Profil  </li></a>
-						<a class='noTransition' href="#"><li> Déconnexion  </li></a>
+						<a class='noTransition' href="profil.php"><li> Profil  </li></a>
+						<a class='noTransition' href="disconnect.php"><li> Déconnexion  </li></a>
 					</ul>
 			</div>
 		</li>
