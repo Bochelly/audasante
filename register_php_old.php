@@ -39,26 +39,20 @@
 
 		
 		// On vérifie si ce numéro de sécu existe déja
-		$requete_1 = $bdd->query("SELECT * FROM user WHERE n_secu='".$n_secu."'");
-	if($requete_1==FALSE)
-	{
-		$error_type = "notexist";
-		header('Location: index.php?error_type='.$error_type.'');
-		exit();
-	}
-	$requete_1=$requete_1->fetch();
-    if (!is_null($requete_1['first_name'])) {
-      $error_type = "exist";
-      header('Location: index.php?error_type='.$error_type.'');
-      exit();
-    }
-	else {
+		$requete_1 = $bdd->query("SELECT * FROM user WHERE n_secu='".$n_secu."'")->fetch();
+		if($requete_1!=FALSE)
+		{
+			$error_type = "unknown";
+			header('Location: index.php?error_type='.$error_type.'');
+			exit();
+		}
+		else {
 
 		//on hache le mot de passe
 		$pswrd_hash = password_hash($pswrd,PASSWORD_BCRYPT);
 
-		$bdd->query("UPDATE `user` SET (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
-		header('Location: index.php');
+		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
+			header('Location: index.php');
 		exit();
 		}
     }
