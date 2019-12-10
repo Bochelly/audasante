@@ -1,10 +1,22 @@
+.bouton_mail{
+	display:none;
+}
+
+#close{
+	display:none;
+}
+
+#close i{
+	color:#3C3B53;
+}
+
 #contenuAssistance
 {
 	position : absolute;
-	margin-left:16%;
-	margin-top : 3%;
+	left:16%;
+	top : 5%;
 	width:84%;
-	height: 93.9%;
+	height: 100%;
 	background-color:#F0F0F7;
 }
 
@@ -139,3 +151,140 @@
 	color:#E8E8EB;
 	background-color: #3C3B53;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width : 680px){
+
+	#close{
+		display:block;
+		position: relative;
+		left:80%;
+		top:4%;
+	}
+
+	.bouton_mail{
+		display:block;
+		text-decoration: none;
+		color : #E8E8EB;
+		background-color: #3C3B53;
+		width: 50%;
+		margin-left: 25%;
+		margin-right: 25%;
+		text-align: center;
+		vertical-align: middle;	
+		margin-bottom: 5%;  
+		margin-top: 3.5%;
+		padding : 1.5%;
+	}
+
+	#contenuAssistance #mail 
+{	
+	position: absolute;
+	 width: 100%;
+	 margin-left: 0%;
+	 margin-top: 0%;
+	 top:1%	;
+	 left:0%;
+	 height: 100%;
+	float:none; 
+	z-index: 5;
+	display : block;
+	background-color: #FFFFFF;	
+}	
+
+	#contenuAssistance #mail label
+{
+	color: #43425D;
+	margin-left: 3.5%;	
+	font-weight: bold;
+	display : inline-block;
+	width:7.5%;
+	font-size: 3vw;
+}
+
+	#contenuAssistance #mail input
+{
+	border: 2px solid #E8E9EC;
+	border-radius: 6px;	
+	margin-left: 5%;
+	width: 75%;	
+}
+
+	.dessous
+{
+	color : #808495;
+	margin-left: 21%;
+	margin-bottom: 6%;
+	font-size: 0.9em;
+}
+
+	#contenuAssistance #mail textarea
+{
+
+	border: 2px solid #CECFD0;
+	border-radius: 10px;
+	margin-left: 5%;
+	width : 75%;
+
+}
+
+	#mail:not(:target) {
+  	transform: translate3d(-700px, 0, 0); /* cache le menu*/
+ 	transition: left 1s;
+}
+
+	#mail:target {	
+ 	transform: translate3d(0, 0, 0); /* affiche le menu quand on click sur le burger */
+ 	  transition: left 1s;
+
+}
+
+
+	#contenuAssistance
+{
+	position : fixed;
+	left:0%;
+	top : 5%;
+	width:100%;
+	height: 100%;
+	background-color:#F0F0F7;
+}
+
+
+	#contenuAssistance h2
+{
+	margin-left: 3%;
+	margin-top: 5%;
+	margin-bottom: 1.5%;
+	font-size: 1.2em;
+	color: #43425D;
+}
+	
+	#contenuAssistance #contact 
+{
+	background-color: #FFFFFF;
+ display: block;
+ position: relative;
+ margin-left: 3%;
+ width: 94%;
+}
+
+
+	}
