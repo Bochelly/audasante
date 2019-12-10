@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 04 déc. 2019 à 12:35
+-- Généré le :  mar. 10 déc. 2019 à 18:27
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -81,35 +81,11 @@ INSERT INTO `faq` (`id`, `subject`, `answer`, `frequency`) VALUES
 
 DROP TABLE IF EXISTS `hospital`;
 CREATE TABLE IF NOT EXISTS `hospital` (
-  `id_hospital` int(32) NOT NULL,
-  `nom` varchar(64) NOT NULL,
-  `adresse` varchar(64) NOT NULL,
+  `id_hospital` int(32) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `adress` varchar(64) NOT NULL,
   PRIMARY KEY (`id_hospital`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `u`
---
-
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `n_secu` int(255) NOT NULL,
-  `medic` binary(1) NOT NULL,
-  `super_user` binary(1) NOT NULL,
-  `first_name` varchar(63) NOT NULL,
-  `last_name` varchar(63) NOT NULL,
-  `birth_date` date NOT NULL,
-  `e_mail` varchar(63) NOT NULL,
-  `password` varchar(63) NOT NULL,
-  `last_connect` date NOT NULL,
-  `nb_try` int(16) NOT NULL DEFAULT '0',
-  `n_secu_medic` int(255) DEFAULT NULL,
-  `id_hospital` int(32) DEFAULT NULL,
-  PRIMARY KEY (`n_secu`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-COMMIT;
 
 -- --------------------------------------------------------
 

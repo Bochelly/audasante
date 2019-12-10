@@ -4,10 +4,10 @@
 
    // Si la session de l'admin ou de l'user est active, on redirige vers sa page
 	if(isset($_SESSION['id_admin'])){
-          header('location:admin/register_admin.php');
+          header('location:admin/index.php');
    }
    else if(isset($_SESSION['id_user'])){
-          header('location:user/register_admin.php');
+          header('location:user/index.php');
    }
 
 //on vérifie qu'on ai bien toute les informatoins d'inscriptions
@@ -23,17 +23,22 @@
 		$requete_1 = $bdd->query("SELECT * FROM user WHERE n_secu='".$n_secu."'")->fetch();
 		if($requete_1!=FALSE)
 		{
-			$error_type = "exist";
-			header('Location: register_admin.php?error_type='.$error_type.'');
+			$error_type = "medic_exist";
+			header('Location:add_medic.php?error_type='.$error_type.'');
 			exit();
 		}
-		else {
 
-		$id_hospital = $bdd->query("SELECT name FROM hospital JOIN user ON hospital.id_hospital = user.id_hospital WHERE hospital.name='".$hospital."'");
+		$id_hospital = $bdd->query("SELECT id_hospital FROM hospital WHERE name='".$hospital."'");
 
-		$bdd->query("INSERT INTO `user` (`n_secu`, `hospital`, `medic`) VALUES ('".$n_secu."', '".$id_hospital."', TRUE')");
-		header('Location: register_admin.php');
-		exit();
+		if ($id_hospital==FALSE){
+			$error_type = "hospital_not_exist";
+		}
+		else{
+			$id_hospital=$id_hospital->fetch()['id_hospital'];
+			$bdd->query("INSERT INTO `user` (`n_secu`, `id_hospital`, `medic`) VALUES ('".$n_secu."', '".$id_hospital."', 0x01)");
+			$error_type = "added";
+			header('Location:add_medic.php?error_type='.$error_type.'');
+			exit();
 		}
     }
 
@@ -42,8 +47,14 @@
   		if ($_GET["error_type"] == "nolog") {
 			$error_msg = "Des informations sont manquantes";
 		}
-		elseif ($_GET["error_type"] == "exist") {
+		elseif ($_GET["error_type"] == "meidc_exist") {
 			$error_msg = "Le numéro de sécurité sociale est déjà associé a un compte";
+		}
+		elseif ($_GET["error_type"] == "hospital_not_exist") {
+			$error_msg = "L'hopital n'est pas dans la base de donnée";
+		}
+		elseif ($_GET["error_type"] == "added") {
+			$error_msg = "Médecin ajouté !";
 		} else { $error_msg=""; }
 	} else { $error_msg=""; }
 ?>
@@ -52,7 +63,7 @@
 <html>
 <head>
 	<meta charset=utf-8 /> 
-	<title>S'enregistrer</title>
+	<title>Inscrire un médecin</title>
 	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
 	<!--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> Permet de telecharger la police Source sans pro -->
 	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
@@ -112,9 +123,9 @@
 	<div class='window'>
 		<div class='welcome' style="margin-bottom:1.5%;">AUDASANTÉ</div>
 
-		<div class='subtitle' style="margin-bottom:3%;">Ajouter un médecin</div>
+		<div class='subtitle' style="margin-bottom:3%;">Formulaire d'ajout d'un médecin</div>
 
-		<form method="POST" action="register_php.php">
+		<form method="POST" action=add_medic.php>
 		
 			<div class="input-line">
 				<input type='text' class='inputText' name='n_secu' required></input>
@@ -123,15 +134,14 @@
 
 			<div class="input-line">
 				<input type='text' class='inputText' name='hospital' required></input>
-				<span class="floating-label">Nom de l'hôpitale</span>
+				<span class="floating-label">Nom de l'hôpital</span>
 			</div>
 
-			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">Inscrire un médecin</button><br/>
+			<div class="error"><?php echo $error_msg; ?><br/></div>
 
-			<div class="error"><?php echo $error_msg ?><br/></div>
+			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">Inscrire un médecin</button><br/>
 		</form>
 
-		
 	</div>
 </body>
 </html>
