@@ -1,6 +1,11 @@
 <?php $page_en_cours = 'patients';
+session_start();
+if (! $_SESSION['connected'] ) { 
+	header('Location: ../index.php');
+	exit();
+};
 require('../config.php');
-session_start(); // On démarre la session AVANT toute chose
+
  ?>
 
 <!DOCTYPE html>

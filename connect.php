@@ -71,6 +71,7 @@
   			   session_start();
   			   
   				$_SESSION['n_secu'] = $requete_1['n_secu'];
+          $_SESSION['connected'] = true;
   				
   			   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
          if($requete_1['medic']==TRUE) {

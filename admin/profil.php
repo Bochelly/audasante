@@ -1,6 +1,13 @@
 <?php $page_en_cours = 'patients';
-require('../config.php');
 session_start(); // On démarre la session AVANT toute chose
+require('../config.php');
+
+if (! $_SESSION['connected'] ) { 
+	header('Location: ../index.php');
+	exit();
+};
+
+
  ?>
 
 <!DOCTYPE html>
@@ -25,9 +32,14 @@ session_start(); // On démarre la session AVANT toute chose
 	<?php
 		require('menu_lateral_admin.php');
 		require('top_bar.php');
-		$patients = $bdd->query('SELECT first_name, last_name, birth_date, e_mail FROM user WHERE n_secu_medic='.$_SESSION["n_secu"].'');
-	?>	
+		$profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'');
+	?>
 
+	<div id="profil">
+
+
+
+	</div>
 
 
 

@@ -1,4 +1,9 @@
 <?php $page_en_cours = 'calendrier'; 
+session_start(); 
+if (! $_SESSION['connected'] ) { 
+	header('Location: ../index.php');
+	exit();
+};
 
 ?>
 
