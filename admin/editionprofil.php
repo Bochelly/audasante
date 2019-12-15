@@ -12,7 +12,7 @@ $profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'')
 
 
 
-if (isset($_POST['newnom']) and !empty($_POST['newnom']) and $_POST['newnom'] != $data['last_name'])
+if (isset($_POST['newnom']) AND !empty($_POST['newnom']) AND $_POST['newnom'] != $data['last_name'])
 {
 	$newnom = htmlspecialchars($_POST["newnom"]);
 	$insertnom = $bdd -> prepare("UPDATE user SET last_name = ? WHERE n_secu = ?") ;
@@ -20,7 +20,7 @@ if (isset($_POST['newnom']) and !empty($_POST['newnom']) and $_POST['newnom'] !=
 	header('Location : profil');
 }
 
-if (isset($_POST['newprenom']) and !empty($_POST['newprenom']) and $_POST['newprenom'] != $data['first_name'])
+if (isset($_POST['newprenom']) AND !empty($_POST['newprenom']) AND $_POST['newprenom'] != $data['first_name'])
 {
 	$newprenom = htmlspecialchars($_POST["newprenom"]);
 	$insertnom = $bdd -> prepare("UPDATE user SET first_name = ? WHERE n_secu = ?") ;
@@ -28,7 +28,7 @@ if (isset($_POST['newprenom']) and !empty($_POST['newprenom']) and $_POST['newpr
 	header('Location : profil');
 }
 
-if (isset($_POST['newemail']) and !empty($_POST['newemail']) and $_POST['newemail'] != $data['e_mail'])
+if (isset($_POST['newemail']) AND !empty($_POST['newemail']) AND $_POST['newemail'] != $data['e_mail'])
 {
 	$newemail = htmlspecialchars($_POST["newemail"]);
 	$insertnom = $bdd -> prepare("UPDATE user SET e_mail = ? WHERE n_secu = ?") ;
@@ -36,7 +36,7 @@ if (isset($_POST['newemail']) and !empty($_POST['newemail']) and $_POST['newemai
 	header('Location : profil');
 }
 
-if (isset($_POST['newfacebook']) and !empty($_POST['newfacebook']) and $_POST['newfacebook'] != $data['facebook'])
+if (isset($_POST['newfacebook']) AND !empty($_POST['newfacebook']) AND $_POST['newfacebook'] != $data['facebook'])
 {
 	$newfacebook = htmlspecialchars($_POST["newfacebook"]);
 	$insertnom = $bdd -> prepare("UPDATE user SET facebook = ? WHERE n_secu = ?") ;
@@ -44,7 +44,7 @@ if (isset($_POST['newfacebook']) and !empty($_POST['newfacebook']) and $_POST['n
 	header('Location : profil');
 }
 
-if (isset($_POST['newinstagram']) and !empty($_POST['newinstagram']) and $_POST['newinstagram'] != $data['instagram'])
+if (isset($_POST['newinstagram']) AND !empty($_POST['newinstagram']) AND $_POST['newinstagram'] != $data['instagram'])
 {
 	$newinstagram = htmlspecialchars($_POST["newinstagram"]);
 	$insertnom = $bdd -> prepare("UPDATE user SET instagram = ? WHERE n_secu = ?") ;
@@ -52,7 +52,7 @@ if (isset($_POST['newinstagram']) and !empty($_POST['newinstagram']) and $_POST[
 	header('Location : profil');
 }
 
-if (isset($_POST['newtwitter']) and !empty($_POST['newtwitter']) and $_POST['newtwitter'] != $data['twitter'])
+if (isset($_POST['newtwitter']) AND !empty($_POST['newtwitter']) AND $_POST['newtwitter'] != $data['twitter'])
 {
 	$newtwitter = htmlspecialchars($_POST["newtwitter"]);
 	$insertnom = $bdd -> prepare("UPDATE user SET twitter = ? WHERE n_secu = ?") ;
@@ -60,7 +60,7 @@ if (isset($_POST['newtwitter']) and !empty($_POST['newtwitter']) and $_POST['new
 	header('Location : profil');
 }
 
-if (isset($_POST['newmdp1']) and !empty($_POST['newmdp1']) and isset($_POST['newmdp2']) and !empty($_POST['newmdp2']))
+if (isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2']))
 {	
 	if($_POST['newmdp1']==$_POST['newmdp2'])
 	{
@@ -75,8 +75,64 @@ if (isset($_POST['newmdp1']) and !empty($_POST['newmdp1']) and isset($_POST['new
 	}
 }
 
+if(isset($_FILES['photo']) AND !empty($_FILES['photo']['name']))
+{
+		$tailleMax = 2097152;
+		$extensionsValides = array('jpg', 'jpeg', 'png');
+		if($_FILES['photo']['size'] <= $tailleMax)
+		{
+			$extensionUpload = strtolower(substr(strrchr($_FILES['photo']['name'], '.'), 1));
+			if(in_array($extensionUpload,$extensionsValides))
+			{
+				$chemin = "../images/images_profil/".$_SESSION['n_secu'].'.'.$extensionUpload;
+				$resultat = move_uploaded_file($_FILES['photo']['tmp_name'], $chemin);
+				if($resultat)
+				{
+					$updatephoto = $bdd -> prepare('UPDATE user SET photo = :photo WHERE n_secu = :n_secu');
+					$updatephoto -> execute(array(
+						'photo' => $_SESSION['n_secu'].".".$extensionUpload,
+						'n_secu' => $_SESSION['n_secu']
+						));
+
+				}
+				else
+				{
+					$message_erreur="erreur lors de l'importation de l'image";
+				}
+			}
+			else
+			{
+				$message_erreur="formats d'image acceptés : jpeg, jpg, png.";
+			}
+		}
+		else
+		{
+			$message_erreur="La photo de profil ne doit pas dépasser 2Mo";
+		}
+}
+
+if(isset($_POST['newemail']) AND $_POST['newemail']== $data['e_mail'] and !isset($message_erreur))
+{
+	header('Location : profil');
+}
+
 $profil->closeCursor(); 
  ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 
@@ -103,7 +159,9 @@ $profil->closeCursor();
 	?>
 
 	<div id="profil">
-		<form method="POST" action=""> 
+		<form method="POST" action=""  enctype="multipart/form-data"> 
+			<label> Photo de profil </label>
+			<input type='file' name="photo"> </input> <br/>
 			<label> Nom </label>
 			<input type="text" name="newnom" placeholder="Nom" value="<?php echo $data['last_name'] ?>"> <br/>
 			<label> Prénom </label>

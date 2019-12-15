@@ -38,6 +38,17 @@ if (! $_SESSION['connected'] ) {
 
 	<div id="profil">
 		<h2> Profil </h2><br>
+
+			<?php 
+				if(!empty($data['photo']))
+				{
+			?>
+				<img src="../images/images_profil/<?php echo $data['photo']; ?>" width="150" height="150">
+			<?php		
+				}
+			?>
+
+		<br/>
 		<ul>
 			<li><h3>Nom :</h3> <?php echo $data['first_name']?> </li>
 			<li><h3>Prénom :</h3>  <?php echo $data['last_name']?></li>

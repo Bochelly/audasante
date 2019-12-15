@@ -64,6 +64,15 @@ body{
 	padding-bottom: 3%; 
 }
 
+img
+{
+	padding: 2%;
+	float: left;
+	position: absolute;
+	width: 34%;
+	height: 55%;
+}
+
 
 
 

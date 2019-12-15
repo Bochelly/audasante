@@ -30,7 +30,8 @@ require('../config.php');
 	<?php
 		require('menu_lateral_admin.php');
 		require('top_bar.php');
-		$patients = $bdd->query('SELECT first_name, last_name, birth_date, e_mail FROM user WHERE n_secu_medic='.$_SESSION["n_secu"].'');
+		$patients = $bdd->query('SELECT first_name, last_name, birth_date, e_mail,photo FROM user WHERE n_secu_medic='.$_SESSION["n_secu"].'');
+
 	?>	
 
 
@@ -41,6 +42,16 @@ require('../config.php');
 				while ($data = $patients->fetch()) { 
 			?>
 					<a href="#"><li  class="patients">
+
+						<?php 
+							if(!empty($data['photo']))
+							{
+						?>
+							<img src="../images/images_profil/<?php echo $data['photo']; ?>">
+						<?php		
+							}
+						?>
+
 						<ul class="info">
 							<li><?php echo $data['first_name']; ?></li>
 							<li><?php echo $data['last_name']; ?></li>
