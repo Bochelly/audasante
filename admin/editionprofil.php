@@ -111,10 +111,6 @@ if(isset($_FILES['photo']) AND !empty($_FILES['photo']['name']))
 		}
 }
 
-if(isset($_POST['newemail']) AND $_POST['newemail']== $data['e_mail'] and !isset($message_erreur))
-{
-	header('Location : profil');
-}
 
 $profil->closeCursor(); 
  ?>

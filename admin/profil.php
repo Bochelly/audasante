@@ -43,30 +43,30 @@ if (! $_SESSION['connected'] ) {
 				if(!empty($data['photo']))
 				{
 			?>
-				<img src="../images/images_profil/<?php echo $data['photo']; ?>" width="150" height="150">
+				<img class='photoProfil'src="../images/images_profil/<?php echo $data['photo']; ?>">
 			<?php		
 				}
 			?>
 
 		<br/>
 		<ul>
-			<li><h3>Nom :</h3> <?php echo $data['first_name']?> </li>
-			<li><h3>Prénom :</h3>  <?php echo $data['last_name']?></li>
+			<li>Nom : <?php echo $data['first_name']?> </li>
+			<li>Prénom : <?php echo $data['last_name']?></li>
 
-			<li><h3>Date de naissance :</h3>  <?php $date = date_parse($data['birth_date']);
+			<li>Date de naissance : <?php $date = date_parse($data['birth_date']);
 									  $jour = $date['day'];
 									  $mois = $date['month'];
 									  $annee = $date['year'];
 									  echo $jour."/".$mois."/".$annee ?>	</li>
 
-			<li><h3>N° de sécurité sociale :</h3>  <?php echo $data['n_secu']?></li>
-			<li><h3>E-mail :</h3>  <?php echo $data['e_mail'] ?></li>
+			<li>N° de sécurité sociale : <?php echo $data['n_secu']?></li>
+			<li>E-mail : <?php echo $data['e_mail'] ?></li>
 
 			<?php
 				$profil->closeCursor(); 
 			?>
 
-			<li><h3>Nom médecin :</h3>  <?php   
+			<li>Nom médecin : <?php   
 												$medecin = $bdd->query('SELECT first_name, last_name FROM user WHERE n_secu='.$data["n_secu_medic"].'');
 												
 												if($medecin == false){
@@ -80,17 +80,17 @@ if (! $_SESSION['connected'] ) {
 			</li>
 
 
-			<li><h3>Hôpital :</h3>  <?php echo $data['id_hospital']?></li>
-			<li><h3>Facebook :</h3>  <?php echo $data['facebook']?></li>
-			<li><h3>Instagram :</h3>  <?php echo $data['instagram']?></li>
-			<li><h3>Twitter :</h3>  <?php echo $data['twitter']?></li>
+			<li>Hôpital : <?php echo $data['id_hospital']?></li>
+			<li>Facebook : <?php echo $data['facebook']?></li>
+			<li>Instagram : <?php echo $data['instagram']?></li>
+			<li>Twitter : <?php echo $data['twitter']?></li>
 
 
 			<?php
 				$profil->closeCursor(); 
 			?>
 		</ul>
-		<div class="boutonedition"><a href="editionprofil"> Editer votre profil </a></div>
+		<a class="boutonedition" href="editionprofil"><p> Editer votre profil </p></a>
 	</div>
 
 

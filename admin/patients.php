@@ -47,7 +47,7 @@ require('../config.php');
 							if(!empty($data['photo']))
 							{
 						?>
-							<img src="../images/images_profil/<?php echo $data['photo']; ?>">
+							<img class='photo_patients' src="../images/images_profil/<?php echo $data['photo']; ?>">
 						<?php		
 							}
 						?>
