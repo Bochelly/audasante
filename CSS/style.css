@@ -1,6 +1,16 @@
 * {margin:0; padding:0;font-family: 'Source Sans Pro';} /* Permet de coller la liste sur la gauche de l'écran*/
 
-
+#croix
+{
+	display:none;
+	visibility: hidden;
+	list-style: none;
+}
+.burger 
+{
+	visibility: hidden;
+	display: none;
+}
 body nav
 {
     background-color: #43425D;
@@ -82,6 +92,23 @@ body header h1
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #top-bar li{ /*Permet d'afficher tous les élements côte à côte padding-bottom: 10px;*/
 	display: inline;
     
@@ -98,9 +125,9 @@ body header h1
     	bottom: 95%;
     	top : 0%;
     	width : 84%; /*largeur */
-    	height: 55px;
+    	height: 7.2%;
 	box-shadow: 0px 0px 4px black;
-	z-index: 99;
+	z-index: 98;
 }
 
 .autocomplete {
@@ -114,7 +141,7 @@ body header h1
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
-  z-index: 99;
+  z-index: 98;
   /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   left: 0;
@@ -188,3 +215,187 @@ body header h1
 }
 
 
+
+
+
+
+#menu_profil{
+	position: fixed;
+	color:#E8E8EB;
+	top: 7.2%;
+	right: 0%;
+	}
+#menu_profil ul{
+	list-style:none;
+}
+
+#menu_profil a{
+	display: block;
+	width:100%;
+	text-decoration: none;
+	color: #E8E8EB;
+	padding-bottom: 10%;
+	background-color: #3C3B53;
+}
+
+
+
+
+#top-photo:not(:hover) #menu_profil {
+  display : none;
+}
+
+	#top-photo:hover #menu_profil {
+	display:block;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width : 680px){
+
+	h1{
+		visibility : hidden;
+	}
+	#top-messagerie	
+	{
+		visibility: hidden;
+	}
+	#top-assist
+	{
+		visibility: hidden;
+	}
+	#top-notif
+	{
+		visibility: hidden;
+	}
+	#search-field{
+	margin-left: 0px;
+	position: relative;
+	text-align: left;
+	width: 70%;
+	text-decoration: none;
+	display: inline;
+    float: left;
+	font-size: 1em;
+	color: #747474;	
+	}
+
+	#croix{
+	position: absolute;
+	z-index: 9;
+	top:2%;
+	left:85%;
+}
+	#croix i{
+	color: black;
+}
+
+	#menu {
+	position: fixed;
+	top: 0;
+    height: 100%;
+	width: 70%;
+	z-index: 99;
+	padding-top: 10%;
+}
+	#top-bar{
+	position:fixed;
+}
+
+	#menu:not(:target) {
+  transform: translate3d(-700px, 0, 0); /* cache le menu*/
+  transition: left 1s;
+}
+
+	#menu:target {
+  transform: translate3d(0, 0, 0); /* affiche le menu quand on click sur le burger */
+  transition: left 1s;
+}
+
+	#menu:target #croix {
+  visibility: visible;
+  display : block;
+}
+
+	.burger{
+		display:block;
+		z-index: 97;
+		position: fixed;
+		top:0%;
+		left:0%;
+		width:20%;
+		height: 55px;
+
+	}
+
+	.burger a
+	{
+		position: absolute;
+		top:0%;
+		left:0%;
+		width: 100%;
+		height: 90%;
+		z-index: 6;
+		padding-left: 10%;
+		padding-top: 3%;
+		visibility: visible;
+		color : black;
+		background-color: #3C3B53;
+	}
+
+
+	#menu_profil{
+	position: fixed;
+	color:#E8E8EB;
+	top: 7.2%;
+	right: 0%;
+	}
+#menu_profil ul{
+	list-style:none;
+}
+
+#menu_profil a{
+	display: block;
+	width:100%;
+	text-decoration: none;
+	color: #E8E8EB;
+	padding-bottom: 10%;
+	background-color: #3C3B53;
+}
+
+
+
+
+#menu_profil:not(:target) {
+  transform: translate3d(-700px, 0, 0); /* cache le menu*/
+  transition: left 5s;
+  visibility: hidden;
+}
+
+	#menu_profil:target {
+	transform: translate3d(0, 0, 0); /* affiche le menu quand on click sur le burger */
+  transition: left 5s;
+  visibility: visible;
+
+}
+
+#top-photo:not(:hover) #menu_profil {
+  display : block;
+}
+
+
+}

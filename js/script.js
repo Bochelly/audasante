@@ -201,10 +201,44 @@ document.addEventListener("click", function (e) {
 });
 } 
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+
+function openForm(firstName,lastName,nSecu,email) {
+  console.log('calld open form', nSecu);
+  document.getElementById("edit-form").style.display = "block";
+
+  var nameTitle = document.getElementById("name-title");
+  nameTitle.innerHTML = firstName + ' ' + lastName ;
+
+  var surnameInput = document.getElementById("surname-input").value = firstName ;
+  var nameInput = document.getElementById("name-input").value = lastName ;
+  var nSecuInput = document.getElementById("no-input").value = nSecu ;
+  var emailInput = document.getElementById("email-input").value = email ;
+
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById("edit-form").style.display = "none";
+} 
+
+/*document.getElementByClass('delete').onSubmit(function(e){
+  e.preventDefault();
+  if (confirm("Voulez-vous vraiment continuer ?")){
+    //rediriger vers user_delete.php
+
+  } else {
+
+    document.getEleme
+  }
+
+}
+
+
+  )*/
+
+function confirmMessage(n_secu) {
+  if (confirm("Cette action est iréversible. Voulez-vous vraiment continuer ?")){
+    var nSecuInput = document.getElementById("user-to-delete").value = n_secu ;
+    document.getElementById("delete-form").submit();
+
+  }
 } 

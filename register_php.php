@@ -42,7 +42,7 @@
 		$requete_1 = $bdd->query("SELECT * FROM user WHERE n_secu='".$n_secu."'")->fetch();
 		if($requete_1!=FALSE)
 		{
-			$error_type = "exist";
+			$error_type = "unknown";
 			header('Location: index.php?error_type='.$error_type.'');
 			exit();
 		}

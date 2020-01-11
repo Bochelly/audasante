@@ -1,4 +1,6 @@
-<?php $page_en_cours = 'assistance'; ?>
+<?php $page_en_cours = 'assistance'; 
+session_start(); // On démarre la session AVANT toute chose
+?>
 
 <!DOCTYPE html>
 
@@ -25,7 +27,10 @@
 	?>	
 	<div id="contenuAssistance">	
 	<h2>Besoin d'aide ?</h2>
+
+	<a class="bouton_mail" href="#mail"><div> Envoyez-nous un mail ! </div></a>
 	<div id="mail"> 
+			<li id='close'><a href=''><i class="far fa-times-circle fa-lg fa-fw"></i></a></li>
 			<h3>Contactez nous !</h3>
 			<br/><br/>
 			<form method="post" action="traitement_mail_contact.php">
@@ -44,7 +49,7 @@
 	<div id="contact">
 		<h3>Communauté</h3>
 		<ul>
-			<a href="faq"><li><i class="fas fa-question fa-fw fa-2x" style="color: #43425D"></i>Foire Aux Questions</li></a>
+			<a href="faq" ><li id="faq"><i class="fas fa-question fa-fw fa-2x" style="color: #E8E8EB"></i>Foire Aux Questions</li></a>
 			<li><i class="fas fa-map-marker-alt fa-fw fa-2x" style="color: #D2323F"></i> 10, rue de Vanves à Issy-les-Moulinaux</li>
 				<li><i class="fas fa-phone-square-alt fa-fw fa-2x" style="color: #72B239"></i> 0100000000</li>
 				<li><i class="fas fa-at fa-fw fa-2x" style="color: #156080"></i> Audasanté@gmail.com</li>

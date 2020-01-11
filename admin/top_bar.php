@@ -8,10 +8,16 @@
 				</li>
 			</div>
 		</form>
-		<li id="top-photo"><a href="#"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a> </li>
-		<li id="top-assist"> <a href="Assistance.html"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
-		<li id="top-messagerie"><a href="Messages.html"><i class="fas fa-envelope fa-lg fa-fw" style="color:#A5A4BF;" title="messagerie"> </i></a> </li>
-		<li id="top-notif"><a href="#"><i class="far fa-bell fa-lg fa-fw" style="color:#A5A4BF;" title="afficher liste des notifs"> </i></a></li>
+		<li id="top-photo"><a href="#menu_profil"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a>
+			 <div id="menu_profil">
+					<ul>
+						<a class='noTransition' href="profil.php"><li> Profil  </li></a>
+						<a class='noTransition' href="disconnect.php"><li> Déconnexion  </li></a>
+					</ul>
+			</div>
+		</li>
+		<li id="top-assist"> <a href="assistance"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
+		<li id="top-messagerie"><a href="messagerie"><i class="fas fa-envelope fa-lg fa-fw" style="color:#A5A4BF;" title="messagerie"> </i></a> </li>
 
 	</ul>
 </div>
