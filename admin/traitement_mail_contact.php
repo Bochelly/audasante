@@ -1,5 +1,6 @@
 <?php
-
+	session_start();
+	
 	$email   =($_POST['email']);
 	$objet   =($_POST['objet']);
 	$message =($_POST['message']);
@@ -25,9 +26,15 @@ $header.='Content-Transfer-Encoding: 8bit';
 $envoie=mail("audasante.technologies@gmail.com", $objet, $message, $header);
 
 if($envoie){
-	echo "YES";
+	$SESSION['message_erreur_mail']='Votre message a bien été envoyé';
+	header('Location: assistance.php');
+	exit();
+
 }
 else{
-	echo "NEIN";
+	$SESSION['message_erreur_mail']='Il y a eu un problème lors de l\'envoi du mail, réessayer';
+	header('Location: assistance.php');
+	exit();
+
 }
 ?>
