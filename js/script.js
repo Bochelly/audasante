@@ -216,6 +216,29 @@ function openForm(firstName,lastName,nSecu,email) {
 
 }
 
+function openFormFAQ(id,subject,answer) {
+ //console.log('calld open form', subject);
+  document.getElementById("edit-form").style.display = "block";
+
+  var nameTitle = document.getElementById("subject");
+  nameTitle.innerHTML = subject ;
+
+  var id = document.getElementById("id").value = id ;
+  var nameInput = document.getElementById("subject-input").value = subject ;
+  var nSecuInput = document.getElementById("answer-input").value = answer ;
+
+}
+
+function openFormAddFAQ() {
+ //console.log('calld open form', subject);
+  document.getElementById("add-form").style.display = "block";
+
+  var id = document.getElementById("id").value = id ;
+  var nameInput = document.getElementById("subject-input").value = subject ;
+  var nSecuInput = document.getElementById("answer-input").value = answer ;
+
+}
+
 function closeForm() {
   document.getElementById("edit-form").style.display = "none";
 } 
@@ -238,6 +261,14 @@ function closeForm() {
 function confirmMessage(n_secu) {
   if (confirm("Cette action est iréversible. Voulez-vous vraiment continuer ?")){
     var nSecuInput = document.getElementById("user-to-delete").value = n_secu ;
+    document.getElementById("delete-form").submit();
+
+  }
+} 
+
+function confirmMessageFAQ(id) {
+  if (confirm("Cette action est iréversible. Voulez-vous vraiment continuer ?")){
+    var nSecuInput = document.getElementById("user-to-delete").value = id ;
     document.getElementById("delete-form").submit();
 
   }

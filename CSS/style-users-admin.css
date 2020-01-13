@@ -23,6 +23,7 @@ td {
  }
 
  .edit {
+ 	cursor: pointer;
  	color : #3B86FF;
  	margin-left : 8%;
  	text-decoration: underline;
@@ -30,6 +31,7 @@ td {
  }
 
 .delete {
+	cursor: pointer;
  	color : #FF3B3B;
  	text-decoration: underline;
  }

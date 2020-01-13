@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset=utf-8 /> 
-  <title>Connexion</title>
+  <title>User edit</title>
   <link rel="stylesheet" href="css/style-connect.css" media="screen"/>
   <link rel="icon" type="image/png" href="css/img/audalogo.png" />
 </head>
