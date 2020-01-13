@@ -40,6 +40,13 @@ session_start(); // On démarre la session AVANT toute chose
 					<label for="objet">Objet</label><input type="text" name="objet" required/><br/>
 					<p class="dessous">Indiquez la raison de votre demande</p>
 					<label for="message">Message</label><textarea name="message" rows=11 placeholder="Tapez votre message ici..." required></textarea><br/>
+					<?php 
+						if(isset($_SESSION['message_mail']))
+						{
+							echo "<p>".$_SESSION['message_mail']."</p>";
+						}
+						else { echo "<br/>";}
+					?>
 					<span><input type="submit" name="envoi" value="Envoyer	" /></span>
 
 				</p>
