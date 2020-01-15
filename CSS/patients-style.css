@@ -12,7 +12,7 @@ body{
 }
 
 #main_section h2{
-	margin-bottom: 5%;
+	margin-bottom: 4%;
 	font-weight: 400;
 	color: #43425D;
 	font-size: 1.5em;
@@ -23,6 +23,7 @@ body{
 	text-decoration : none;
 	color : #4D4F5C;
 	font-weight: 550;
+
 }
 
 #main_section a .patients
@@ -36,6 +37,8 @@ body{
 	margin-bottom: 4%;	
 	border : solid 1px;
 	overflow : hidden;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
 }
 
 #main_section a .patients .info
@@ -62,6 +65,17 @@ body{
 	padding-left : 10%;
 	padding-top: 3%;
 	padding-bottom: 3%; 
+}
+
+.photo_patients
+{
+	padding: 1.2%;
+	float: left;
+	top: 0%;
+	position: absolute;
+	width: 34%;
+	height: 62%;
+	border-radius: 50%;
 }
 
 
@@ -92,11 +106,10 @@ body{
 
 	#main_section a .patients
 {
-	background-color: #3C3B53;
+	background-color: #FFF;
 	width : 80%;
 	margin-bottom: 5%;	
 	border : solid 1px;
-	border-radius: 20px 20px 20px 20px;
 }
 
 	#main_section a .patients .info

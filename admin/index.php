@@ -1,5 +1,9 @@
 <?php
 session_start(); // On démarre la session AVANT toute chose
+if (! $_SESSION['connected'] ) { 
+    header('Location: ../index.php');
+    exit();
+};
 ?>
 <!DOCTYPE html>
 
