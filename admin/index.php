@@ -65,9 +65,9 @@ session_start(); // On démarre la session AVANT toute chose
 
 		        					<div class="prompteur"><h3> Prompteur patient<h3>
                       <?php
-                        $moment_du_test = 'rythme cardiaque';
+                        $moment_du_test = 'test de frequence';
 
-                        if ($moment_du_test = 'reacton auditive')
+                        if ($moment_du_test =='reaction auditive')
                           {
                             echo '<img src="../CSS/img/listener.png" alt="listener">';
                             
@@ -80,7 +80,7 @@ session_start(); // On démarre la session AVANT toute chose
                                     
                             
                                   
-                        elseif ($moment_du_test='rythme cardiaque') {
+                        elseif ($moment_du_test=='rythme cardiaque') {
                           echo '<img src="../CSS/img/rythmecardiaque.png" alt="rythmecardiaque">';
                       
                             for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
@@ -89,13 +89,40 @@ session_start(); // On démarre la session AVANT toute chose
                               }
                               echo 'Mesure de votre fréquence cardiaque en cours...';
                           }
-                                  ?>
-		        					</div>
-		        					<div class="decompte"> <h5>
-                      <?php
-                      $moment_du_test = 'pendant le test';
+                                  
 
-                      if ($moment_du_test = 'avant le test')
+                        elseif ($moment_du_test == 'temperature')
+                          {
+                            echo '<img src="../CSS/img/thermometer.png" alt="listener">';
+                            
+                            for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
+                              {
+                               echo '' . '<br />';
+                              }
+                              echo 'Mesure de votre température corporelle en cours...';
+                          }
+                        elseif ($moment_du_test == 'test de frequence')
+                          {
+                            echo '<img src="../CSS/img/audio.png" alt="listener">';
+                            
+                            for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
+                              {
+                               echo '' . '<br />';
+                              }
+                              echo 'Test de reconnaissance de note';
+                          }
+                          ?>
+		        					</div>
+
+
+		        					<div class="decompte"> <h5>
+
+
+                      <?php
+
+                      $detail_du_test = 'pendant le test';
+
+                      if ($detail_du_test == 'avant le test')
                       {
                         echo  ' Décompte'.'</br>'.'</br>';
                         $secondes_restantes=0;
@@ -105,7 +132,7 @@ session_start(); // On démarre la session AVANT toute chose
                                            
                       
                       }
-                      elseif ($moment_du_test='pendant le test')
+                      elseif ($detail_du_test=='pendant le test')
                       {
                         echo 'test en cours'.'</br>'.'veuillez patienter s\'il vous plaît';
                       }
@@ -116,7 +143,7 @@ session_start(); // On démarre la session AVANT toute chose
 		        				
 
 		        				<div class="etape">
-
+                    
                                 <div id="moncercle1">
                                     <h9> 1</h9>
                                 </br>
@@ -154,9 +181,5 @@ session_start(); // On démarre la session AVANT toute chose
 		        			</div>
 		        		</div>		
 		        	</div>
-
-
-
-
 
 <body>
