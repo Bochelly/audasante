@@ -25,7 +25,8 @@ session_start(); // On démarre la session AVANT toute chose
 	<?php
     $page_en_cours = 'accueil';
 		require('menu_lateral_admin.php');
-		require('top_bar.php');
+    require('top_bar.php');
+    $instance_en_cours = 'index';
 	?>
 		        
 		        <h2> Profil Administtrateur </h2>
@@ -63,39 +64,52 @@ session_start(); // On démarre la session AVANT toute chose
 		        				<div class=" test"> 
 
 		        					<div class="prompteur"><h3> Prompteur patient<h3>
-                                       <img src="../CSS/img/listener.png" alt="listener">
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    </br>
-                                    
-                                    
-                                
+                      <?php
+                        $moment_du_test = 'rythme cardiaque';
 
-                                   <h10> Appuyez sur l'interrupteur
-                                    lorsque vous entendez un son</h10>
+                        if ($moment_du_test = 'reacton auditive')
+                          {
+                            echo '<img src="../CSS/img/listener.png" alt="listener">';
+                            
+                            for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
+                              {
+                               echo '' . '<br />';
+                              }
+                              echo 'Appuyez sur l\'interrupteur quand vous entendez un signal sonore';
+                          }
+                                    
+                            
+                                  
+                        elseif ($moment_du_test='rythme cardiaque') {
+                          echo '<img src="../CSS/img/rythmecardiaque.png" alt="rythmecardiaque">';
+                      
+                            for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
+                              {
+                               echo '' . '<br />';
+                              }
+                              echo 'Mesure de votre fréquence cardiaque en cours...';
+                          }
+                                  ?>
 		        					</div>
 		        					<div class="decompte"> <h5>
-                                        Décompte</br></br>
-                                        X</br>
-                                       <h6>SECONDES RESTANTES<h6>
+                      <?php
+                      $moment_du_test = 'pendant le test';
 
-                                           <h7> Tenez vous prêt pour</br>
-                                            le départ du test; <h7>
+                      if ($moment_du_test = 'avant le test')
+                      {
+                        echo  ' Décompte'.'</br>'.'</br>';
+                        $secondes_restantes=0;
+                        echo             $secondes_restantes.'</br>'.'</br>'.'<h6>SECONDES RESTANTES</h6>'.'</br>';
+
+                         echo                '<h7> Tenez vous prêt pour </h7> '.'</br>'.'<h7> le départ du test</h7>';
                                            
-
-
+                      
+                      }
+                      elseif ($moment_du_test='pendant le test')
+                      {
+                        echo 'test en cours'.'</br>'.'veuillez patienter s\'il vous plaît';
+                      }
+                      ?>
 		        					</div>
 
 		        				</div>
