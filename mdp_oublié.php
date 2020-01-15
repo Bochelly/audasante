@@ -16,7 +16,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 			 	$recup_code = "";
 			 	for($i=0; $i < 10; $i++)
 			 	{
-			 		$recup_code.= mt_rand(0,9);
+			 		$recup_code.= mt_rand(1,9);
 			 	}
 			 	$insert_code = $bdd->prepare('UPDATE user SET code_password= ? WHERE e_mail = ?');
 			 	$insert_code -> execute(array($recup_code,$mail));
@@ -168,17 +168,6 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 				<span class="floating-label">E-mail</span>
 			</div>
 
-			<?php if(isset($error)) 
-			{
-				echo '<p>'.$error.'</p>';
-			}
-			else{
-				echo "<br/>";
-			}
-
-
-
-			 ?>
 
 			<button class="ghost-round bright"  type="submit" name="recup_submit" value="Valider" style="margin-top: 3%; margin-left:15%;">Recevoir un mail</button><br/>
 			<a class='suite' href="mdp_oublié_changement">Changer de mot de passe</a><br/>
@@ -187,6 +176,14 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 
 		
 	</div>
+	<?php if(isset($error)) 
+			{
+				echo '<p>'.$error.'</p>';
+			}
+			else{
+				echo "<br/>";
+			}
+			 ?>
 </body>
 </html>
 
