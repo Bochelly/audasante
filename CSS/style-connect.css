@@ -300,7 +300,6 @@ a:hover /*lorsque qu'on passe la souris sur le lien*/
   
 }
 
-
 @media (orientation:portrait) {
   #log-img {
     background:none;
@@ -374,6 +373,15 @@ a:hover /*lorsque qu'on passe la souris sur le lien*/
     font-size: 3vw;
   }
 
+  .suite
+  {
+    font-size: 4vw;
+
+  }
+
+  .retour{
+    font-size: 4vw;
+  }
 }
 
 

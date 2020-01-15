@@ -21,10 +21,23 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 			 	$insert_code = $bdd->prepare('UPDATE user SET code_password= ? WHERE e_mail = ?');
 			 	$insert_code -> execute(array($recup_code,$mail));
 			 	
+				$message = "<html>
+									<body>
+										<div>
+											Bonjour, vous avez demandé un code pour réinitialiser votre mot de passe Audasanté. <br/>
+											le code est le suivant : ".$recup_code."<br/>
+											Cliquez sur le lien 'Changez de mot de passe' et rentrez vos informations afin de réinitialiser votre mot de passe.
 
+										</div>
+									</body>
+								</html>";
+				$header="MIME-Version: 1.0\r\n";
+				$header.='From: Audasant.technologies@gmail.com'."\n";
+				$header.='Content-Type:text/html; charset="utf-8"'."\n";
+				$header.='Content-Transfer-Encoding: 8bit';
 
+				mail($mail,"Modification mot de passe",$message,$header);
 
-	
 			 }
 			 else
 			 {
@@ -115,20 +128,17 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 
 		}
 
-		a{
+		.retour {
 			position: absolute;
 			bottom: 15%;
-			left: 30%;
+			left: 32%;
 		}
 
-		@media (orientation:portrait) {
+		.suite {
+			position: absolute;
+			bottom: 20%;
+			left : 27%;
 
-			a
-			{
-				font-size: 4vw;
-				left: 25%;
-			}
-		}
 	</style>
 
 </head>
@@ -171,8 +181,8 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 			 ?>
 
 			<button class="ghost-round bright"  type="submit" name="recup_submit" value="Valider" style="margin-top: 3%; margin-left:15%;">Recevoir un mail</button><br/>
-
-			<a href="index">Identifiez-vous.</a>
+			<a class='suite' href="mdp_oublié_changement">Changer de mot de passe</a><br/>
+			<a class='retour' href="index">Identifiez-vous.</a>
 		</form>
 
 		
