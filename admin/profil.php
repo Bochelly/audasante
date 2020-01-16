@@ -90,7 +90,7 @@ if (! $_SESSION['connected'] ) {
 				$profil->closeCursor(); 
 			?>
 		</ul>
-		<a class="boutonedition" href="editionprofil"><p> Editer votre profil </p></a>
+		<a class="boutonedition" href="editionprofil.php"><p> Editer votre profil </p></a>
 	</div>
 
 
