@@ -43,7 +43,7 @@ body{
   background-color: #FCFCFE;
 
 }
-input{
+.input-line input{
   border: none;
   font-size: 1vw;
   margin-top: 1%;
