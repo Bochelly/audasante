@@ -157,24 +157,46 @@ $profil->closeCursor();
 	<div id="profil">
 		<form method="POST" action=""  enctype="multipart/form-data"> 
 			<label> Photo de profil </label>
-			<input type='file' name="photo"> </input> <br/>
-			<label> Nom </label>
-			<input type="text" name="newnom" placeholder="Nom" value="<?php echo $data['last_name'] ?>"> <br/>
-			<label> Prénom </label>
-			<input type="text" name="newprenom" placeholder="Prénom" value="<?php echo $data['first_name'] ?>"> <br/>
-			<label> E-mail </label>
-			<input type="text" name="newemail" placeholder="E-mail" value="<?php echo $data['e_mail'] ?>"> <br/>
-			<label> Facebook </label>
-			<input type="text" name="newfacebook" placeholder="Facebook" value="<?php echo $data['facebook'] ?>"> <br/>
-			<label> Instragram </label>
-			<input type="text" name="newinstagram" placeholder="Instagram" value="<?php echo $data['instagram'] ?>"> <br/>
-			<label> Twitter </label>
-			<input type="text" name="newtwitter" placeholder="Twitter" value="<?php echo $data['twitter'] ?>"> <br/>
-			<label> Nouveau mot de passe </label>
-			<input type="password" name="newmdp1" > <br/>
-			<label> Confirmation Mot de passe </label>
-			<input type="password" name="newmdp2" > <br/>
-			<input type="submit" value="Modifier mon profil" > <br/>
+			<input type='file' name="photo"> </input> 
+			<br/>
+
+
+			<div class="input-line">
+			<input type="text" name="newnom" placeholder="Nom" value="<?php echo $data['last_name'] ?>">
+			<span class="floating-label">Nom</span>
+			<br/>
+			</div>
+
+			<div class="input-line">
+			<input type="text" name="newprenom" placeholder="Prénom" value="<?php echo $data['first_name'] ?>">
+			<span class="floating-label">prenom</span>
+			 <br/>
+			 </div>
+
+			<div class="input-line">
+			<input type="text" name="newemail" placeholder="E-mail" value="<?php echo $data['e_mail'] ?>">
+			<span class="floating-label">E-mail</span>
+			<br/>
+			</div>
+
+			<div class="input-line">
+			<input type="text" name="newfacebook" placeholder="Facebook" value="<?php echo $data['facebook'] ?>"> 
+			<span class="floating-label">Facebook</span>
+			<br/>
+			</div>
+
+			<div class="input-line">
+			<input type="text" name="newinstagram" placeholder="Instagram" value="<?php echo $data['instagram'] ?>">
+			<span class="floating-label">Instagram</span> 
+			<br/>
+			</div>
+
+			<div class="input-line">
+			<input type="text" name="newtwitter" placeholder="Twitter" value="<?php echo $data['twitter'] ?>"> 
+			<span class="floating-label">Twitter</span>
+			<br/>
+			</div>
+			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Modifier mon Profil</button>
 			<?php if(isset($message_erreur)) {
 					echo $message_erreur;
 				}

@@ -6,3 +6,54 @@ body{
 	margin-left: 20%;
 	margin-top:10%;
 }
+.input-line{
+  height:18%;
+  width:100%;
+  /*background: none;*/
+}
+.input-line input:focus ~ .floating-label,
+.input-line input:placeholder-shown ~ .floating-label,
+.input-line input:not(:focus):valid ~ .floating-label{
+  font-weight: 600;
+  left: 0.1vw;
+  top: -120%;
+  font-size: 1.5vw;
+ }
+ .floating-label {
+  position:relative;
+  pointer-events: none;
+  font-weight: 300;
+  font-size: 1vw;
+  left: 0.1vw;
+  top: -65%;
+  transition: 0.2s ease all;
+}
+.input-line input{
+  color: #43425D;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(67, 66, 93, 0.3);
+  transition: .2s;
+
+}
+
+.input-line input:focus {
+  outline: none;
+  border-color: #43425D;;
+  transition: .2s;
+  background-color: #FCFCFE;
+
+}
+input{
+  border: none;
+  font-size: 1vw;
+  margin-top: 1%;
+  background-color:#F0F0F7;
+}
+  .ghost-round{
+    font-size: 1.2vw;
+    margin-top: 1%;
+    background-color:#43425D;
+    color: #F0F0F7;
+    padding-left: 1%;
+    padding-right: 1%; 
+  }
