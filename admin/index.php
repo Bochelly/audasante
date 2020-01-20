@@ -48,12 +48,12 @@ session_start(); // On démarre la session AVANT toute chose
 
 		        					<div class="info"> <h3> Informations</h3>
 		        					</br><h4>
-		        						Test actuel:</br>
-		        						N°patient:</br>
-		        						Nom:</br>
-		        						Ref HIG:</br>
-		        						Date de naissance:</br>
-		        						Commentaire:</br>
+		        						N°patient: SELECT * FROM user WHERE n_secu=$_SESSION['n_secu']</br>
+		        						Nom: SELECT * FROM user WHERE nom=SESSION['last_name']</br>
+                        Prénom : SELECT * FROM user WHERE prénom=SESSION['first_name']
+		        						Ref HIG: SELECT * FROM user WHERE medecin=$_SESSION['medic']</br>
+		        						Date de naissance: SELECT * FROM user WHERE dateNaissance=$_SESSION['birth_date']</br>
+		        						e_mail: SELECT * FROM user WHERE e_mail=$_SESSION['e_mail']</br>
 </h4>
 		        					</div>
 		        					<div class="prog"><h3> Progression</h3>
