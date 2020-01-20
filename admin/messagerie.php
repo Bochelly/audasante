@@ -1,4 +1,11 @@
-<?php $page_en_cours = 'messagerie'; ?>
+<?php $page_en_cours = 'messagerie';
+session_start(); 
+if (! $_SESSION['connected'] ) { 
+	header('Location: ../index.php');
+	exit();
+};
+ ?>
+
 <!DOCTYPE html>
 
 

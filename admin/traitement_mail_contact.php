@@ -1,6 +1,6 @@
 <?php
-
-	/* on récupère les données du formulaire */
+	session_start();
+	
 	$email   =($_POST['email']);
 	$objet   =($_POST['objet']);
 	$message =($_POST['message']);
@@ -9,27 +9,32 @@
 	$message = htmlspecialchars($message);
 	$objet = htmlspecialchars($objet);
 
+	$message = "<html>
+					<body>
+						<div>
+							De : ".$email." <br>
+							".$message."
+						</div>
+					</body>
+				</html>";
+$header="MIME-Version: 1.0\r\n";
+$header.='From: felix@gmail.com'."\n";
+$header.='Content-Type:text/html; charset="utf-8"'."\n";
+$header.='Content-Transfer-Encoding: 8bit';
 
-	$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'From: <'.$email.'>' . "\r\n" .
-				'Reply-To:'.$email. "\r\n" .
-				'Content-Type: text/plain; charset="utf-8"; DelSp="Yes"; format=flowed '."\r\n" .
-				'Content-Disposition: inline'. "\r\n" .
-				'Content-Transfer-Encoding: 7bit'." \r\n" .
-				'X-Mailer:PHP/'.phpversion();
 
+$envoie=mail("audasante.technologies@gmail.com", $objet, $message, $header);
 
+if($envoie){
+	$_SESSION['message_mail']='Votre message a bien été envoyé';
+	header('Location: assistance.php');
+	exit();
 
+}
+else{
+	$_SESSION['message_mail']='Il y a eu un problème lors de l\'envoi du mail, réessayer';
+	header('Location: assistance.php');
+	exit();
 
-    $envoi = mail('audasante@gmail.com', $objet, $message, $headers);
-
-
-    if ($envoi) {
-        echo '<script> alert("le mail a bien été envoyé") <script>';
-    }
-    else
-    {
-    	echo '<script> alert("erreur : le mail n\'a pas pu être envoyé, réessayer." <script>';
-    }
-
-    ?>
+}
+?>

@@ -1,3 +1,8 @@
+<?php 	require('../config.php');	
+		$profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'');
+		$data = $profil->fetch();
+?>
+
 <div id='top-bar'>
 	<ul>
 		<form autocomplete="off" >
@@ -8,7 +13,22 @@
 				</li>
 			</div>
 		</form>
-		<li id="top-photo"><a href="#menu_profil"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a>
+		<li id="top-photo"><a href="#menu_profil"> <div id='nom'><?php echo $data['first_name'].' '.$data['last_name']; ?></div>		
+
+			<?php 
+				if(!empty($data['photo']))
+				{
+			?>
+				<img id='photo_profil' src="../images/images_profil/<?php echo $data['photo']; ?>">
+			<?php		
+				}
+			?>
+
+
+			</a>
+
+
+
 			 <div id="menu_profil">
 					<ul>
 						<a class='noTransition' href="profil.php"><li> Profil  </li></a>

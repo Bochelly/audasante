@@ -1,5 +1,12 @@
 <?php $page_en_cours = 'assistance';
-require('../config.php')
+session_start(); 
+if (! $_SESSION['connected'] ) { 
+	header('Location: ../index.php');
+	exit();
+};
+require('../config.php');
+
+
 
  ?>
 

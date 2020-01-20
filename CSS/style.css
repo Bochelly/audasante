@@ -214,6 +214,39 @@ body header h1
 
 }
 
+#photo_profil
+{
+	position: absolute;
+	right : 0%;
+	top:0%;
+	width : 5%;
+	height: 100%;
+	border-radius: 30px;
+}
+
+#nom
+{
+	position: absolute;
+	top: 25%;
+	right :5.5%;
+	text-align: right;
+	width: 9.5%;
+	overflow: hidden;
+	height: 75%;
+}
+
+#top-assist
+{
+	position: absolute;
+	right:15%;
+}
+
+#top-messagerie
+{
+	position: absolute;
+	right: 20%;
+}
+
 
 
 
@@ -249,6 +282,8 @@ body header h1
 	display:block;
 
 }
+
+
 
 
 

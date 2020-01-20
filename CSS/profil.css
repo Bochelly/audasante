@@ -1,0 +1,47 @@
+body{
+	background-color: #F0F0F7;
+}
+
+
+
+#profil{
+	margin-left: 19%;
+	margin-top:7%;
+}
+
+#profil ul
+{
+	margin-left: 30%;
+	list-style: none;
+}
+
+#profil li
+{
+	padding-top: 1.2%;
+	padding-bottom: 1.2%;
+}
+
+.photoProfil
+{
+	position: absolute;
+	left: 19%;
+	top : 30%;
+	width: 20%;
+	height: 40%;
+
+}
+
+.boutonedition
+{
+	color: white;
+	position: absolute;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	width: 20%;
+	background-color: #43425D;
+	text-align: center;
+	left: 75%;
+	top: 85%;
+}
