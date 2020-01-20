@@ -17,7 +17,7 @@ body{
   font-weight: 600;
   left: 0.1vw;
   top: -120%;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
  }
  .floating-label {
   position:relative;
@@ -38,7 +38,9 @@ body{
 
 .input-line input:focus {
   outline: none;
-  border-color: #43425D;;
+  border-bottom: 0.1rem solid;
+  border-bottom-color: #454545;
+  border-color: #43425D;
   transition: .2s;
   background-color: #FCFCFE;
 
