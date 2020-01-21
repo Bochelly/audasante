@@ -164,7 +164,7 @@
 			<div class="error"><?php echo $error_msg ?><br/></div>
 
 			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">S'inscrire</button><br/>
-			<a href="index">Vous avez déjà un compte ? Identifiez-vous.</a>
+			<a href="index.php">Vous avez déjà un compte ? Identifiez-vous.</a>
 		</form>
 
 		
