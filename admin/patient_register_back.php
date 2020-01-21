@@ -1,4 +1,4 @@
-
+<?php session_start(); 	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +51,9 @@
 		//on hache le mot de passe
 		$pswrd_hash = password_hash($pswrd,PASSWORD_BCRYPT);
 
-		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
-			header('Location: sucess.php');
-		exit();
+		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`,`n_secu_medic`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."', '".$_SESSION["n_secu"]."')");
+		    header('Location: index.php');
+		    exit();
 		}
     }
 ?>

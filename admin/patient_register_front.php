@@ -1,4 +1,4 @@
-<?php $page_en_cours = 'assistance'; 
+<?php $page_en_cours = 'add_patient'; 
 session_start(); // On démarre la session AVANT toute chose
 if (! $_SESSION['connected'] ) { 
 	header('Location: ../index.php');
@@ -10,7 +10,7 @@ if (! $_SESSION['connected'] ) {
 			$error_msg = "Des informations sont manquantes";
 		}
 		else {
-			$error_msg = "Erruer inconnue";
+			$error_msg = "Errreur inconnue";
 		}
 		} else { $error_msg=""; }
 
@@ -94,7 +94,7 @@ if (! $_SESSION['connected'] ) {
 	<div class='window'>
 		<div class='welcome' style="margin-bottom:1.5%;">AUDASANTÉ</div>
 
-		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous pour accéder à votre espace personnel</div>
+		<div class='subtitle' style="margin-bottom:3%;">Formulaire d'inscription de votre patient</div>
 
 		<form method="POST" action="patient_register_back.php">
 
