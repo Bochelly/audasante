@@ -16,6 +16,8 @@
 			$insertmdp = $bdd -> prepare("UPDATE user SET password = ? WHERE e_mail = ?") ;
 			$insertmdp -> execute(array($mdp, $e_mail));
 			$message_erreur="Mot de passe modifié avec succès";
+			$retirerCode = $bdd -> prepare("UPDATE user SET code_password = NULL WHERE e_mail = ?") ;
+			$retirerCode -> execute(array($e_mail));
 		}
 		else
 		{
