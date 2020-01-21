@@ -29,7 +29,7 @@ require('../config.php');
 	<h2> FAQ </h2>
 
 	<?php
-		require('menu_lateral_admin.php');
+		require('menu_lateral_user.php');
 		require('top_bar.php')
 	?>
 

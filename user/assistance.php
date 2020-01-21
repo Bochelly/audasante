@@ -24,7 +24,7 @@ require('sécurité_user.php');
 	<header><h1>AUDASANTÉ</h1></header>
 
 	<?php
-		require('menu_lateral_admin.php');
+		require('menu_lateral_user.php');
 		require('top_bar.php')
 	?>	
 	<div id="contenuAssistance">	
