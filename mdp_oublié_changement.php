@@ -9,13 +9,15 @@
 		$codemail =  $bdd->prepare('SELECT code_password FROM user WHERE e_mail = ?');
 		$codemail->execute(array($e_mail));
 		$sécurité = $codemail -> fetch();
-		echo $sécurité['code_password']." / ".$code;
 		if($_POST['newmdp1']==$_POST['newmdp2'] AND $code == $sécurité['code_password'])
 		{
 			$mdp = password_hash($_POST['newmdp2'],PASSWORD_BCRYPT);
-			$insertmdp = $bdd -> prepare("UPDATE user SET password = ? WHERE e_mail = ?") ;
-			$insertmdp -> execute(array($mdp, $e_mail));
+			$insertMdp = $bdd -> prepare("UPDATE user SET password = ? WHERE e_mail = ?") ;
+			$insertMdp -> execute(array($mdp, $e_mail));
 			$message_erreur="Mot de passe modifié avec succès";
+			$updateCode = $bdd -> prepare("UPDATE user SET code_password = NULL WHERE e_mail = ?");
+			$updateCode -> execute(array($e_mail));
+
 		}
 		else
 		{

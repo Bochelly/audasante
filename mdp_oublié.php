@@ -18,7 +18,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 			 	{
 			 		$recup_code.= mt_rand(1,9);
 			 	}
-			 	$insert_code = $bdd->prepare('UPDATE user SET code_password= ? WHERE e_mail = ?');
+			 	$insert_code = $bdd->prepare('UPDATE user SET code_password = ? WHERE e_mail = ?');
 			 	$insert_code -> execute(array($recup_code,$mail));
 			 	
 				$message = "<html>
