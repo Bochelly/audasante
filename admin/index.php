@@ -52,12 +52,12 @@ if (! $_SESSION['connected'] ) {
 
 		        					<div class="info"> <h3> Informations</h3>
 		        					</br><h4>
-		        						Test actuel:</br>
-		        						N°patient:</br>
-		        						Nom:</br>
-		        						Ref HIG:</br>
-		        						Date de naissance:</br>
-		        						Commentaire:</br>
+		        						N°patient: SELECT * FROM user WHERE n_secu=$_SESSION['n_secu']</br>
+		        						Nom: SELECT * FROM user WHERE nom=SESSION['last_name']</br>
+                        Prénom : SELECT * FROM user WHERE prénom=SESSION['first_name']
+		        						Ref HIG: SELECT * FROM user WHERE medecin=$_SESSION['medic']</br>
+		        						Date de naissance: SELECT * FROM user WHERE dateNaissance=$_SESSION['birth_date']</br>
+		        						e_mail: SELECT * FROM user WHERE e_mail=$_SESSION['e_mail']</br>
 </h4>
 		        					</div>
 		        					<div class="prog"><h3> Progression</h3>
@@ -69,9 +69,9 @@ if (! $_SESSION['connected'] ) {
 
 		        					<div class="prompteur"><h3> Prompteur patient<h3>
                       <?php
-                        $moment_du_test = 'rythme cardiaque';
+                        $moment_du_test = 'test de frequence';
 
-                        if ($moment_du_test = 'reacton auditive')
+                        if ($moment_du_test =='reaction auditive')
                           {
                             echo '<img src="../CSS/img/listener.png" alt="listener">';
                             
@@ -84,7 +84,7 @@ if (! $_SESSION['connected'] ) {
                                     
                             
                                   
-                        elseif ($moment_du_test='rythme cardiaque') {
+                        elseif ($moment_du_test=='rythme cardiaque') {
                           echo '<img src="../CSS/img/rythmecardiaque.png" alt="rythmecardiaque">';
                       
                             for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
@@ -93,13 +93,40 @@ if (! $_SESSION['connected'] ) {
                               }
                               echo 'Mesure de votre fréquence cardiaque en cours...';
                           }
-                                  ?>
-		        					</div>
-		        					<div class="decompte"> <h5>
-                      <?php
-                      $moment_du_test = 'pendant le test';
+                                  
 
-                      if ($moment_du_test = 'avant le test')
+                        elseif ($moment_du_test == 'temperature')
+                          {
+                            echo '<img src="../CSS/img/thermometer.png" alt="listener">';
+                            
+                            for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
+                              {
+                               echo '' . '<br />';
+                              }
+                              echo 'Mesure de votre température corporelle en cours...';
+                          }
+                        elseif ($moment_du_test == 'test de frequence')
+                          {
+                            echo '<img src="../CSS/img/audio.png" alt="listener">';
+                            
+                            for ($nombre_de_lignes = 1; $nombre_de_lignes <= 15; $nombre_de_lignes++)
+                              {
+                               echo '' . '<br />';
+                              }
+                              echo 'Test de reconnaissance de note';
+                          }
+                          ?>
+		        					</div>
+
+
+		        					<div class="decompte"> <h5>
+
+
+                      <?php
+
+                      $detail_du_test = 'pendant le test';
+
+                      if ($detail_du_test == 'avant le test')
                       {
                         echo  ' Décompte'.'</br>'.'</br>';
                         $secondes_restantes=0;
@@ -109,7 +136,7 @@ if (! $_SESSION['connected'] ) {
                                            
                       
                       }
-                      elseif ($moment_du_test='pendant le test')
+                      elseif ($detail_du_test=='pendant le test')
                       {
                         echo 'test en cours'.'</br>'.'veuillez patienter s\'il vous plaît';
                       }
@@ -120,7 +147,7 @@ if (! $_SESSION['connected'] ) {
 		        				
 
 		        				<div class="etape">
-
+                    
                                 <div id="moncercle1">
                                     <h9> 1</h9>
                                 </br>
@@ -158,9 +185,5 @@ if (! $_SESSION['connected'] ) {
 		        			</div>
 		        		</div>		
 		        	</div>
-
-
-
-
 
 <body>

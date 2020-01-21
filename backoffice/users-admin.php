@@ -95,7 +95,7 @@
 									<?php } $reponse->closeCursor(); ?>
 
 								</table>
-							<image id="plus-button" src = "../images/plus.png" alt="plus button"/> 
+
 			</div>
 		</div>
 		<script src="../js/script.js"></script>
