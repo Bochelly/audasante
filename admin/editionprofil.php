@@ -2,10 +2,7 @@
 session_start(); // On démarre la session AVANT toute chose
 require('../config.php');
 
-if (! $_SESSION['connected'] ) { 
-	header('Location: ../index.php');
-	exit();
-};
+require('sécurité_médecin.php');
 
 $profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'');
 		$data = $profil->fetch();

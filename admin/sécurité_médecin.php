@@ -14,4 +14,4 @@ if ($dataprofil['medic'] == false) {
 	exit();
 }
 
-};
+?>

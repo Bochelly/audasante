@@ -1,11 +1,7 @@
 <?php $page_en_cours = 'parametre';
 session_start(); // On démarre la session AVANT toute chose
 require('../config.php');
-
-if (! $_SESSION['connected'] ) { 
-	header('Location: ../index.php');
-	exit();
-};
+require('sécurité_médecin.php');
 
 
  ?>
