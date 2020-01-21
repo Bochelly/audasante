@@ -24,6 +24,7 @@ require('sécurité_user.php');
 
 	<?php
 		require('menu_lateral_user.php');
+		require('top_bar.php');
 	?>	
 
 
