@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 jan. 2020 à 16:20
+-- Généré le :  mar. 21 jan. 2020 à 17:51
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -238,8 +238,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `code_password`, `last_connect`, `nb_try`, `n_secu_medic`, `id_hospital`, `facebook`, `instagram`, `twitter`, `photo`, `medic`, `super_user`) VALUES
 (12345678910, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$6QRCsl8Jeyj5BX2SLALrAey7vChrUpvgRqt7DkSkz54Kpw0Kysn2W', NULL, '2019-12-04', 2, NULL, NULL, NULL, NULL, NULL, '', 0, 0),
-(111111111, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg', 0, 0),
-(222222222, 'alban', 'Erulin', '1999-04-12', 'pvar.tpe@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '', 1, 1),
+(111111111, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg', 1, 0),
+(222222222, 'alban', 'Erulin', '1999-04-12', 'pvar.tpe@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '222222222.jpg', 1, 1),
 (333333333, 'maxime', 'guasp', '1999-10-21', 'maxguasp@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', NULL, '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
 (444444444, 'roger', 'dupond', '2000-07-28', 'roger.d@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
 (555555555, 'andre', 'dupont', '1999-10-19', 'andre.t@gmail.com', '$2y$10$3mgjm1IcpNzBSDdpdAkPV.I6TE4pKPt/pGBLKB24.baN0GzeeyZ0C', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),

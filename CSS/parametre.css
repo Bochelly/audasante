@@ -1,0 +1,36 @@
+#BO
+{
+	
+	position: absolute;
+	top: 50%;
+	left: 45%;
+	width: 20%;
+	text-align: center;
+	color: #A5A4BF;
+	background-color: #43425D;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#sitePatient
+{
+
+	position: absolute;
+	top: 25%;
+	left: 45%;
+	width: 20%;
+	text-align: center;
+	color: #A5A4BF;
+	background-color: #43425D;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+#CGU
+{
+	position: absolute;
+	bottom: 3%;
+	left: 50%;
+	color: rgba(67, 66, 93, 0.7);
+}
+

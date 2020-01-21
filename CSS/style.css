@@ -91,6 +91,14 @@ body header h1
 	background-color: #3C3B53;
 }
 
+#CGUmenu
+{
+	position: absolute;
+	color: #C7BCE3;
+	bottom: 2%;
+	padding-left: 10%;
+}
+
 
 
 
