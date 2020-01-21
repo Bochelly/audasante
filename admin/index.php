@@ -65,11 +65,11 @@ if (! $_SESSION['connected'] ) {
                         $e_mail = '';
                         
                         
-                        echo 'N°sécurite sociale : '. $n_secu.'</br>'.'</br>';
-                        echo 'Nom : '. $last_name.'</br>'.'</br>';
-                        echo 'Prénom : '.$first_name. '</br>'.'</br>';
+                        echo 'N°sécurite sociale : '. $n_secu.'</br>';
+                        echo 'Nom : '. $last_name.'</br>';
+                        echo 'Prénom : '.$first_name. '</br>';
 		        						/*Ref HIG: SELECT * FROM user WHERE medecin=$_SESSION['medic'].'</br>';*/
-		        						echo 'Date de naissance : '.$birth_date .'</br>'.'</br>';
+		        						echo 'Date de naissance : '.$birth_date .'</br>';
                         echo 'e_mail : '.$e_mail;
 
                         ?>
