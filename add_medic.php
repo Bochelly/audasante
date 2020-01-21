@@ -21,7 +21,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 									<div>
 										Bonjour, voici code pour créer votre compte Audasanté. <br/>
 										le code est le   suivant : ".$recup_code."<br/>
-										Cliquez sur le lien suivant pour vous inscrire : http://localhost/audasante/register.php
+										Cliquez sur le lien suivant pour vous inscrire : http://localhost/audasante/medic_register_front.php
 
 									</div>
 								</body>

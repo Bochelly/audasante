@@ -109,9 +109,14 @@
 	<div class='window'>
 		<div class='welcome' style="margin-bottom:1.5%;">AUDASANTÉ</div>
 
-		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous pour accéder à votre espace personnel</div>
+		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous en tant que médecin</div>
 
 		<form method="POST" action="patient_register_php.php">
+
+			<div class="input-line" style="width : 47%; display : inline;">
+				<input type='text' class='inputText' name='code' required></input>
+				<span class="floating-label">Votre code reçu par mail</span>
+			</div>
 
 			<div class="input-line" style="width : 47%; display : inline;">
 				<input type='text' class='inputText' name='first_name' required></input>

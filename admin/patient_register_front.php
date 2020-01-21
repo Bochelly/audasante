@@ -1,15 +1,9 @@
-<?php
-   // tous d'abord il faut démarrer le système de sessions
-   session_start();
-
-   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-	if(isset($_SESSION['id_admin'])){
-          header('location:../admin/index.php');
-   }
-   else if(isset($_SESSION['id_user'])){
-          header('location:../user/index.php');
-   }
-
+<?php $page_en_cours = 'assistance'; 
+session_start(); // On démarre la session AVANT toute chose
+if (! $_SESSION['connected'] ) { 
+	header('Location: ../index.php');
+	exit();
+}
   
   if (isset($_GET["error_type"])) {
   		if ($_GET["error_type"] == "nolog") {
@@ -102,7 +96,7 @@
 
 		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous pour accéder à votre espace personnel</div>
 
-		<form method="POST" action="patient_register_php.php">
+		<form method="POST" action="patient_register_back.php">
 
 			<div class="input-line" style="width : 47%; display : inline;">
 				<input type='text' class='inputText' name='first_name' required></input>
