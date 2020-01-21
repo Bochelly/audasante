@@ -1,9 +1,7 @@
 <?php $page_en_cours = 'assistance'; 
 session_start(); // On démarre la session AVANT toute chose
-if (! $_SESSION['connected'] ) { 
-	header('Location: ../index.php');
-	exit();
-};
+require('../config.php');
+require('sécurité_médecin.php');
 ?>
 
 <!DOCTYPE html>

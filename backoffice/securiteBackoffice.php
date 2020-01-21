@@ -9,10 +9,9 @@ if (! $_SESSION['connected'] ) {
 	$profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'');
 	$dataprofil = $profil->fetch();
 
-if ($dataprofil['medic'] == false) {
+if ($dataprofil['super_user'] == false) {
 	header('Location: ../index.php');
 	exit();
 }
 
-?>
-
+};

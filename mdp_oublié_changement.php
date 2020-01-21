@@ -17,7 +17,6 @@
 			$message_erreur="Mot de passe modifié avec succès";
 			$updateCode = $bdd -> prepare("UPDATE user SET code_password = NULL WHERE e_mail = ?");
 			$updateCode -> execute(array($e_mail));
-
 		}
 		else
 		{
