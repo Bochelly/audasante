@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 jan. 2020 à 13:46
+-- Généré le :  mar. 21 jan. 2020 à 15:05
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -65,8 +65,14 @@ CREATE TABLE IF NOT EXISTS `code` (
 --
 
 INSERT INTO `code` (`code`) VALUES
+('1684857824'),
 ('2195843391'),
-('7632495546');
+('4553745376'),
+('5567684665'),
+('5835431222'),
+('7442941934'),
+('7632495546'),
+('9551614639');
 
 -- --------------------------------------------------------
 
@@ -106,20 +112,6 @@ CREATE TABLE IF NOT EXISTS `hospital` (
   `adress` varchar(64) NOT NULL,
   PRIMARY KEY (`id_hospital`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `messages`
---
-
-DROP TABLE IF EXISTS `messages`;
-CREATE TABLE IF NOT EXISTS `messages` (
-  `id_sender` int(11) NOT NULL,
-  `id_receiver` int(11) NOT NULL,
-  `text` text NOT NULL,
-  `time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cette table stocke les messages des utilisateurs';
 
 -- --------------------------------------------------------
 
@@ -228,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `birth_date` date NOT NULL,
   `e_mail` varchar(63) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `code_password` varchar(11) DEFAULT NULL,
+  `code_password` int(11) DEFAULT NULL,
   `last_connect` date DEFAULT NULL,
   `nb_try` int(16) NOT NULL DEFAULT '0',
   `n_secu_medic` bigint(13) DEFAULT NULL,
@@ -236,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `facebook` varchar(100) DEFAULT NULL,
   `instagram` varchar(100) DEFAULT NULL,
   `twitter` varchar(100) DEFAULT NULL,
-  `photo` varchar(255) NOT NULL,
+  `photo` varchar(255) DEFAULT 'defaut',
   PRIMARY KEY (`n_secu`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -246,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`n_secu`, `medic`, `super_user`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `code_password`, `last_connect`, `nb_try`, `n_secu_medic`, `id_hospital`, `facebook`, `instagram`, `twitter`, `photo`) VALUES
 (12345678910, 0x00, 0x00, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$6QRCsl8Jeyj5BX2SLALrAey7vChrUpvgRqt7DkSkz54Kpw0Kysn2W', NULL, '2019-12-04', 2, NULL, NULL, NULL, NULL, NULL, ''),
-(111111111, 0x01, 0x00, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/W2CGamrtpAXATrMsZ7MYeU31cPFKndXsbdMOxkn1fVXRxxTzXgLm', NULL, '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg'),
+(111111111, 0x01, 0x00, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg'),
 (222222222, 0x00, 0x00, 'Jean', 'Bon', '1999-04-12', 'Jeanbon@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, ''),
 (333333333, 0x00, 0x00, 'Thomas', 'Lachico', '1999-10-21', 'Thomslachico@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', NULL, '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, ''),
 (444444444, 0x00, 0x00, 'Cas', 'Lelache', '2000-07-28', 'Caslelache@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, ''),
