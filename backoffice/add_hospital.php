@@ -137,6 +137,7 @@
 			<div class="error"><?php echo $error_msg; ?><br/></div>
 
 			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">Ajouter un hôpital</button><br/>
+			<a href="index.php">Retourner sur en arrière</a>
 		</form>
 
 	</div>

@@ -101,7 +101,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 		  text-align: left;
 		  transition-duration: 0.2s;
 		  margin-top: 3%;
-		  margin-left: 10%;
+		  margin-left: 27%;
 		}
 
 		.ghost-round
@@ -156,6 +156,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 
 
 			<button class="ghost-round bright"  type="submit" name="recup_submit" value="Valider" style="margin-top: 3%; margin-left:15%;">Envoyer le mail</button><br/>
+			<a href="index.php">Retourner sur en arrière</a>
 		</form>
 
 		

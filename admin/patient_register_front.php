@@ -52,6 +52,18 @@ if (! $_SESSION['connected'] ) {
 		  top: -112%;
 		  font-size: 0.9vw;
 		}
+		a
+		{
+		  text-decoration : underline;
+		  color: rgba(67, 66, 93, 0.7);
+		  width: 100%;
+		  font-size: 1.2vw;
+		  font-weight: 300;
+		  text-align: left;
+		  transition-duration: 0.2s;
+		  margin-top: 3%;
+		  margin-left: 27%;
+		}
 
 		div{
 			font-size : 1.2vw;
@@ -127,7 +139,8 @@ if (! $_SESSION['connected'] ) {
 
 			<div class="error"><?php echo $error_msg ?><br/></div>
 
-			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">S'inscrire</button><br/>
+			<button class="ghost-round bright"  type="submit" name="submit" value="Register" style="margin-top: 3%; margin-left:15%;">Inscrire un patient</button><br/>
+			<a href="index.php">Retourner sur en arrière</a>
 		</form>
 
 		
