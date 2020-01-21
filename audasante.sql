@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 jan. 2020 à 12:26
+-- Généré le :  mar. 21 jan. 2020 à 13:15
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -60,6 +60,14 @@ CREATE TABLE IF NOT EXISTS `code` (
   PRIMARY KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `code`
+--
+
+INSERT INTO `code` (`code`) VALUES
+('2195843391'),
+('7632495546');
+
 -- --------------------------------------------------------
 
 --
@@ -102,33 +110,6 @@ CREATE TABLE IF NOT EXISTS `hospital` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `medic`
---
-
-DROP TABLE IF EXISTS `medic`;
-CREATE TABLE IF NOT EXISTS `medic` (
-  `n_secu` bigint(20) NOT NULL,
-  `first_name` varchar(63) NOT NULL,
-  `last_name` varchar(63) NOT NULL,
-  `birth_date` date NOT NULL,
-  `work_place` varchar(63) NOT NULL,
-  `e_mail` varchar(63) NOT NULL,
-  `password` varchar(63) NOT NULL,
-  `last_connect` date NOT NULL,
-  `nb_try` int(16) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`n_secu`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `medic`
---
-
-INSERT INTO `medic` (`n_secu`, `first_name`, `last_name`, `birth_date`, `work_place`, `e_mail`, `password`, `last_connect`, `nb_try`) VALUES
-(1, 'Antoine', 'BORRELLY', '2019-11-11', 'JuniorISEP', 'eniot94@gmail.com', 'G1C2A3I4A5', '2018-10-10', 0);
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `messages`
 --
 
@@ -139,25 +120,6 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `text` text NOT NULL,
   `time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cette table stocke les messages des utilisateurs';
-
--- --------------------------------------------------------
-
---
--- Structure de la table `patient`
---
-
-DROP TABLE IF EXISTS `patient`;
-CREATE TABLE IF NOT EXISTS `patient` (
-  `n_secu` bigint(20) NOT NULL,
-  `first_name` varchar(63) CHARACTER SET utf8 NOT NULL,
-  `last_name` varchar(63) CHARACTER SET utf8 NOT NULL,
-  `birth_date` date NOT NULL,
-  `e_mail` varchar(63) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(63) CHARACTER SET utf8 NOT NULL,
-  `last_connect` date NOT NULL,
-  `nb_try` int(16) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`n_secu`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -252,7 +214,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `birth_date` date NOT NULL,
   `e_mail` varchar(63) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `code_password` int(11) DEFAULT NULL,
   `last_connect` date DEFAULT NULL,
   `nb_try` int(16) NOT NULL DEFAULT '0',
   `n_secu_medic` bigint(13) DEFAULT NULL,
@@ -269,14 +230,15 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`n_secu`, `medic`, `super_user`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `code_password`, `last_connect`, `nb_try`, `n_secu_medic`, `id_hospital`, `facebook`, `instagram`, `twitter`, `photo`, `code`) VALUES
-(12345678910, 0x00, 0x00, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$6QRCsl8Jeyj5BX2SLALrAey7vChrUpvgRqt7DkSkz54Kpw0Kysn2W', NULL, '2019-12-04', 0, NULL, NULL, NULL, NULL, NULL, '', NULL),
-(111111111, 0x01, 0x00, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$6dsEFMqFhqqKQqtANpbrLOWD4lTFyJXXqqDdm5BjdDDBfU28BclMi', 1851141238, '2020-01-21', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg', NULL),
-(222222222, 0x00, 0x00, 'Jean', 'Bon', '1999-04-12', 'Jeanbon@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
-(333333333, 0x00, 0x00, 'Thomas', 'Lachico', '1999-10-21', 'Thomslachico@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', NULL, '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
-(444444444, 0x00, 0x00, 'Cas', 'Lelache', '2000-07-28', 'Caslelache@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
-(555555555, 0x00, 0x00, 'Babzer', 'Zuccherro', '1999-10-19', 'babzer@gmail.com', '$2y$10$3mgjm1IcpNzBSDdpdAkPV.I6TE4pKPt/pGBLKB24.baN0GzeeyZ0C', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
-(666666666, 0x00, 0x00, 'PH', 'Lesang', '1998-10-05', 'phles@gmail.com', '$2y$10$W1f.rLQnGe5anmzw1h3S9./GXmNhjXcrXbBrUHEZc3tfUhd4C0k16', NULL, '2019-12-15', 0, 111111111, NULL, NULL, NULL, NULL, '666666666.jpg', NULL);
+INSERT INTO `user` (`n_secu`, `medic`, `super_user`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `last_connect`, `nb_try`, `n_secu_medic`, `id_hospital`, `facebook`, `instagram`, `twitter`, `photo`, `code`) VALUES
+(12345678910, 0x00, 0x00, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$6QRCsl8Jeyj5BX2SLALrAey7vChrUpvgRqt7DkSkz54Kpw0Kysn2W', '2019-12-04', 2, NULL, NULL, NULL, NULL, NULL, '', NULL),
+(111111111, 0x01, 0x00, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg', NULL),
+(222222222, 0x00, 0x00, 'Jean', 'Bon', '1999-04-12', 'Jeanbon@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
+(333333333, 0x00, 0x00, 'Thomas', 'Lachico', '1999-10-21', 'Thomslachico@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
+(444444444, 0x00, 0x00, 'Cas', 'Lelache', '2000-07-28', 'Caslelache@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
+(555555555, 0x00, 0x00, 'Babzer', 'Zuccherro', '1999-10-19', 'babzer@gmail.com', '$2y$10$3mgjm1IcpNzBSDdpdAkPV.I6TE4pKPt/pGBLKB24.baN0GzeeyZ0C', NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', NULL),
+(666666666, 0x00, 0x00, 'PH', 'Lesang', '1998-10-05', 'phles@gmail.com', '$2y$10$W1f.rLQnGe5anmzw1h3S9./GXmNhjXcrXbBrUHEZc3tfUhd4C0k16', '2019-12-15', 0, 111111111, NULL, NULL, NULL, NULL, '666666666.jpg', NULL),
+(1888888, 0x00, 0x00, 'Antoine', 'Borrelly', '2020-01-20', 'antoine.borrelly@isep.fr', '$2y$10$6Lo7jPWFVgXrb6S40V.Hsu7oKglTNTeiOfagPD1mRu0PvqM1mVfJm', '2020-01-21', 0, NULL, NULL, NULL, NULL, NULL, '', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
