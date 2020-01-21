@@ -36,6 +36,15 @@ td {
  	text-decoration: underline;
  }
 
+#key {
+	text-align: center;
+	color: orangered;
+}
+
+#subtitle {
+	color: #43425D;
+}
+
 #contenuAssistance
 {
 
@@ -74,7 +83,7 @@ td {
 	margin-left: 3.5%;
 	margin-top: 2%;
 	margin-bottom: 2%;
-	color:#4D4F5C;
+
 }
 
 #contenuAssistance #mail label
@@ -269,3 +278,4 @@ td {
 #delete-section {
 	display:none;
 }
+
