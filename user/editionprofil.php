@@ -2,7 +2,7 @@
 session_start(); // On démarre la session AVANT toute chose
 require('../config.php');
 
-require('sécurité_user.php');
+require('securite_user.php');
 
 $profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'');
 		$data = $profil->fetch();
