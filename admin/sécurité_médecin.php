@@ -10,6 +10,7 @@ if (! $_SESSION['connected'] ) {
 	$dataprofil = $profil->fetch();
 
 if ($dataprofil['medic'] == false) {
+	session_destroy();
 	header('Location: ../index.php');
 	exit();
 }

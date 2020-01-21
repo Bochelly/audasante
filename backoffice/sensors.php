@@ -1,4 +1,6 @@
-<?php $page_en_cours = 'sensors'; ?>
+<?php $page_en_cours = 'sensors';
+require('securiteBackoffice.php'); 
+?>
 
 <!DOCTYPE html>
 

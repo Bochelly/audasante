@@ -1,4 +1,6 @@
-<?php $page_en_cours = 'accueil'; ?>
+<?php $page_en_cours = 'accueil'; 
+require('securiteBackoffice.php');
+?>
 
 <!DOCTYPE html>
 

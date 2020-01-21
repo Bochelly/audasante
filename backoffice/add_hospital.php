@@ -1,6 +1,7 @@
 <?php
    // tous d'abord il faut démarrer le système de sessions
    session_start();
+   require('securiteBackoffice.php');
 
    // Si la session de l'admin ou de l'user est active, on redirige vers sa page
 	if(isset($_SESSION['id_admin'])){
