@@ -1,0 +1,166 @@
+#main-section{
+
+	display: flex;
+	flex-direction: column;
+	margin-left: 16%;
+	margin-top: 25px;
+	background-color: #F0F0F7;
+	height: 100%;
+	width : 84%;
+
+
+
+}
+
+.patient{
+	margin-left: 7%;
+
+}
+
+.menu{
+	display: flex;
+	height: 880px;
+	margin-left: 75px;
+
+
+
+
+}
+.API{
+	background-color: #3c3b53;
+	margin-left: 5%;
+	width:20%;
+	height: 90%;
+	margin-right: 5%;
+}
+.interfaces{
+
+
+	display: flex;
+	flex-direction: column;
+	width:70%;
+	height: 90%;
+
+
+
+}
+.info-prog{
+	display: flex;
+	height:30%;
+	width: 100%;
+
+
+}
+.test{
+	display: flex;
+	height: 45%;
+	width: 100%;
+	margin-top: 50px;
+
+
+
+}
+.info{
+	background-color: white;
+	width:50%;
+
+
+}
+.prog{
+	background-color: white;
+	margin-left: 7%;
+	width: 50%;
+}
+.prompteur{
+	background-color: white;
+	width: 70%;
+	padding-right: 4%;
+
+}
+.decompte{
+	background-color: #3c3b53;
+	width : 30%;
+}
+.etape{
+	padding-top: 7%;
+	display: flex;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+.patient{
+	height: 100px;
+}
+h3{
+	color: black;
+	padding-left: 15px;
+	font-size: 1.3em;
+	
+
+}
+h4{
+	padding-left: 15px;
+	font-size: 0.9em;
+
+
+}
+h5{
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+}
+h6{
+	font-size: 1.2em;
+	text-align: center;
+	color: #C0C0C0;
+}
+h7{
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+
+}
+
+#moncercle1, #moncercle2, #moncercle3, #moncercle4{
+	background:#3c3b53;
+	border-radius:50%;
+	width:40px;
+	height:40px;
+	display: inline;
+ 
+  }
+  hr{
+	margin-top: 2.5%;
+	width: 25%;
+	height: 2px;
+	background-color: #3c3b53;
+	border: none; 
+  }
+
+  h8{
+	  font-size: 0.6em;
+	  color: #3c3b53;
+	  text-align: center;
+	  
+
+  }
+  h9{
+	  padding-left: 30%;
+	  color:white;
+	  text-align: center;
+	  font-size: 2em;
+  }
+
+  h10{
+	  color: #3c3b53;
+	  font-size: 0.8em;
+	  padding-left: 
+
+  }
+  img{
+	  width :65%;
+	  height: 65%;
+	  float: right;
+  }
+  p{
+	  font-size: 1.8em;
+  }
