@@ -239,11 +239,11 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `code_password`, `last_connect`, `nb_try`, `n_secu_medic`, `id_hospital`, `facebook`, `instagram`, `twitter`, `photo`, `medic`, `super_user`) VALUES
 (12345678910, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$6QRCsl8Jeyj5BX2SLALrAey7vChrUpvgRqt7DkSkz54Kpw0Kysn2W', NULL, '2019-12-04', 2, NULL, NULL, NULL, NULL, NULL, '', 0, 0),
 (111111111, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg', 0, 0),
-(222222222, 'Jean', 'Bon', '1999-04-12', 'Jeanbon@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
-(333333333, 'Thomas', 'Lachico', '1999-10-21', 'Thomslachico@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', NULL, '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
-(444444444, 'Cas', 'Lelache', '2000-07-28', 'Caslelache@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
-(555555555, 'Babzer', 'Zuccherro', '1999-10-19', 'babzer@gmail.com', '$2y$10$3mgjm1IcpNzBSDdpdAkPV.I6TE4pKPt/pGBLKB24.baN0GzeeyZ0C', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
-(666666666, 'PH', 'Lesang', '1998-10-05', 'phles@gmail.com', '$2y$10$W1f.rLQnGe5anmzw1h3S9./GXmNhjXcrXbBrUHEZc3tfUhd4C0k16', NULL, '2019-12-15', 0, 111111111, NULL, NULL, NULL, NULL, '666666666.jpg', 0, 0),
+(222222222, 'alban', 'Erulin', '1999-04-12', 'pvar.tpe@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '', 1, 1),
+(333333333, 'maxime', 'guasp', '1999-10-21', 'maxguasp@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', NULL, '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
+(444444444, 'roger', 'dupond', '2000-07-28', 'roger.d@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
+(555555555, 'andre', 'dupont', '1999-10-19', 'andre.t@gmail.com', '$2y$10$3mgjm1IcpNzBSDdpdAkPV.I6TE4pKPt/pGBLKB24.baN0GzeeyZ0C', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
+(666666666, 'yves', 'duponlt', '1998-10-05', 'yves.lt@gmail.com', '$2y$10$W1f.rLQnGe5anmzw1h3S9./GXmNhjXcrXbBrUHEZc3tfUhd4C0k16', NULL, '2019-12-15', 0, 111111111, NULL, NULL, NULL, NULL, '666666666.jpg', 0, 0),
 (1888888, 'Antoine', 'Borrelly', '2020-01-20', 'antoine.borrelly@isep.fr', '$2y$10$6Lo7jPWFVgXrb6S40V.Hsu7oKglTNTeiOfagPD1mRu0PvqM1mVfJm', NULL, '2020-01-21', 0, NULL, NULL, NULL, NULL, NULL, '', 1, 1);
 COMMIT;
 
