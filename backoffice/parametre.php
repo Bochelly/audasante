@@ -1,6 +1,6 @@
 <?php $page_en_cours = 'parametre'; 
 session_start(); // On démarre la session AVANT toute chose
-require('sécurité_user.php');
+require('securiteBackoffice.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,22 +23,14 @@ require('sécurité_user.php');
 	<header><h1>AUDASANTÉ</h1></header>
 
 	<?php
-		require('menu_lateral_user.php');
+		require('menu_lateral_backoffice.php');
 		require('top_bar.php');
 	?>	
 
-	<?php
-	if ($dataprofil['super_user'] == 1) {
-	echo "<a id='BO' href='../backoffice/index.php'> Lien vers le Back Office </a>";
-	}
-	?>
+<a id='BO' href='../user/index.php'> Lien vers l'interface patient </a>
 
-	<?php
-	if ($dataprofil['medic'] == 1) {
-	echo "<a id='sitePatient' href='../admin/index.php'> Lien vers l'interface médecin</a>";
-	}
-	?>
-	
+<a id='sitePatient' href='../admin/index.php'> Lien vers l'interface médecin</a>
+
 
 
 

@@ -1,3 +1,8 @@
+<?php 	require('../config.php');	
+		$profil = $bdd->query('SELECT * FROM user WHERE n_secu='.$_SESSION["n_secu"].'');
+		$data = $profil->fetch();
+?>
+
 <div id='top-bar'>
 	<ul>
 		<form autocomplete="off" >
@@ -8,10 +13,30 @@
 				</li>
 			</div>
 		</form>
-		<li id="top-photo"><a href="#"> nom profil <img src="photo profil.jpg" title="profil" alt="photo"></a> </li>
-		<li id="top-assist"> <a href="Assistance.html"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
-		<li id="top-messagerie"><a href="Messages.html"><i class="fas fa-envelope fa-lg fa-fw" style="color:#A5A4BF;" title="messagerie"> </i></a> </li>
-		<li id="top-notif"><a href="#"><i class="far fa-bell fa-lg fa-fw" style="color:#A5A4BF;" title="afficher liste des notifs"> </i></a></li>
+		<li id="top-photo"><a href="#menu_profil"> <div id='nom'><?php echo $data['first_name'].' '.$data['last_name']; ?></div>		
+
+			<?php 
+				if(!empty($data['photo']))
+				{
+			?>
+				<img id='photo_profil' src="../images/images_profil/<?php echo $data['photo']; ?>">
+			<?php		
+				}
+			?>
+
+
+			</a>
+
+
+
+			 <div id="menu_profil">
+					<ul>
+						<a class='noTransition' href="profil.php"><li> Profil  </li></a>
+						<a class='noTransition' href="disconnect.php"><li> Déconnexion  </li></a>
+					</ul>
+			</div>
+		</li>
+
 
 	</ul>
 </div>
