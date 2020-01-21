@@ -58,12 +58,19 @@ if (! $_SESSION['connected'] ) {
 
                         $bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `n_secu_medic`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."')");
 
-                        echo 'N°sécurite sociale:'. $n_secu.'</br>';
-                        echo 'Nom:'. $last_name.'</br>';
-                        echo 'Prénom :'.$first_name. '</br>';
+                        $first_name = '';
+	                    	$last_name = '';
+	                    	$n_secu = '';
+	                    	$birth_date = '';
+                        $e_mail = '';
+                        
+                        
+                        echo 'N°sécurite sociale : '. $n_secu.'</br>'.'</br>';
+                        echo 'Nom : '. $last_name.'</br>'.'</br>';
+                        echo 'Prénom : '.$first_name. '</br>'.'</br>';
 		        						/*Ref HIG: SELECT * FROM user WHERE medecin=$_SESSION['medic'].'</br>';*/
-		        						echo 'Date de naissance:'.$birth_date .'</br>';
-                        echo 'e_mail:'.$e_mail;
+		        						echo 'Date de naissance : '.$birth_date .'</br>'.'</br>';
+                        echo 'e_mail : '.$e_mail;
 
                         ?>
 
@@ -165,7 +172,9 @@ if (! $_SESSION['connected'] ) {
                                 </div>
                                 <hr>
                                 <div id="moncercle2">
-                                    <h9>2</h9>
+                                    <h9>
+
+                                    2</h9>
                                 </br>
                                 </br>
                                   <h8>  Température corporelle</h8>
