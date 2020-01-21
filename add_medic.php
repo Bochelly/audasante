@@ -72,9 +72,9 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 
 <head>
 	<title>Mot de passe oublié</title>
-	<link rel="stylesheet" href="../css/style-connect.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> 
-	<link rel="icon" type="image/png" href="../css/img/audalogo.png" />
+	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 
 
 	<style>
