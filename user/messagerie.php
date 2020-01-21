@@ -1,6 +1,6 @@
 <?php $page_en_cours = 'messagerie';
 session_start(); 
-require('sécurité_user.php');
+require('securite_user.php');
  ?>
 
 <!DOCTYPE html>

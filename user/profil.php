@@ -1,7 +1,7 @@
 <?php $page_en_cours = 'parametre';
 session_start(); // On démarre la session AVANT toute chose
 require('../config.php');
-require('sécurité_user.php');
+require('securite_user.php');
 
 
  ?>
@@ -54,7 +54,7 @@ require('sécurité_user.php');
 									  $annee = $date['year'];
 									  echo $jour."/".$mois."/".$annee ?>	</li>
 
-			<li>N° de sécurité sociale : <?php echo $data['n_secu']?></li>
+			<li>N° de securite sociale : <?php echo $data['n_secu']?></li>
 			<li>E-mail : <?php echo $data['e_mail'] ?></li>
 
 			<?php

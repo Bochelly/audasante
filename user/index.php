@@ -3,7 +3,7 @@
 
 <?php
 session_start(); // On démarre la session AVANT toute chose
-require('sécurité_user.php');
+require('securite_user.php');
 ?>
 
 <!DOCTYPE html>
