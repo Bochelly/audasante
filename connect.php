@@ -74,7 +74,10 @@
           $_SESSION['connected'] = true;
   				
   			   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-         if($requete_1['medic']==TRUE) {
+          if($requete_1['super_admin']==TRUE) {
+            header('Location: super_admin/index.php');
+          }
+         else if($requete_1['medic']==TRUE) {
   			   header('Location: admin/index.php');
          }
          else {
