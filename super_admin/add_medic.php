@@ -13,8 +13,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 			{
 				$recup_code.= mt_rand(1,9);
 			}
-			$insert_code = $bdd->prepare('UPDATE user SET code_password= ? WHERE e_mail = ?');
-			$insert_code -> execute(array($recup_code,$mail));
+			$bdd->query("INSERT INTO `code` (`code`) VALUES ('".$recup_code."')");
 
 			$message = "<html>
 								<body>
@@ -31,7 +30,7 @@ if (isset($_POST['recup_submit'],$_POST['e_mail']))
 			$header.='Content-Type:text/html; charset="utf-8"'."\n";
 			$header.='Content-Transfer-Encoding: 8bit';
 
-			mail($mail,"Modification mot de passe",$message,$header);
+			mail($mail,"Inscription Audasanté",$message,$header);
 
 		}
 		else

@@ -27,6 +27,7 @@
 
   require('config.php');
   $requete_1 = $bdd->query("SELECT code FROM code_table WHERE code='".$code."'")->fetch();
+  
   elseif ($requete_1 == FALSE) {
   	$error_type = "no_code";
     header('Location: medic_register_front.php?error_type='.$error_type.'');
