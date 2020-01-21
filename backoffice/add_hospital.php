@@ -61,9 +61,9 @@
 <head>
 	<meta charset=utf-8 /> 
 	<title>Ajouter un hôpital</title>
-	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="../css/style-connect.css" type="text/css" media="screen"/>
 	<!--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> Permet de telecharger la police Source sans pro -->
-	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
+	<link rel="icon" type="image/png" href="../css/img/audalogo.png" />
 
 	<style>
 		.window form {
