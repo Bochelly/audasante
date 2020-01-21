@@ -1,5 +1,6 @@
 <?php
 require('../config.php');
+require('securiteBackoffice.php');
 
 if (isset($_POST['recup_submit'],$_POST['e_mail']))
 {

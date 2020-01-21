@@ -10,8 +10,9 @@ if (! $_SESSION['connected'] ) {
 	$dataprofil = $profil->fetch();
 
 if ($dataprofil['super_user'] == false) {
+	session_destroy();
 	header('Location: ../index.php');
 	exit();
 }
 
-};
+?>

@@ -1,4 +1,6 @@
-<?php $page_en_cours = 'users-admin'; ?>
+<?php $page_en_cours = 'users-admin'; 
+require('securiteBackoffice.php');
+?>
 
 <!DOCTYPE html>
 
