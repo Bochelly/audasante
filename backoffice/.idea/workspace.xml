@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57eda338-d50f-4635-bfa0-fdc4e6af297d" name="Default Changelist" comment="" />
+    <list default="true" id="57eda338-d50f-4635-bfa0-fdc4e6af297d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../config.php" beforeDir="false" afterPath="$PROJECT_DIR$/../config.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579536882316</updated>
       <workItem from="1579536883913" duration="3988000" />
-      <workItem from="1579598655769" duration="1379000" />
+      <workItem from="1579598655769" duration="6448000" />
     </task>
     <servers />
   </component>
@@ -63,5 +65,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="413" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1579600238847" />
+    <state x="329" y="37" width="782" height="825" key="find.popup" timestamp="1579603268889">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="329" y="37" width="782" height="825" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1579603268889" />
   </component>
 </project>

@@ -272,4 +272,66 @@ function confirmMessageFAQ(id) {
     document.getElementById("delete-form").submit();
 
   }
-} 
+}
+
+function plotTemp(){
+    var layout = {
+        title:'Température (en °)'
+    };
+// traitement
+    Plotly.plot('plot-temp', [{
+        y: [1,2,3].map(getRandomTemp),
+        marker: {
+            color: '#ff8600'
+        }
+    }],layout);
+
+    var cnt = 0;
+
+    var interval = setInterval(function() {
+        console.log(getRandomTemp());
+
+        Plotly.extendTraces('plot-temp', {
+            y: [[getRandomTemp()]]
+        }, [0])
+
+        if(cnt === 100) clearInterval(interval);
+    }, 1000);
+}
+plotTemp();
+
+function plotCard(){
+    var layout = {
+        title:'Fréquence cardiaque (en BPM)'
+    };
+
+    Plotly.plot('plot-card', [{
+        y: [1,2,3].map(getRandomBeat)
+    }],layout);
+
+    var cnt = 0;
+
+    var interval = setInterval(function() {
+        console.log(getRandomBeat());
+
+        Plotly.extendTraces('plot-card', {
+            y: [[getRandomBeat()]]
+        }, [0])
+
+        if(cnt === 100) clearInterval(interval);
+    }, 1000);
+}
+plotCard();
+
+
+
+
+function getRandomTemp(){
+    return Math.random() * (33.9 - 33.1) + 33.1;
+
+}
+
+function getRandomBeat(){
+    return Math.random() * (80 - 70) + 70;
+
+}

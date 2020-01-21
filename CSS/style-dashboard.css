@@ -1,0 +1,41 @@
+	body{
+	background-color: #F0F0F7		;
+}
+h2
+{
+	margin-left: 19%;
+	margin-top : 6%;
+	color:#42415c;
+}
+.dashboard
+{
+
+	margin-top: 2%;
+	margin-left: 19%;
+	width: 77.5%;
+	height: 550px;
+	background-color: #FFFF;
+}
+
+
+
+
+
+@media all and (max-width : 680px){
+	h2
+{
+	margin-left: 10%;
+	margin-top : 20%;
+	margin-bottom: 5%;
+}
+
+	.dashboard {
+		margin-top: 2%;
+		margin-left: 7%;
+		width: 83.5%;
+		height: 100%;
+		background-color: #FFF;
+		border: solid 2px;
+	}
+
+}
