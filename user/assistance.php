@@ -1,7 +1,7 @@
 <?php $page_en_cours = 'assistance'; 
 session_start(); // On démarre la session AVANT toute chose
 require('../config.php');
-require('sécurité_user.php');
+require('securite_user.php');
 ?>
 
 <!DOCTYPE html>
