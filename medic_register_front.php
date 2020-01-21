@@ -4,10 +4,10 @@
 
    // Si la session de l'admin ou de l'user est active, on redirige vers sa page
 	if(isset($_SESSION['id_admin'])){
-          header('location:../admin/index.php');
+          header('location:admin/index.php');
    }
    else if(isset($_SESSION['id_user'])){
-          header('location:../user/index.php');
+          header('location:user/index.php');
    }
 
   
@@ -15,7 +15,10 @@
   		if ($_GET["error_type"] == "nolog") {
 			$error_msg = "Des informations sont manquantes";
 		}
-		if ($_GET["error_type"] == "repeat") {
+		elseif ($_GET["error_type"] == "nocode") {
+			$error_msg = "Code incorrect!";
+		}
+		elseif ($_GET["error_type"] == "repeat") {
 			$error_msg = "Le mot de passe répété n'est pas le même";
 		}
 		elseif ($_GET["error_type"] == "exist") {
@@ -23,9 +26,9 @@
 		}
 		elseif ($_GET["error_type"] == "notexist") {
 			$error_msg = "Le numéro de sécurité sociale n'est pas dans la base de donnée";
-		}
+		}  
 		else {
-			$error_msg = "Erruer inconnue";
+			$error_msg = "Erreur inconnue";
 		}
 		} else { $error_msg=""; }
 
@@ -36,9 +39,9 @@
 <head>
 	<meta charset=utf-8 /> 
 	<title>S'enregistrer</title>
-	<link rel="stylesheet" href="../css/style-connect.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/style-connect.css" type="text/css" media="screen"/>
 	<!--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> Permet de telecharger la police Source sans pro -->
-	<link rel="icon" type="image/png" href="../css/img/audalogo.png" />
+	<link rel="icon" type="image/png" href="css/img/audalogo.png" />
 
 	<style>
 		.window form {
@@ -111,9 +114,9 @@
 
 		<div class='subtitle' style="margin-bottom:3%;">Inscrivez-vous en tant que médecin</div>
 
-		<form method="POST" action="patient_register_php.php">
+		<form method="POST" action="medic_register_back.php">
 
-			<div class="input-line" style="width : 47%; display : inline;">
+			<div class="input-line" style="width : 100%; display : inline;">
 				<input type='text' class='inputText' name='code' required></input>
 				<span class="floating-label">Votre code reçu par mail</span>
 			</div>
