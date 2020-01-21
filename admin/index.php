@@ -54,7 +54,7 @@ if (! $_SESSION['connected'] ) {
 		        					</br><h4>
                        <?php 
 
-                        require('config.php');
+                        require('../config.php');
 
                         $bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `n_secu_medic`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."')");
 
