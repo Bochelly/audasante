@@ -1,5 +1,9 @@
 <?php
 session_start(); // On démarre la session AVANT toute chose
+if (! $_SESSION['connected'] ) { 
+    header('Location: ../index.php');
+    exit();
+};
 ?>
 <!DOCTYPE html>
 
@@ -48,12 +52,21 @@ session_start(); // On démarre la session AVANT toute chose
 
 		        					<div class="info"> <h3> Informations</h3>
 		        					</br><h4>
-		        						N°patient: SELECT * FROM user WHERE n_secu=$_SESSION['n_secu']</br>
-		        						Nom: SELECT * FROM user WHERE nom=SESSION['last_name']</br>
-                        Prénom : SELECT * FROM user WHERE prénom=SESSION['first_name']
-		        						Ref HIG: SELECT * FROM user WHERE medecin=$_SESSION['medic']</br>
-		        						Date de naissance: SELECT * FROM user WHERE dateNaissance=$_SESSION['birth_date']</br>
-		        						e_mail: SELECT * FROM user WHERE e_mail=$_SESSION['e_mail']</br>
+                       <?php 
+
+                        require('config.php');
+
+                        $bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `n_secu_medic`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."')");
+
+                        echo 'N°sécurite sociale:'. $n_secu.'</br>';
+                        echo 'Nom:'. $last_name.'</br>';
+                        echo 'Prénom :'.$first_name. '</br>';
+		        						/*Ref HIG: SELECT * FROM user WHERE medecin=$_SESSION['medic'].'</br>';*/
+		        						echo 'Date de naissance:'.$birth_date .'</br>';
+                        echo 'e_mail:'.$e_mail;
+
+                        ?>
+
 </h4>
 		        					</div>
 		        					<div class="prog"><h3> Progression</h3>
