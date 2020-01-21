@@ -33,7 +33,7 @@ require('../config.php');
 
 <body>
 	<header><h1>AUDASANTÉ</h1></header>
-	<h2> Donées statistiques </h2>
+	<h2> Donées live </h2>
 
 	<?php
 		require('menu_lateral_admin.php');
