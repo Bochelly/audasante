@@ -1,22 +1,4 @@
-<?php
 
-////////////////////////
-////   PAGE  USER   ////
-////////////////////////
-
-   // tous d'abord il faut démarrer le système de sessions
-   session_start();
-
-   // Si la session de l'admin est active, on redirige vers sa page
-	if(isset($_SESSION['id_admin'])){
-          header('location:user/index.php');
-   }
-   // Si il n'y a pas de session utilisateur active, on redirige vers la page de connexion
-   else if(!isset($_SESSION['id_user'])){
-          header('location:admin/index.php');
-		  
-   }
-?>
 
 <!DOCTYPE html>
 <html>
