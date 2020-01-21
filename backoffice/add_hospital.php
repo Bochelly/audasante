@@ -22,18 +22,18 @@
 		
 		// On vérifie si ce numéro de sécu existe déja
 		$requete_1 = $bdd->query("SELECT * FROM hospital WHERE (adress='".$adress."') AND (name='".$hospital_name."')");
-		if($requete_1!=FALSE)
+		/* if($requete_1!=false)
 		{
 			$error_type = "hospital_exist";
 			header('Location: add_hospital.php?error_type='.$error_type.'');
 			exit();
-		} else {
+		} else { */
 
 			$bdd->query("INSERT INTO `hospital` (`name`, `adress`) VALUES ('".$hospital_name."', '".$adress."')");
 			$error_type = "added";
 			header('Location: add_hospital.php?error_type='.$error_type.'');
 			exit();
-		}
+		//}
     }
 
   

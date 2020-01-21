@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 jan. 2020 à 13:21
+-- Généré le :  mar. 21 jan. 2020 à 13:46
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -101,11 +101,11 @@ INSERT INTO `faq` (`id`, `subject`, `answer`, `frequency`) VALUES
 
 DROP TABLE IF EXISTS `hospital`;
 CREATE TABLE IF NOT EXISTS `hospital` (
-  `id_hospital` int(32) NOT NULL,
-  `nom` varchar(64) NOT NULL,
-  `adresse` varchar(64) NOT NULL,
+  `id_hospital` int(32) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `adress` varchar(64) NOT NULL,
   PRIMARY KEY (`id_hospital`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

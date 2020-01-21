@@ -71,7 +71,7 @@
 
 			<button class="ghost-round dark"  type="submit" name="submit" value="Connexion">Connexion</button>
 
-			<a class="ghost-round bright"  onclick="self.location.href='register.php'">S'inscrire</a>
+			<a class="ghost-round bright"  onclick="self.location.href='medic_register_front.php'">S'inscrire</a>
 		</form>
 
 	</div>
