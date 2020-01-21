@@ -1,4 +1,8 @@
-<?php $page_en_cours = 'faq-admin'; ?>
+<?php $page_en_cours = 'faq-admin'; 
+
+session_start();
+require('securiteBackoffice.php');
+?>
 
 <!DOCTYPE html>
 
