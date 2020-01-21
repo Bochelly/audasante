@@ -165,7 +165,10 @@ if (! $_SESSION['connected'] ) {
 		        				<div class="etape">
                     
                                 <div id="moncercle1">
-                                    <h9> 1</h9>
+                                    <h9> <FORM>
+                                    <INPUT type="button" name="nom" value="1" onclick="$moment_du_test='rythme cardiaque'">
+                                          </FORM>
+                                    </h9>
                                 </br>
                                 </br>
                                   <h8>  Rythme cardiaque<h8>
@@ -173,22 +176,30 @@ if (! $_SESSION['connected'] ) {
                                 <hr>
                                 <div id="moncercle2">
                                     <h9>
-
-                                    2</h9>
+                                    <FORM>
+                                    <INPUT type="button" name="nom" value="2" onclick="$moment_du_test='temperature'">
+                                    <FORM>
+                                    </h9>
                                 </br>
                                 </br>
                                   <h8>  Température corporelle</h8>
                                 </div>
                                 <hr>
                                 <div id="moncercle3">
-                                    <h9>3</h9>
+                                    <h9>
+                                    <FORM>
+                                    <INPUT type="button" name="3" value="" onclick="$moment_du_test='reaction auditive'">
+                                    <FORM>
+                                    </h9>
                                 </br>  
                                 </br>
                                 <h8>Réaction auditive</h8>
                                 </div>
                                 <hr>
                                 <div id="moncercle4">
-                                    <h9>4</h9>
+                                    <h9>
+                                    <INPUT type="button" name="4" value="" onclick="$moment_du_test='test de frequence'">
+                                    </h9>
                                 </br>
                                 </br>
                                   <h8>  Test d'audition</h8>
