@@ -54,7 +54,13 @@ if (! $_SESSION['connected'] ) {
 		        					</br><h4>
                        <?php 
 
-                        require('config.php');
+                        require('../config.php');
+
+                        $first_name = 'Thomas';
+		                    $last_name = 'Hercule';
+	                    	$n_secu = '1234567891';
+	                    	$birth_date = '1999-08-05';
+	                    	$e_mail = 'thomas.hercule@isep.fr';
 
                         $bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `n_secu_medic`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."')");
 
