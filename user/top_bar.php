@@ -36,8 +36,8 @@
 					</ul>
 			</div>
 		</li>
-		<li id="top-assist"> <a href="assistance"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
-		<li id="top-messagerie"><a href="messagerie"><i class="fas fa-envelope fa-lg fa-fw" style="color:#A5A4BF;" title="messagerie"> </i></a> </li>
+		<li id="top-assist"> <a href="assistance.php"><i class="far fa-question-circle fa-lg fa-fw" style="color:#A5A4BF;" title="assistance"> </i></a> </li>
+		<li id="top-messagerie"><a href="#"><i class="fas fa-envelope fa-lg fa-fw" style="color:#A5A4BF;" title="messagerie"> </i></a> </li>
 
 	</ul>
 </div>
