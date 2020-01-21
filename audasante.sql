@@ -7,6 +7,7 @@
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -87,9 +88,9 @@ INSERT INTO `faq` (`id`, `subject`, `answer`, `frequency`) VALUES
 --
 DROP TABLE IF EXISTS `hospital`;
 CREATE TABLE IF NOT EXISTS `hospital` (
-  `id_hospital` int(32) NOT NULL,
-  `nom` varchar(64) NOT NULL,
-  `adresse` varchar(64) NOT NULL,
+  `id_hospital` int(32) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `adress` varchar(64) NOT NULL,
   PRIMARY KEY (`id_hospital`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
