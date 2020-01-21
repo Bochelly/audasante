@@ -4,8 +4,8 @@
 <head>
 	<meta charset=utf-8 /> 
   <title>Connexion</title>
-  <link rel="stylesheet" href="css/style-connect.css" media="screen"/>
-  <link rel="icon" type="image/png" href="css/img/audalogo.png" />
+  <link rel="stylesheet" href="../css/style-connect.css" media="screen"/>
+  <link rel="icon" type="image/png" href="../css/img/audalogo.png" />
 </head>
 
 <body>
@@ -21,12 +21,12 @@
   //On vérifie si les deux mot de passes sont identiques
   elseif (isset($_POST['pswrd']) != isset($_POST['pswrd_again'])) {
   	$error_type = "repeat";
-    header('Location: index.php?error_type='.$error_type.'');
+    header('Location: patient_register_front.php?error_type='.$error_type.'');
     exit();
   }
   else
    {
-		require('config.php'); // On réclame le fichier config
+		require('../config.php'); // On réclame le fichier config
 
 		$first_name = $_POST['first_name'];
 		$last_name = $_POST['last_name'];
@@ -43,7 +43,7 @@
 		if($requete_1!=FALSE)
 		{
 			$error_type = "unknown";
-			header('Location: index.php?error_type='.$error_type.'');
+			header('Location: patient_register_front.php?error_type='.$error_type.'');
 			exit();
 		}
 		else {
@@ -52,7 +52,7 @@
 		$pswrd_hash = password_hash($pswrd,PASSWORD_BCRYPT);
 
 		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."')");
-			header('Location: index.php');
+			header('Location: sucess.php');
 		exit();
 		}
     }
