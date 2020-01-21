@@ -70,19 +70,21 @@
   			   // on démarre le système de sessions
   			   session_start();
   			   
-  				$_SESSION['n_secu'] = $requete_1['n_secu'];
-          $_SESSION['connected'] = true;
+  			$_SESSION['n_secu'] = $requete_1['n_secu'];
+            $_SESSION['connected'] = true;
   				
   			   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
          if($requete_1['super_admin']==TRUE) {
             header('Location: backoffice/index.php');
           }
          else if($requete_1['medic']==TRUE) {
-  			   header('Location: admin/index.php');
+         	$_SESSION['connected'] = true;
+  			header('Location: admin/index.php');
          }
          else {
-  				// On redirige vers la partie membre
-  				header('Location: user/index.php');
+         	$_SESSION['connected'] = true;
+  			// On redirige vers la partie membre
+  			header('Location: user/index.php');
           }
 
         }
