@@ -1,4 +1,5 @@
 <?php $page_en_cours = 'sensors';
+session_start();
 require('securiteBackoffice.php'); 
 ?>
 

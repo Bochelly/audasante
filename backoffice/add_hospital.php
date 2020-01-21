@@ -3,16 +3,10 @@
    session_start();
    require('securiteBackoffice.php');
 
-   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-	if(isset($_SESSION['id_admin'])){
-          header('location:admin/add_hospital.php');
-   }
-   else if(isset($_SESSION['id_user'])){
-          header('location:user/add_hospital.php');
-   }
+
 
 //on vérifie qu'on ai bien toute les informatoins d'inscriptions
-  elseif(isset($_POST['hospital']) && isset($_POST['adress']) && isset($_POST['postal']))
+  if(isset($_POST['hospital']) && isset($_POST['adress']) && isset($_POST['postal']))
    {
 		require('config.php'); // On réclame le fichier config
 

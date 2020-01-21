@@ -1,16 +1,4 @@
 <?php
-   // tous d'abord il faut démarrer le système de sessions
-   session_start();
-
-   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-	if(isset($_SESSION['id_admin'])){
-          header('location:admin/index.php');
-   }
-   else if(isset($_SESSION['id_user'])){
-          header('location:user/index.php');
-   }
-
-  
   if (isset($_GET["error_type"])) {
   		if ($_GET["error_type"] == "falselog") {
 			$error_msg = "Mot de passe incorrect";
@@ -23,6 +11,8 @@
 		}
 		elseif ($_GET["error_type"] == "spam") {
 			$error_msg = "Vous avez atteint le quota de tentatives, essayez demain !";
+		} elseif ($_GET["error_type"] == "notlogged") {
+			$error_msg = "Vous devez d'abord vous connecter !";
 		}
 	} else { $error_msg=""; }
 

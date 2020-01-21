@@ -15,20 +15,11 @@
   if(!isset($_POST['login']) || !isset($_POST['pswrd']))
   {
     $error_type = "nolog";
-    header('Location: index.php');
+    header('Location: index.php?error_type='.$error_type.'');
     exit();
   }
   else
   {
-    // On va vérifier les variables
-    /* if()
-    {
-      echo 'Vous devez entrer uniquement des lettres ou des chiffres <br/>';
-      echo '<a href="index.php" temp_href="index.php">Réessayer</a>';
-      exit();
-    }
-    else
-    { */
     require('config.php'); // On réclame le fichier config
 
       $login = $_POST['login'];
@@ -61,31 +52,32 @@
 			}
 			else
 			{
-  			// On vérifie si le login et le mot de passe correspondent au compte utilisateur
-  			if(password_verify($pswrd,$requete_1['password'])) {
-  				$nbr_try = 0;
-  				//on met a jour la date de dernère connexion et le nombre d'essais
-  				$bdd->exec("UPDATE user SET nb_try='".$nbr_try."', last_connect=NOW() WHERE e_mail='".$login."'");
+		// On vérifie si le login et le mot de passe correspondent au compte utilisateur
+		if(password_verify($pswrd,$requete_1['password'])) {
+			$nbr_try = 0;
+			//on met a jour la date de dernère connexion et le nombre d'essais
+			$bdd->exec("UPDATE user SET nb_try='".$nbr_try."', last_connect=NOW() WHERE e_mail='".$login."'");
 
-  			   // on démarre le système de sessions
-  			   session_start();
-  			   
-  			$_SESSION['n_secu'] = $requete_1['n_secu'];
-            $_SESSION['connected'] = true;
-  				
-  			   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
-         if($requete_1['super_admin']==TRUE) {
-            header('Location: backoffice/index.php');
-          }
-         else if($requete_1['medic']==TRUE) {
-         	$_SESSION['connected'] = true;
-  			header('Location: admin/index.php');
-         }
-         else {
-         	$_SESSION['connected'] = true;
-  			// On redirige vers la partie membre
-  			header('Location: user/index.php');
-          }
+			// on démarre le système de sessions
+			session_start();
+
+			$_SESSION['n_secu'] = $requete_1['n_secu'];
+			$_SESSION['connected'] = true;
+	  				
+	  			   // Si la session de l'admin ou de l'user est active, on redirige vers sa page
+	         if($requete_1['super_user']==1) {
+	         	$_SESSION['connected'] = true;
+	            header('Location: backoffice/index.php');
+	          }
+	         elseif($requete_1['medic']==1) {
+	         	$_SESSION['connected'] = true;
+	  			header('Location: admin/index.php');
+	         }
+	         else {
+	         	$_SESSION['connected'] = true;
+	  			// On redirige vers la partie user
+	  			header('Location: user/index.php');
+	          }
 
         }
         else

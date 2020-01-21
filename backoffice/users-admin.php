@@ -1,4 +1,5 @@
 <?php $page_en_cours = 'users-admin'; 
+session_start();
 require('securiteBackoffice.php');
 ?>
 
