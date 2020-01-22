@@ -28,7 +28,7 @@ if (! $_SESSION['connected'] ) {
 
 	<?php
     $page_en_cours = 'accueil';
-		require('menu_lateral_admin.php');
+    require('menu_lateral_admin.php');
     require('top_bar.php');
     $instance_en_cours = 'index';
 	?>
@@ -200,5 +200,6 @@ if (! $_SESSION['connected'] ) {
 		        			</div>
 		        		</div>		
 		        	</div>
+    <script src="../js/script.js"></script>
 
 <body>

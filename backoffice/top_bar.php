@@ -5,7 +5,7 @@
 
 <div id='top-bar'>
 	<ul>
-		<form autocomplete="off" >
+		<form autocomplete="off"  >
 			<div class="autocomplete">
 				<li id="search-field"><i class="fas fa-search" style="color:#A5A4BF;"></i>
 					<input id="search-text" type="text" name="search-bar" placeholder="Recherchez un patient, un test ou un message">

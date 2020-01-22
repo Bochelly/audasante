@@ -28,7 +28,7 @@ require('sécurité_médecin.php');
 
 <body>
 	<header><h1>AUDASANTÉ</h1></header>
-	<h2> Donées live </h2>
+	<h2> Données live </h2>
 
 	<?php
 		require('menu_lateral_admin.php');

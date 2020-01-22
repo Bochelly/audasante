@@ -5,10 +5,10 @@
 
 <div id='top-bar'>
 	<ul>
-		<form autocomplete="off" >
+		<form autocomplete="off" method="POST" action="find.php" >
 			<div class="autocomplete">
 				<li id="search-field"><i class="fas fa-search" style="color:#A5A4BF;"></i>
-					<input id="search-text" type="text" name="search-bar" placeholder="Recherchez un patient, un test ou un message">
+					<input id="search-text" type="text" name="search-text" placeholder="Recherchez un patient, un test ou un message">
 					<input type="submit" hidden>
 				</li>
 			</div>
