@@ -1,5 +1,25 @@
 * {margin:0; padding:0;font-family: 'Source Sans Pro';} /* Permet de coller la liste sur la gauche de l'écran*/
 
+#contenuAssistance #welcome{
+	text-align: center;
+	font-size: 50px;
+
+}
+
+#contenuAssistance #sub-welcome{
+	text-align: center;
+	color: #43425D;
+	font-size: 20px;
+}
+
+#welcome-img{
+	display: block;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto }
+}
+
+
 #croix
 {
 	display:none;

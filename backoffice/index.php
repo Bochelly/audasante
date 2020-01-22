@@ -40,19 +40,20 @@ require('securiteBackoffice.php');
 
 
     <div id="contenuAssistance">
-        <h2>Clé d'inscription</h2>
+        <h2></h2>
         <div id="mail">
-            <p onclick="plot()">Hello</p>
+            <img id="welcome-img" src="../images/welcome.png">
+            <h2 id="welcome">BIENVENUE SUR LE BACKOFFICE</h2>
+            <h3 id="sub-welcome">Cliquez sur une section dans le menu latéral pour commencer.</h3>
+            <h2></h2>
 
         </div>
 
 
     </div>
-    <div id="plot">
-        <h3>Graph</h3>
-    </div>
+
 	<script src="../js/script.js"></script>
-    <script src="plot.js"></script>
+
 </body>
 </html>
 
