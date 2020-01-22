@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 jan. 2020 à 17:51
+-- Généré le :  mer. 22 jan. 2020 à 12:56
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_connect` date DEFAULT NULL,
   `nb_try` int(16) NOT NULL DEFAULT '0',
   `n_secu_medic` bigint(13) DEFAULT NULL,
-  `id_hospital` int(32) DEFAULT NULL,
+  `hospital` varchar(32) DEFAULT NULL,
   `facebook` varchar(100) DEFAULT NULL,
   `instagram` varchar(100) DEFAULT NULL,
   `twitter` varchar(100) DEFAULT NULL,
@@ -236,15 +236,19 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `code_password`, `last_connect`, `nb_try`, `n_secu_medic`, `id_hospital`, `facebook`, `instagram`, `twitter`, `photo`, `medic`, `super_user`) VALUES
-(12345678910, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$6QRCsl8Jeyj5BX2SLALrAey7vChrUpvgRqt7DkSkz54Kpw0Kysn2W', NULL, '2019-12-04', 2, NULL, NULL, NULL, NULL, NULL, '', 0, 0),
+INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`, `code_password`, `last_connect`, `nb_try`, `n_secu_medic`, `hospital`, `facebook`, `instagram`, `twitter`, `photo`, `medic`, `super_user`) VALUES
+(12345678910, 'thomas', 'hercule', '2019-11-26', 'thomas.hercule@isep.fr', '$2y$10$MbfLMjqcZnSLq6DJmZ6lsOHJ00hNuoAAmXGDyUkEXjQh6pk1hOLCu', NULL, '2020-01-22', 0, NULL, NULL, NULL, NULL, NULL, '', 0, 0),
 (111111111, 'Félix', 'Nedelec', '1999-11-05', 'felix.nedelec75@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-15', 0, NULL, NULL, 'félix', 'felixndlc', 'Ouii', '111111111.jpg', 1, 0),
 (222222222, 'alban', 'Erulin', '1999-04-12', 'pvar.tpe@gmail.com', '$2y$10$/YhaexL3UHQ1.8ejvSeB1.aXAOB8oo8hE.l2cKH1YAvnuQaj.yBDe', NULL, '2019-12-05', 0, 111111111, NULL, NULL, NULL, NULL, '222222222.jpg', 1, 1),
 (333333333, 'maxime', 'guasp', '1999-10-21', 'maxguasp@gmail.com', '$2y$10$BthEgWJhCFREnEeGmJOpfObZsM17tr4p4osqI48Q85RoXi5FE9z.y', NULL, '2019-12-10', 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
 (444444444, 'roger', 'dupond', '2000-07-28', 'roger.d@gmail.com', '$2y$10$4b91hQMUVVBrD1D8mnlI5OQ1dcK8/xYpIXru4qIUhavuRn3KvLPvm', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
 (555555555, 'andre', 'dupont', '1999-10-19', 'andre.t@gmail.com', '$2y$10$3mgjm1IcpNzBSDdpdAkPV.I6TE4pKPt/pGBLKB24.baN0GzeeyZ0C', NULL, NULL, 0, 111111111, NULL, NULL, NULL, NULL, '', 0, 0),
 (666666666, 'yves', 'duponlt', '1998-10-05', 'yves.lt@gmail.com', '$2y$10$W1f.rLQnGe5anmzw1h3S9./GXmNhjXcrXbBrUHEZc3tfUhd4C0k16', NULL, '2019-12-15', 0, 111111111, NULL, NULL, NULL, NULL, '666666666.jpg', 0, 0),
-(1888888, 'Antoine', 'Borrelly', '2020-01-20', 'antoine.borrelly@isep.fr', '$2y$10$6Lo7jPWFVgXrb6S40V.Hsu7oKglTNTeiOfagPD1mRu0PvqM1mVfJm', NULL, '2020-01-21', 0, NULL, NULL, NULL, NULL, NULL, '', 1, 1);
+(1888888, 'Antoine', 'Borrelly', '2020-01-20', 'antoine.borrelly@isep.fr', '$2y$10$6Lo7jPWFVgXrb6S40V.Hsu7oKglTNTeiOfagPD1mRu0PvqM1mVfJm', NULL, '2020-01-22', 0, NULL, NULL, NULL, NULL, NULL, '', 1, 0),
+(1234589, 'Thomas', 'Hercule', '2020-01-16', 'fqsfds', '$2y$10$BoM0jWLptRViQJyLyDQojOL6lFhFDsMrMt7B940LgBzzDMo2Ffy5i', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 'defaut', 1, 0),
+(8851, 'azdazdzaadadza', 'nbj', '2020-01-23', 'rzoihdzahudza', '$2y$10$M3ezxSO7UE5eNLBCLLrn7u/z0nvXrll0NcUbqdZeW6gEyf68GZMDa', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 'defaut', 1, 0),
+(321561, 'fsdfds', 'sfdsdffsd', '2020-02-06', 'fefsdfesd', '$2y$10$mqpkzPdZ0k6PirsM6n6ezOBnGHFyg.kBa13JXnFTNkmSpL5ueRrbq', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 'defaut', 1, 0),
+(6815, 'effefe', 'huygguy', '2020-01-22', 'jythtr', '$2y$10$fd0TF2UH6FhCVPrbP6ZmEuuMv6cALbUe54fhdHdeUnR1ua3Q8mn0y', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 'defaut', 1, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
