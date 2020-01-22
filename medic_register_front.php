@@ -126,6 +126,11 @@
 				<span class="floating-label">Votre code reçu par mail</span>
 			</div>
 
+			<div class="input-line" style="width : 100%; display : inline;">
+				<input type='text' class='inputText' name='hospital' required></input>
+				<span class="floating-label">Votre hôpitale</span>
+			</div>
+
 			<div class="input-line" style="width : 47%; display : inline;">
 				<input type='text' class='inputText' name='first_name' required></input>
 				<span class="floating-label">Prénom</span>

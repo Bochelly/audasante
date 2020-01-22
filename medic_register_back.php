@@ -45,6 +45,7 @@
 		$e_mail = $_POST['e_mail'];
 		$pswrd = $_POST['pswrd'];
 		$pswrd_again = $_POST['pswrd_again'];
+		$hospital = $_POST['hospital'];
 		
 
 		
@@ -61,7 +62,7 @@
 		//on hache le mot de passe
 		$pswrd_hash = password_hash($pswrd,PASSWORD_BCRYPT);
 
-		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`,`medic`,`nb_try`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."', '1', '0')");
+		$bdd->query("INSERT INTO `user` (`n_secu`, `first_name`, `last_name`, `birth_date`, `e_mail`, `password`,`medic`,`nb_try`,`hospital`) VALUES ('".$n_secu."', '".$first_name."', '".$last_name."', '".$birth_date."', '".$e_mail."', '".$pswrd_hash."', '1', '0', '".$hospital."')");
 		$bdd->query("DELETE FROM code WHERE code = '".$code."')");
 			header('Location: index.php');
 		exit();
